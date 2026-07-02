@@ -11,6 +11,7 @@ The system spans post-DAQ streaming processing, global production campaigns, and
 - **Platform** covers the realization of the architecture with specific technology and implementation choices
 - **Streaming** documents post-DAQ workflows during datataking
 - **Production** documents the epicprod automated production system
+- **Validation** documents WFMS support for ePIC validation activities
 - **Distributed Analysis** describes the support for distributed and managed analysis workflows
 - **Operations** describes how the WFMS is operated
 - **Organization** describes the organization of WFMS efforts and how the work is coordinated

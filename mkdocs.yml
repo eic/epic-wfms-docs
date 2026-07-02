@@ -25,6 +25,7 @@ nav:
   - Platform: platform.md
   - Streaming: streaming.md
   - Production: production.md
+  - Validation: validation.md
   - Distributed Analysis: analysis.md
   - Operations: operations.md
   - Organization: organization.md

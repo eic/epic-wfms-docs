@@ -1,0 +1,32 @@
+site_name: ePIC Workflow Management System
+site_description: Documentation for the ePIC distributed workflow management system.
+repo_url: https://github.com/eic/epic-wfms-docs
+repo_name: eic/epic-wfms-docs
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Foundations: foundations.md
+  - Architecture: architecture.md
+  - Platform: platform.md
+  - Streaming: streaming.md
+  - Production: production.md
+  - Distributed Analysis: analysis.md
+  - Operations: operations.md
+  - Organization: organization.md
+  - Timeline: timeline.md
+  - References: reference.md

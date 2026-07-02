@@ -16,6 +16,8 @@ Covers the realization of the architecture with specific technology and implemen
 ## Metadata And APIs
 
 
-## Agents and AI services
+## Agents and services
+
+![High-level epicprod LLM and distributed computing integration](diagrams/epicprod_llm_ops_highlevel_tw.svg)
 
 ## Authentication

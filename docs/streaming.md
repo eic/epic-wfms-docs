@@ -2,6 +2,8 @@
 
 Documents post-DAQ workflows during datataking: E0 to E1 dataflow, STF/TF processing, fast processing for low-latency control room/AI analytics and validation, prompt processing of STF files, fast monitoring, E2 integration in streaming workflows, and current/near term realizations in the streaming workflow testbed.
 
+[![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
+
 ## E0-E1 Interface - Controls and Dataflows
 
 
@@ -14,8 +16,6 @@ Documents post-DAQ workflows during datataking: E0 to E1 dataflow, STF/TF proces
 ## Monitoring And Validation
 
 ## Streaming Workflow Testbed
-
-[![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
 
 [![Fast processing pipeline](diagrams/fast-processing-pipeline-v10.svg)](diagrams/fast-processing-pipeline-v10.svg)
 

@@ -19,6 +19,12 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
+plugins:
+  - search
+  - to-pdf:
+      enabled_if_env: ENABLE_PDF_EXPORT
+      output_path: pdf/epic-wfms-docs.pdf
+
 nav:
   - Home: index.md
   - Foundations: foundations.md

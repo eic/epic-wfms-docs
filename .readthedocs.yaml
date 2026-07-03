@@ -1,9 +1,25 @@
 version: 2
 
+formats:
+  - pdf
+
 build:
   os: ubuntu-24.04
   tools:
     python: "3.12"
+  apt_packages:
+    - libcairo2
+    - libffi-dev
+    - libgdk-pixbuf-2.0-0
+    - libpango-1.0-0
+    - libpangoft2-1.0-0
+    - shared-mime-info
+  jobs:
+    build:
+      pdf:
+        - ENABLE_PDF_EXPORT=1 python -m mkdocs build --clean --site-dir _site_pdf --config-file mkdocs.yml
+        - mkdir -p $READTHEDOCS_OUTPUT/pdf/
+        - cp _site_pdf/pdf/epic-wfms-docs.pdf $READTHEDOCS_OUTPUT/pdf/$READTHEDOCS_PROJECT.pdf
 
 mkdocs:
   configuration: mkdocs.yml

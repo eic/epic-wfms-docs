@@ -1,3 +1,4 @@
 .venv/
 site/
 _site_pdf/
+_mkdocs_pdf.yml

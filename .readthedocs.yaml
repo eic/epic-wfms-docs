@@ -17,7 +17,8 @@ build:
   jobs:
     build:
       pdf:
-        - ENABLE_PDF_EXPORT=1 python -m mkdocs build --clean --site-dir _site_pdf --config-file mkdocs.yml
+        - python scripts/write-pdf-config.py --output _mkdocs_pdf.yml
+        - ENABLE_PDF_EXPORT=1 python -m mkdocs build --clean --site-dir _site_pdf --config-file _mkdocs_pdf.yml
         - mkdir -p $READTHEDOCS_OUTPUT/pdf/
         - cp _site_pdf/pdf/epic-wfms-docs.pdf $READTHEDOCS_OUTPUT/pdf/$READTHEDOCS_PROJECT.pdf
 

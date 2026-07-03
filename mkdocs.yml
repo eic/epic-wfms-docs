@@ -24,6 +24,7 @@ plugins:
   - to-pdf:
       enabled_if_env: ENABLE_PDF_EXPORT
       output_path: pdf/epic-wfms-docs.pdf
+      custom_template_path: pdf_templates
 
 nav:
   - Home: index.md

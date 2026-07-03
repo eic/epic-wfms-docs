@@ -13,6 +13,13 @@ Collects reference documents, glossary terms, external links, API references, MC
 - **EIC/ePIC Software Statement of Principles**: <https://eic.github.io/activities/principles.html>
 - **Streaming workflow testbed architecture**: <https://github.com/BNLNPPS/swf-testbed/blob/main/docs/architecture.md>
 - **epicprod implementation repository**: <https://github.com/BNLNPPS/swf-monitor>
+- **PCS — Physics Configuration System**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/PCS.md>
+- **epicprod task catalog design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_TASK_CATALOG.md>
+- **Production operations runbook**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_OPS.md>
+- **Production operations agent design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_OPS_AGENT.md>
+- **Validation integration plan**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_VALIDATION.md>
+- **Production request questionnaire design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_QUESTIONNAIRE.md>
+- **argus-ai assessment application design**: <https://github.com/BNLNPPS/corun-ai/blob/master/docs/argus-ai.md>
 
 ## Glossary
 

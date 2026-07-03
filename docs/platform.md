@@ -1,306 +1,292 @@
 # WFMS Platform
 
 This section covers the specific technical platform used to build the ePIC WFMS across streaming, production, validation,
-distributed analysis, calibration, distributed CI, and related workflow domains. With it we pass from technology
-agnostic architecture to implementation specifics. It documents the concrete systems,
+distributed analysis, calibration, distributed CI, and related workflow domains. It marks the passage from
+technology-agnostic architecture to implementation specifics. It documents the concrete systems,
 services, libraries, interfaces, and conventions used to realize the architecture described in the previous section.
 
 The platform is developing through two active implementation fronts: the streaming workflow testbed and the epicprod production system. These
-fronts have different near-term purposes, but they are deliberately based on the same substrate: PanDA and related
+fronts have different near-term purposes, but they are deliberately based on the same foundation: PanDA and related
 workflow services, Rucio and XRootD data handling, message-driven agents, a shared monitor/database service, REST and
-MCP interfaces, browser-based operational pages, AI bot, and harnessed LLM AI services.
+MCP interfaces, browser-based operational pages, AI bot interfaces, and harnessed LLM AI services.
 
-## Common Technical Platform
+## Production And Testbed Convergence
 
-### Platform Role
+The two implementation fronts exercise complementary parts of the platform. Production carries the immediate
+operational needs: campaign definition, task creation, PanDA execution, data product accounting, monitoring, human
+controls, and operations automation. The testbed exercises the datataking side: E0-E1-E2 streaming processing, message-driven agents,
+fast processing, Rucio data handling, and prompt monitoring.
 
-The common platform is the concrete implementation layer beneath the WFMS workflow domains. It consists of the shared
-technologies, code patterns, services, and operational conventions used by the current testbed and production systems.
-Domain-specific sections describe how the platform is applied in each workflow domain.
+Several production components serve the testbed as well. The Physics Configuration System (PCS) provides a dynamic,
+editable, composable catalog for task creation. Rucio-based input ingest and PanDA submission are production
+needs today and testbed needs for composed streaming-processing tasks. The task catalog's browsing, state, controls, and copy/edit
+capabilities can extend to testbed namespaces, data challenges, and future streaming exercises.
 
-### Production And Testbed Convergence
+The ePIC-specific monitor originated in the testbed and now supports both fronts. Bot interfaces, alarms, operations
+agents, MCP tools, and LLM-backed assessment services are likewise shared, with authorization and action policies set
+per domain.
 
-The production system and streaming workflow testbed exercise the same platform from different directions. Production
-has immediate operational pressure: campaign definition, task creation, PanDA execution, data product accounting,
-monitoring, human controls, and operations automation. The testbed exercises the datataking side: E0-E1-E2 streaming
-processing, message-driven agents, fast processing, Rucio data handling, and prompt monitoring.
-
-Several production components have testbed relevance. The Physics Configuration System provides a dynamic, editable,
-composable catalog model for task creation. Rucio-based input ingest and PanDA submission are production needs today and
-testbed needs for composed streaming-processing tasks. The task catalog's browsing, state, controls, and copy/edit
-patterns can also support testbed namespaces, data challenges, and future streaming exercises.
-
-The ePIC-specific monitor originated in the testbed and now supports both production and testbed development. Bot
-interfaces, alarm handling, operations agents, MCP tools, and LLM-backed assessment services are shared capabilities
-with different authorization and action policies by use case. Production does not expose general proactive workflow
-actions through the general bot. The testbed may use more active bot or agent behavior where that is appropriate for
-workflow experimentation.
-
-corun-ai extends the platform with LLM-backed operations and durable document artifacts. Its production role begins with
-assessments, comments, campaign narratives, and reports. Its testbed category is available for deeper analytics on
-streaming workflow behavior as the testbed matures.
-
-### Repository Organization
+## Repository Organization
 
 The `swf-*` repositories implement the current platform. `swf-testbed` is the umbrella repository for testbed
-configuration, orchestration, and documentation. `swf-monitor` provides the Django web application, database-backed
-monitoring, REST APIs, MCP server, production pages, and epicprod implementation. `swf-common-lib` provides shared
-agent, messaging, logging, and Rucio helper code. Agent repositories such as `swf-daqsim-agent`, `swf-data-agent`,
-`swf-processing-agent`, and `swf-fastmon-agent` implement specific testbed roles.
+configuration, orchestration, and documentation. `swf-monitor` is the central web and database application, covering
+monitoring, APIs, and the epicprod implementation. `swf-common-lib` holds shared agent, messaging, logging, and Rucio
+helper code; code used by more than one component belongs there. Agent repositories (`swf-daqsim-agent`,
+`swf-data-agent`, `swf-processing-agent`, `swf-fastmon-agent`) implement specific testbed roles.
 
-Cross-repository development is coordinated when a platform change spans repositories. Common code that is used by more
-than one component belongs in `swf-common-lib`, not in copied local utilities.
+The three core repositories (`swf-testbed`, `swf-monitor`, `swf-common-lib`) advance together on coordinated branches.
 
 ## Web And Database Stack
 
 ### swf-monitor
 
-`swf-monitor` is the central web and database application for the present platform. It serves both the testbed and
-epicprod, with the historical name now covering more than monitoring. It provides browser pages, REST APIs, MCP tools,
-message history, agent state, PanDA monitoring views, PCS, task catalogs, and LLM assessment integration.
+`swf-monitor` serves both the testbed and epicprod; the historical name now covers much more than monitoring. It is a
+Django application backed by PostgreSQL, providing the platform's browser pages, REST APIs, and MCP tools and the
+database-backed state beneath them: message history, agent state, PanDA monitoring views, PCS, task catalogs, and LLM
+assessment integration.
 
 ### Database-Backed Operational State
 
-The monitor database stores operational state that must be queried, filtered, linked, audited, or rendered. It stores
-current state and history rather than only transient status. Testbed records include runs, agents, messages, files,
-workflow executions, and fast monitoring state. Production records include requests, PCS entities, campaign tasks,
-PanDA associations, operator state, cached system status, LLM artifact pointers, and production metadata.
+The monitor database stores all operational state that must be queried, filtered, linked, audited, or rendered, holding
+current state and its history. Testbed records include runs, agents, messages, files, workflow executions, and fast
+monitoring state. Production records include requests, PCS entities, campaign tasks, PanDA associations, operator
+state, cached system status, LLM artifact pointers, and production metadata.
 
-Django models and migrations define the current schema. JSON fields are used where a record needs extensible metadata
-without prematurely fixing every field as a column. Structured fields are used where filtering, linking, constraints, or
-operator workflows require them.
+Django models and migrations define the schema. JSON fields hold extensible metadata; structured fields are used where
+filtering, linking, constraints, or operator workflows require them. The pervasive use of JSON fields makes the
+system flexible and adaptable to include new knowledge, state and functionality. 
 
-### Browser Page Implementation
+### Browser Pages
 
-Browser pages are implemented as server-rendered Django pages with targeted JavaScript for filtering, selection,
-asynchronous actions, and notification. Page state that affects interpretation should be represented in the URL:
-selected task, active tab, filters, sorting, and similar controls. This makes views bookmarkable, shareable, and usable
-as stable references in operations discussions.
+Pages are server-rendered Django templates with targeted JavaScript for filtering, selection, asynchronous actions, and
+notification. Page state that affects interpretation (selected task, active tab, filters, sorting) is carried in the
+URL, making views bookmarkable and stable as references.
 
-Pages that trigger long-running or credentialed work enqueue an agent request and return promptly. Completion is shown
-from database state, cache state, or browser notification.
+Pages that have buttons triggering long-running or credentialed work enqueue an agent request and return promptly,
+not waiting for completion; completion arrives through database state and immediate browser notification with
+an auto-updated page.
 
 ### Server-Sent Events
 
-Server-Sent Events are the browser notification mechanism for asynchronous completion. swf-monitor consumes message-bus
-events, persists relevant messages, and relays selected events to browsers through `/api/messages/stream/`. Production
-uses the same pattern for operations-agent completion and corun-ai callback completion. SSE is a notification path, not
-the source of truth; pages refresh database or REST state after receiving the notice.
+Server-Sent Events (SSE) deliver asynchronous completion notices to the browser. swf-monitor consumes message-bus
+events, persists relevant messages, and relays selected events to browsers through `/api/messages/stream/`.
+Operations-agent completions and corun-ai callbacks reach production pages the same way. SSE carries only the
+notification; on receipt, pages refresh their state from the database or REST.
 
 ## Workflow And Workload Management
 
 ### PanDA
 
-PanDA is the distributed workload management system used for production execution and testbed workflow processing. It
-turns task specifications into jobs, brokers work to sites, and records task and job state. epicprod uses PanDA for
-campaign tasks. The testbed uses it as the execution substrate for prompt and streaming workflow prototypes.
+PanDA[^panda] is the distributed workload management system for both fronts: it turns task specifications into jobs, brokers
+work to sites, and records task and job state. epicprod uses it for campaign tasks; the testbed uses it to execute
+prompt and streaming workflows.
 
-PanDA task and job state is presented in swf-monitor through ePIC-specific task, job, queue, and system views. These
-views supplement the generic BigPanDA monitor with production-specific task links, campaign context, payload-log access,
-Rucio output views, and LLM assessments.
+swf-monitor presents PanDA task and job state through ePIC-specific task, job, queue, and system views that for
+ePIC purposes supplant
+the default ATLAS PanDA monitor with production task links, campaign context, payload-log access, Rucio output views, and
+LLM assessments.
 
 ### JEDI
 
-JEDI is the PanDA task definition and execution layer used for direct production task submission from PCS. PCS builds the
-task specification, maps PCS fields into a JEDI `taskParamMap`, and queues the credentialed submission through the
-production operations agent. The live epicprod path uses the PanDA client API for EVGEN production tasks and records each
-physical submission attempt as a PanDA task association.
+JEDI is the PanDA task definition and execution layer, used for direct production task submission from PCS. PCS builds
+the task specification, maps its fields into a JEDI `taskParamMap`, and queues the credentialed submission through the
+production operations agent. The live epicprod path uses the PanDA client API for EVGEN production tasks and records
+each physical submission attempt as a PanDA task association.
 
-The JEDI integration also defines the distinction between logical campaign task identity and physical PanDA/Rucio attempt
-names. The logical identity remains stable in PCS. Physical submissions may append `.tryN` so reruns and future site
-racing have unique PanDA task names and output namespaces.
+The integration separates logical campaign task identity from physical PanDA/Rucio attempt names. The logical identity
+remains stable in PCS; physical submissions may append `.tryN` so that reruns have unique PanDA
+task names and output namespaces, and/or `.bN` to organize blocks of outputs within a task when very large tasks would
+exceed Rucio's maximum dataset size (100k files).
 
 ### iDDS
 
-iDDS is part of the broader PanDA ecosystem for intelligent data delivery and workflow orchestration. It is relevant to
-multi-stage and data-driven workflows where data availability, transformation, and workflow state must be coordinated
-beyond simple task submission. The current documentation includes the iDDS/PanDA detail view as a candidate pattern for
-future streaming and production workflow expansion.
+iDDS[^idds], part of the PanDA ecosystem, is PanDA's workflow management component,
+orchestrating multi-stage and data-driven workflows in which data availability,
+transformation, and workflow state must be coordinated beyond single task submission. It is capable of large and
+complex workflows, able to handle future streaming and production workflow expansion.
+PanDA also has an internal workflow capability under development, for workflows integral to PanDA's management of
+an overall task; PanDA has full and direct awareness and control of a multi-stage task, rather than delegating to iDDS.
+As this capability matures it will be reviewed for possible application in ePIC WFMS. The complex workflows of 
+ePIC fast streaming processing will always be an iDDS domain.
 
 ### Workflow Descriptions
 
-The testbed uses a layered workflow model. TOML holds human-editable configuration and parameters. Python/SimPy supports
-execution and simulation patterns that need rapid iteration. Snakemake is the candidate layer for workflows where
-dependency management is central, such as calibration or other multi-step orchestration.
+The testbed uses a layered workflow model: TOML for human-editable configuration and parameters, Python/SimPy for
+execution and simulation patterns that need rapid iteration, and Snakemake as the layer where dependency
+management is central, as in calibration and other multi-step orchestration. Snakemake integration in a form amenable
+to driving real ePIC calibration and CI workflows is under development.
 
 ## Data Management
 
 ### Rucio
 
-Rucio is the distributed data management system used by the platform. In the testbed it manages run datasets, STF-file
-registration, subscriptions, transfer rules, and RSE state. In production it records and exposes production data products,
-EVGEN inputs, RECO/FULL outputs, and log datasets, subject to the production constraint described below.
-
-Rucio DIDs, scopes, RSEs, rules, replicas, and metadata are operational objects, not only storage references.
-Rucio-derived state is surfaced beside workflow state in monitor pages and task catalogs.
+Rucio[^rucio] is the distributed data management system of ePIC and of the platform. In the testbed it manages run datasets, super time
+frame (STF) file registration, subscriptions, transfer rules and execution, and Rucio Storage Element (RSE) state. In production it
+records and exposes production data products (EVGEN inputs, RECO outputs, and log datasets).
+Rucio DIDs (dataset identifiers), scopes, RSEs, rules, replicas, and metadata are operational objects,
+presented beside workflow state in monitor pages and task catalogs.
 
 ### XRootD And FTS
 
-XRootD is the file access and transfer protocol used by the testbed and production paths. Rucio can drive movement
-through FTS. Agents and doer scripts may also use XRootD directly for bounded operations such as payload-log retrieval
-or testbed data movement. The testbed maps DAQ and E1 RSEs onto XRootD-accessible storage areas to emulate the E0-E1
-dataflow.
+XRootD is the file access and transfer protocol for the testbed and production paths. Rucio drives data movement through
+FTS (the File Transfer Service); agents also use XRootD directly for direct read operations, including
+over distributed sites.
 
 ### Production Science-Data Constraint
 
-The production PanDA server is configured with one Rucio instance. The BNL PanDA server used for ePIC production uses BNL
-Rucio, where PanDA records logs. ePIC production science data is held in JLab Rucio. As a result, production payloads
-handle science-data movement and registration directly against JLab Rucio. PanDA does not resolve, transfer, or register
-the science data on either the input or output side for the current production path.
-
-This constraint does not prevent use of the common copytool pattern inside payload-side data handling. It does require
-the platform to keep PanDA-managed logs and JLab-Rucio science outputs distinct in implementation and monitoring.
+The BNL PanDA server used for ePIC production is configured with an associated Rucio instance, BNL Rucio, where PanDA
+records logs. ePIC production science data is held in JLab Rucio. Production payloads therefore handle science data
+movement and registration directly against JLab Rucio on both the input and output sides, with PanDA not directly
+involved in science data resolution, transfer, and registration for production operations. Rucio operations may be
+consolidated on a single PanDA-coupled instance in the future.
+Payload-side data handling uses standard PanDA/Rucio copytools for worker node data movement.
+The monitor includes built-in access and presentation of Rucio-based science and log data.
 
 ### Data Product Cataloging
 
-Data products are cataloged as operational objects. Production campaign tasks link to expected and observed outputs,
-including Rucio DIDs, output status, logs, and PanDA task associations. The testbed records run, STF, TF, and
-workflow-stage metadata. Workflow state and data-product state should be inspectable together.
+Data products are cataloged and curated as the primary product of the production process.
+Production campaign tasks link to expected and observed outputs:
+Rucio DIDs, output status, logs, and PanDA task associations. The testbed records run, STF, time frame (TF), and
+workflow-stage metadata. Workflow state and data-product state are inspectable together.
 
 ## Distributed Resources Integration
 
-### Echelon-Aware Resource Model
+The platform expresses the Echelon model defined in Foundations through workflow processing destinations,
+a prompt processing 'decision box' determining E1 processing, data locations, site state,
+queue state, and monitoring views. The same abstractions serve present testbed emulation and future distributed facility scale
+operation.
 
-Foundations defines the Echelon model. The platform expresses that model through workflow targets, data locations, site
-state, queue state, and monitoring views. The same abstractions must accommodate present testbed emulation and future
-facility-scale operation.
+PanDA represents compute resources as sites and queues; Harvester and the pilot infrastructure connect PanDA tasks to
+the site execution layer, typically a batch system. swf-monitor presents task, job, queue, site, resource usage, and
+harvester-worker state so that failures can be diagnosed at the level of the campaign task, PanDA task, job, queue, or
+site.
 
-### PanDA Queues, Pilots, And Harvester
-
-PanDA represents compute execution through sites and queues. Harvester and pilot infrastructure connect PanDA tasks to
-the batch or facility execution layer. swf-monitor presents task, job, queue, site, resource usage, and harvester-worker
-state so operators can diagnose failures at the level of the campaign task, PanDA task, job, queue, or site.
-
-### Testbed Resource Emulation
-
-The testbed emulates elements of the E0-E1-E2 workflow using local services and configured RSEs. DAQ buffer and E1 storage
-roles can be represented by distinct RSEs and XRootD paths even when they are implemented on the same host during
-development. This allows workflow and dataflow logic to be exercised before the physical facilities and final data paths
-exist.
+The testbed emulates elements of the E0-E1-E2 workflow with local services and configured RSEs. DAQ buffer and E1
+storage roles are represented by distinct RSEs and XRootD paths even when implemented on the same host during
+development, so workflow and dataflow logic can be exercised before the physical facilities and final data paths exist.
 
 ## Metadata And APIs
 
-### REST APIs
+REST APIs are the programmatic interface for browser pages, scripts, agents, service-to-service calls, and automation;
+command-line clients and operational scripts work through REST endpoints rather than Django internals or direct
+database queries. Endpoints return structured errors, preserve stable identifiers, and represent the same state shown
+in the browser. Write actions that must work through the remote proxy use a proxy-safe shape: JSON response, no session
+or CSRF dependence the proxy cannot carry, and no redirect as the action result.
 
-REST APIs provide the programmatic interface for browser pages, scripts, agents, service-to-service calls, and
-automation. Command-line clients and operational scripts should use REST endpoints rather than importing Django internals
-or querying the database directly.
+MCP (Model Context Protocol) tools are the corresponding structured interface for LLM clients, exposing testbed state,
+production state, PanDA monitoring, PCS entities, LLM artifacts, and selected bounded actions. swf-monitor serves MCP
+from a FastMCP ASGI worker separate from the Django WSGI site. Tools are designed as data access and bounded-action
+primitives: list tools support filtering, pagination, and stable identifiers, and action tools route through the same
+service layer and agent execution paths as browser and REST actions. Tool docstrings are operational metadata: they are
+the primary text an LLM reads when deciding what to call.
 
-REST APIs should return structured errors, preserve stable identifiers, and represent the same state shown in the browser.
-When write actions must work through the remote proxy, the endpoint shape must be proxy-safe: JSON response, no session
-or CSRF dependence where the proxy cannot carry it, and no redirect as the action result.
-
-### MCP Tools
-
-MCP is the structured LLM-facing API for the platform. swf-monitor exposes MCP over a FastMCP ASGI worker separate from
-the Django WSGI web site. Tools expose testbed state, production state, PanDA monitoring, PCS entities, LLM artifacts,
-and selected bounded actions.
-
-MCP tools should be designed as data access and bounded action primitives. Tool docstrings are operational metadata
-because they are the primary text an LLM sees when deciding what to call. List tools should support filtering,
-pagination, and stable returned identifiers. Tools that expose actions should route through the same service layer and
-agent execution paths used by browser and REST actions.
-
-### Metadata Conventions
-
-The platform relies on stable identifiers: campaign task composed names, PanDA JEDI task IDs, PanDA job IDs, Rucio DIDs,
-RSE names, agent names, workflow execution IDs, section slugs, and document artifact group IDs. JSON metadata should
-identify source system, artifact type, subject reference, producing user or service, and relevant model or prompt
-provenance for LLM-generated artifacts.
+Both interfaces rest on stable identifiers: campaign task composed names, JEDI task IDs, PanDA job IDs, Rucio DIDs, RSE
+names, agent names, workflow execution IDs, section slugs, and document artifact group IDs. JSON metadata identifies
+the source system, artifact type, subject reference, producing user or service, and, for LLM-generated artifacts, model
+and prompt provenance.
 
 ## Agents And Services
 
-### BaseAgent
+### Agent Infrastructure
 
-`BaseAgent` in `swf-common-lib` is the shared agent base. It provides STOMP/ActiveMQ integration, monitor registration,
-heartbeats, namespace filtering, message dispatch, REST logging, and background execution support. Agents that inherit
-from it are visible in the monitor and follow common message and status conventions.
+`BaseAgent` in `swf-common-lib` is the shared agent base, providing STOMP/ActiveMQ integration, monitor registration,
+heartbeats, namespace filtering, message dispatch, REST logging, and background execution. Agents built on it are
+visible in the monitor and follow common message and status conventions. `BaseAgent.run_in_background()` gives handlers
+a bounded worker pool for calls into subprocesses, REST services, Rucio, and XRootD, keeping the single receiver thread
+responsive to liveness and control messages while slow work completes.
 
-`BaseAgent.run_in_background()` provides bounded background execution for handlers that call subprocesses, REST services,
-Rucio, XRootD, or other potentially slow services. This keeps the receiver thread responsive to liveness and control
-messages while work completes in a worker pool.
+A precept throughout the system is no silent failures: an error always produces a visible consequence and informative
+logging for diagnostics. BaseAgent carries this into the agent layer with REST logging into the monitor, heartbeat and
+status reporting, and message-level error handling; across the platform, handlers, parsers, and service calls report
+errors into logs, user-visible messages, or operational summaries.
 
-### ActiveMQ Artemis
+ActiveMQ Artemis is the message broker. Topics carry broadcast events; queues deliver anycast work. Testbed workflow
+messages use broadcast topics for events such as run state and STF availability; production operations use an anycast
+control queue for single-consumer credentialed work. Destination names carry the explicit `/topic/` or `/queue/`
+prefix, and the choice between topic and queue follows the delivery semantics. Durable subscriptions are used sparingly
+because they create broker-side state and can accumulate messages.
 
-ActiveMQ Artemis is the message broker. Topics provide broadcast event flow, while queues provide anycast work delivery.
-Testbed workflow messages use broadcast topics for events such as run state and STF availability. Production operations
-use an anycast control queue for single-consumer credentialed work. Destination names should include the explicit
-`/topic/` or `/queue/` prefix.
-
-Durable subscriptions are used with care because they create broker-side state and can accumulate messages if not
-managed. Work queues and broadcast topics should be chosen according to delivery semantics rather than convenience.
-
-### Testbed Agents
+### Workflow And Operations Agents
 
 The testbed agent set models the streaming workflow. `swf-daqsim-agent` simulates DAQ state and STF generation.
-`swf-data-agent` receives DAQ messages, creates run datasets, manages Rucio STF handling, and notifies processing and fast
-monitoring. `swf-processing-agent` submits or manages PanDA processing tasks. `swf-fastmon-agent` consumes STF
+`swf-data-agent` receives DAQ messages, creates run datasets, manages Rucio STF handling, and notifies processing and
+fast monitoring. `swf-processing-agent` submits and manages PanDA processing tasks. `swf-fastmon-agent` consumes STF
 availability, samples TF-level information, records metadata through REST, and publishes notification events for
 real-time monitoring.
 
-### Production Operations Agent
-
 `epicprod_ops_agent` is the always-on credentialed executor for production. The web tier, REST endpoints, MCP tools,
-bots, and scheduled jobs can request work, but privileged actions are performed by the agent. Current actions include
-PanDA submission, payload-log retrieval, Rucio snapshot updates, and PanDA task operations.
-
-The agent follows a handler plus doer pattern. The handler validates and queues work; the doer script performs the
-credentialed operation as a subprocess. This keeps capabilities reusable from cron or operator scripts and keeps
-privileged service logic outside the browser request.
+bots, and scheduled jobs request work; the agent performs the privileged actions, currently including PanDA submission,
+payload-log retrieval, Rucio snapshot updates, and PanDA task operations. It follows a handler-plus-doer pattern: the
+handler validates and queues work, and a doer script performs the credentialed operation as a subprocess. Capabilities
+remain reusable from cron and operator scripts, and privileged service logic stays out of the browser request path.
 
 ### Bot Interfaces
 
-The bot interface is a natural-language and chat-facing layer over MCP tools and selected REST-backed operations.
-Production bot behavior must remain constrained: production does not support proactive workflow actions through the
-general bot. A separate testbed bot or testbed-specific mode may support more active workflow experimentation.
+The bot interface is a natural-language chat layer over MCP tools and selected REST-backed operations. Bots run as
+persistent services with conversational access to the same structured state the browser and REST interfaces expose:
+testbed status, PanDA tasks and jobs, queues, PCS entities, and LLM artifacts, so operational questions get answers
+grounded in live system state.
+
+Bot authority is a per-domain policy: the production bot informs, assesses, and answers, while workflow actions remain
+with operators and the operations agent; a testbed bot or testbed mode can be more active where that suits workflow
+experimentation. As confidence in harnessed AI operation grows, bots are a natural interface for exercising the same
+bounded action paths that humans operate, following the AI integration approach set out in Architecture.
 
 ### Alarms
 
-The alarm system is a platform capability for surfacing actionable state. It applies naturally to production operations
-and has direct relevance to testbed and eventual E0-E1 operations. Alarms should be derived from monitored state,
-attached to the relevant object or service, and visible in both detailed and summary views.
+The alarm system concentrates operator attention where it is needed. Alarms are derived from monitored state, attached
+to the relevant object or service, and visible in both detail and summary views.
+
+Alarms serve the minimal-effort operations goal: automation handles routine conditions, and the alarm stream defines
+what needs human or AI attention. The capability applies to production operations now and extends to testbed and
+eventual E0-E1 operations, where streaming latencies demand automated detection and notification.
 
 ### corun-ai And wrangle-ai
 
-corun-ai provides LLM-backed operations and durable artifacts. For epicprod, swf-monitor supplies production context and
-renders the production-facing pages, while corun-ai stores assessments, comments, campaign narratives, and reports.
-swf-monitor records pointers to these artifacts rather than copying generated content into production records.
+corun-ai is the LLM execution and durable artifact service of the platform, central to its AI integration: much of the
+AI functionality of the WFMS will be delivered through it. It runs LLM work under its own credentials and configuration
+(models, prompts, execution environment) and holds the results as durable document artifacts carrying model and prompt
+provenance.
 
-wrangle-ai is the rapid asynchronous worker substrate for bounded LLM operations such as comment replies or assessment
-probes. For browser-triggered LLM operations, swf-monitor calls corun-ai REST, corun-ai creates and executes a work item,
-and completion returns to swf-monitor through a callback that is converted into an SSE browser notification.
+For epicprod, swf-monitor supplies production context and renders the production-facing pages while corun-ai stores and
+serves the LLM artifacts: assessments of tasks, jobs, queues, and campaigns; LLM replies in comment discussions;
+human-authored campaign narratives that give LLMs context for reasoning; and daily campaign reports analyzing status
+and progress. swf-monitor records pointers to these artifacts rather than copying generated content into production
+records. This implements the architectural rule that AI outputs become artifacts in the system: attached to the
+relevant object, open to comment, and available as context for later assessments and reports. The role grows with the
+system; assessment coverage across workflow domains, deeper diagnostics, campaign reporting, and testbed analytics on
+streaming workflow behavior all build on the same service.
+
+wrangle-ai is the rapid asynchronous executor for bounded LLM operations such as comment replies and assessment probes.
+For browser-triggered LLM operations, swf-monitor calls corun-ai over REST, corun-ai creates and executes a work item,
+and completion returns to swf-monitor through a callback converted into an SSE browser notification: LLM results reach
+the requesting page the moment they complete.
 
 [![High-level epicprod LLM and distributed computing integration](diagrams/epicprod_llm_ops_highlevel_tw.svg)](diagrams/epicprod_llm_ops_highlevel_tw.svg)
 
 ## Authentication
 
-### User Authentication
-
 Browser access is authenticated according to deployment surface. The internal `pandaserver02` site uses BNL-facing
-authentication. The external proxy at `epic-devcloud.org/prod` provides collaboration access through swf-remote and the
-production URL prefix. Browser authorization must distinguish read-only access, production request actions, operator
+authentication; the external proxy at `epic-devcloud.org/prod` provides collaboration access through swf-remote and the
+production URL prefix. Browser authorization distinguishes read-only access, production request actions, operator
 actions, and privileged service execution.
 
-### Service Authentication
+Service credentials are held by the service that needs them. PanDA OIDC tokens, Rucio x509 proxies, XRootD access
+credentials, and LLM service tokens live in the environment of the agent or service that uses them. Privileged
+production actions route through `epicprod_ops_agent`: the web tier reads database state and world-readable cache
+artifacts and enqueues work, while PanDA, Rucio, and XRootD operations with production credentials run only in the
+agent. MCP observes the same boundary as an API surface whose action tools enqueue work for the agent.
 
-Service credentials are held by the service that needs them, not by every caller. PanDA OIDC tokens, Rucio x509 proxies,
-XRootD access credentials, and LLM service tokens belong in the appropriate agent or service environment.
+The external proxy is part of the production surface and an implementation constraint. URLs intended for external
+collaborators work under `/prod/`; write actions that pass through the proxy use the proxy-safe REST patterns above;
+and pages make remote limitations visible where a control is available only on `pandaserver02`.
 
-### Credentialed Action Boundary
+BNL internal services use a private certificate chain, so platform scripts and agents use a combined trust bundle that
+verifies both BNL services and public HTTPS endpoints. Certificate and proxy configuration belongs in deployment
+configuration and agent environments.
 
-Privileged production actions route through `epicprod_ops_agent`. The web tier can read database state, read
-world-readable cache artifacts, and enqueue work. It should not run PanDA clients, Rucio clients, or XRootD transfers
-with production credentials. MCP follows the same rule: it is an LLM-facing API surface, not the credentialed executor.
+[^panda]: PanDA: Production and Distributed Analysis system. Documentation: <https://panda-wms.readthedocs.io/> · paper: <https://link.springer.com/article/10.1007/s41781-024-00114-3>
 
-### Remote Proxy Constraints
+[^rucio]: Rucio: A Distributed Data Management System. <https://link.springer.com/article/10.1007/s41781-019-0026-3>
 
-The external proxy is part of the production surface and must be treated as an implementation constraint. URLs intended
-for external collaborators must work under `/prod/`. Write actions that need to pass through the proxy should use
-proxy-safe REST patterns and JSON results. Browser pages should make remote limitations visible where a control is
-available only on `pandaserver02`.
-
-### TLS And Certificate Handling
-
-BNL internal services use a private certificate chain. Platform scripts and agents use a combined trust bundle so both
-BNL services and public HTTPS endpoints can be verified. Certificate and proxy configuration belongs in deployment
-configuration and agent environments, not in browser code or source-controlled secrets.
+[^idds]: iDDS: intelligent Data Delivery Service. <https://link.springer.com/article/10.1140/epjc/s10052-025-15275-7>

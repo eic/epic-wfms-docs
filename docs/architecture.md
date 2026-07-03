@@ -7,9 +7,9 @@ and the specific implementation details.
 ## System Overview
 
 The ePIC WFMS architecture is organized around a shared platform serving the multiple workflow domains described
-in the previous section. They have varying operational requirements,
-but the system architecture should converge on common services where practical: workflow orchestration, data
-management, monitoring, metadata, operational state, human controls, REST interfaces, MCP services, and AI assistance.
+in the previous section. The domains have varying operational requirements, but the architecture converges on common
+services where practical, from workflow orchestration and data management through monitoring, human controls, and AI
+assistance.
 
 The architecture is agent and service oriented, and prioritizes full access to system information at all detail
 levels by operators, users and AI agents. Information management begins with a comprehensive, centralized back end database
@@ -18,15 +18,15 @@ database service hold operational state and history, metadata, curated knowledge
 
 Browser pages present operational views and controls, from high level
 summaries to deep drill-down with full presentation of filterable metadata. Browser interfaces always capture all
-state in the URL, for reproducility, bookmarking and transparency.
+state in the URL, for reproducibility, bookmarking and transparency.
 
 REST APIs
 support system workflow interrogation and control, service-to-service interaction, and automation.
 MCP tools expose structured system context
-to AI clients and bots, and -- selectively, with controls -- tools expose active functionality that AIs can exercise safely and reliably.
+to AI clients and bots, and, selectively and under controls, active functionality that AIs can exercise safely and reliably.
 
 Agent services drawing on MCP and REST perform credentialed or long-running actions away from the web tier. They can be activated
-in several ways: regular cron-like invocation, integration as discrete steps in a workflow, human triggered by natural language interation
+in several ways: regular cron-like invocation, integration as discrete steps in a workflow, human triggered by natural language interaction
 with a bot or LLM, or human triggered via web interface. Agents operate using no-latency messaging to/from an
 asynchronous worker queue, accommodating the macroscopic times (seconds to minutes) that LLM and distributed service operations take to complete.
 
@@ -43,14 +43,12 @@ validation, and analysis workflows. In streaming workflows, the flow starts at t
 in data terms at the DAQ exit buffer, with time frame
 and super time frame data driving registration, movement, monitoring, and prompt processing.
 
-!!!! we need to include E0-E1 schematic showing testbed scope here
-
 In production workflows,
 the flow begins with community production requests leading (with human intervention) to corresponding physics configurations,
 which are transformed into executable production tasks that produce the desired data products.
 
 Control flows begin with humans or scheduled automated operations. System operators, production experts, validation experts,
-collaboration users etc. interact through web interfaces, bots, REST clients, and analysis interfaces. These
+and collaboration users interact through web interfaces, bots, REST clients, and analysis interfaces. These
 points of interaction, at exposed surfaces such as web browsers and servers,
 do not directly hold credentials to operate system services.
 Credentialed operations are routed through designated agents
@@ -99,5 +97,5 @@ action paths explicit.
 The architectural rule is that AI outputs become artifacts in the system. They should carry provenance, be attached to
 the relevant production or workflow object, be open to human (and AI) comment where appropriate, and be available as context
 for later reports or assessments. AI is very new, any application of it is an R&D exercise, and use of it must accordingly
-accommodate correcting, qualifying or ignoring its products as appropriate, and accommodate trying and comparing different
+accommodate correcting, qualifying or ignoring its products as appropriate, and trying and comparing different
 models and approaches.

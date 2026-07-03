@@ -3,23 +3,25 @@
 This section defines the WFMS scope, requirements basis, streaming computing model alignment, computing use cases, Echelon model,
 and butterfly model. It explains what the system must accomplish and why it is structured this way.
 
-The WFMS system foreseen by ePIC for physics operations is not presently realized, nor should it be a decade prior to datataking. ePIC is building towards it, focused on current needs, with an operating streaming workflow testbed evaluating an agentic and PanDA/Rucio based infrastructure for E0-E1-E2 datataking workflows, and an operating production system integrating PanDA, Rucio and AI systems through an agentic infrastructure. The trajectory of these developments is aligned with the end goal, if all goes well. ePIC decision points in the future will determine the decided trajectory. This document describes the end goal, the present technical implementations, and the planned timeline (at a high level, appropriate to this stage of the project).
+The WFMS foreseen by ePIC for physics operations is not presently realized, nor should it be a decade prior to datataking. ePIC is building towards it, focused on current needs, with an operating streaming workflow testbed evaluating an agentic and PanDA/Rucio based infrastructure for E0-E1-E2 datataking workflows, and an operating production system integrating PanDA, Rucio and AI systems through an agentic infrastructure. The trajectory of these developments is aligned with the end goal, if all goes well. ePIC decision points in the future will determine the trajectory. This document describes the end goal, the present technical implementations, and the planned timeline (at a high level, appropriate to this stage of the project).
 
 ## WFMS Scope
 
 The ePIC Workflow Management System (WFMS) is the shared workflow, data management, monitoring, automation, and
 operations layer for ePIC computing, from datataking to global production.
-It encompasses streaming and production -- including workflows that include aspects of both --
+It encompasses streaming and production — including workflows that combine aspects of both —
 in a common WFMS platform for the experiment, spanning post-DAQ E0-E1 streaming processing, global production campaigns,
 validation workflows, distributed analysis support, calibration, distributed CI, and future datataking operations.
 
 The present system has two active implementation fronts, building from a common platform for a coherent and efficient overall WFMS capability:
 
 - the **streaming workflow testbed**, prototyping E0-to-E1 streaming workflow and dataflow orchestration for the documented ePIC streaming computing model[^streaming-computing-model]
-- **epicprod**, the automated production system used to gather and integrate production requests from the community, establish physics configurations that define request production tasks,
-  document and manage present, past and future production campaigns, configure execution-ready tasks, execute tasks on a distributed computing infrastructure using PanDA and Rucio,
-provide robust and comprehensive monitoring from drill-down diagnostics by experts to user-friendly overviews, and apply maximal automation and AI integration throughout the system
-to enable high quality production operations with minimal human operations effort.
+- **epicprod**, the automated production system. It gathers and integrates production requests from the community,
+  establishes the physics configurations that define request production tasks, and documents and manages present, past
+  and future production campaigns. It configures execution-ready tasks and executes them on a distributed computing
+  infrastructure using PanDA and Rucio, with robust and comprehensive monitoring from drill-down expert diagnostics to
+  user-friendly overviews. Maximal automation and AI integration throughout the system enable high quality production
+  operations with minimal human operations effort.
 
 ## Requirements
 
@@ -36,7 +38,7 @@ environments, and opportunistic or specialized resources
 processing
 - provide web, REST, programmatic, and operational interfaces suitable for users, operators, facilities, and automated
 services
-- maintain provenance, bookkeeping, metadata, monitoring, diagnostics, and logs as first-class parts of the system
+- maintain provenance, bookkeeping, metadata, monitoring, diagnostics, and logs as integral parts of the system
 - support high-quality operations with maximal automation and minimal routine human effort
 - allow fast-turnaround development and deployment without losing operational control
 
@@ -73,15 +75,14 @@ as baseline system capabilities.
 The streaming workflow testbed exercises this model directly. It prototypes the E0 to E1 interface,
 time frame based processing, fast monitoring, Rucio data handling, PanDA task execution,
 a fast agentic message-based infrastructure, monitor-backed
-deep operational state, with REST and MCP services to inform collaborating software, AIs and people.
+deep operational state, and REST and MCP services that inform collaborating software, AIs and people.
 These are the early implementation of WFMS behavior needed for datataking, to inform ePIC's decision making on
 streaming WFMS over the next several years.
 
-Production system work exercises the same platform from a different direction. The epicprod system is built from
-the same foundation as the testbed. It uses PanDA, monitoring, task
+The epicprod production system exercises the same platform from a different direction. It uses PanDA, monitoring, task
 cataloging, AI based assessments and diagnostics, human-in-the-loop control and curation,
 and data product cataloging to run the simulation/reconstruction campaign operations that ePIC needs today,
-automated to the greatest extent possible to minize the scarce ops effort resources ePIC has available.
+automated to the greatest extent possible to minimize the demand on the scarce operations effort ePIC has available.
 The production experience feeds the same WFMS design: operational clarity, automation, provenance, site awareness, and
 reliable human control.
 

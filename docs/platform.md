@@ -1,4 +1,4 @@
-# Platform
+# WFMS Platform
 
 This section covers the technical platform used to build the ePIC WFMS across streaming, production, validation,
 distributed analysis, calibration, distributed CI, and related workflow domains. It documents the concrete systems,

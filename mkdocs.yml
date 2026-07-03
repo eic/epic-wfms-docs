@@ -30,9 +30,9 @@ nav:
   - Home: index.md
   - Foundations: foundations.md
   - Architecture: architecture.md
-  - Platform: platform.md
-  - Streaming: streaming.md
-  - Production: production.md
+  - WFMS Platform: platform.md
+  - Streaming Workflows: streaming.md
+  - Production System: production.md
   - Validation: validation.md
   - Distributed Analysis: analysis.md
   - Operations: operations.md

@@ -22,6 +22,9 @@ def main() -> None:
 
     build_date = datetime.now().strftime("%B %-d, %Y")
     subtitle = f"A rendering of Read the Docs as of {build_date}"
+    extra = config.setdefault("extra", {})
+    extra["pdf_render_date"] = build_date
+    extra["pdf_rtd_url"] = "https://epic-wfms-docs.readthedocs.io/en/latest/"
 
     for plugin in config.get("plugins", []):
         if isinstance(plugin, dict) and "to-pdf" in plugin:

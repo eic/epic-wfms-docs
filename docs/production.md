@@ -6,7 +6,7 @@ Documents the epicprod automated production system: request ingest, PCS, campaig
 
 ### epicprod Task Catalog
 
-![epicprod task catalog](diagrams/epicprod_task_catalog.svg)
+[![epicprod task catalog](diagrams/epicprod_task_catalog.svg)](diagrams/epicprod_task_catalog.svg)
 
 ## Production Requests
 
@@ -22,6 +22,6 @@ Documents the epicprod automated production system: request ingest, PCS, campaig
 
 ### Detailed epicprod LLM Operations Architecture
 
-![Detailed epicprod LLM operations architecture](diagrams/epicprod_llm_ops_architecture.svg)
+[![Detailed epicprod LLM operations architecture](diagrams/epicprod_llm_ops_architecture.svg)](diagrams/epicprod_llm_ops_architecture.svg)
 
 ## Human Controls And Curation

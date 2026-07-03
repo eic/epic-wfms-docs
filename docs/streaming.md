@@ -15,6 +15,6 @@ Documents post-DAQ workflows during datataking: E0 to E1 dataflow, STF/TF proces
 
 ## Streaming Workflow Testbed
 
-![Fast processing pipeline](diagrams/fast-processing-pipeline-v10.svg)
+[![Fast processing pipeline](diagrams/fast-processing-pipeline-v10.svg)](diagrams/fast-processing-pipeline-v10.svg)
 
-![iDDS PanDA detail](diagrams/idds-panda-detail-v1.svg)
+[![iDDS PanDA detail](diagrams/idds-panda-detail-v1.svg)](diagrams/idds-panda-detail-v1.svg)

@@ -14,10 +14,9 @@ MCP interfaces, browser-based operational pages, AI bot, and harnessed LLM AI se
 
 ### Platform Role
 
-The common platform is the concrete implementation layer beneath the workflow domains described elsewhere in this
-document. It is not a separate product from the current testbed and production systems. It is the set of shared
-technologies, code patterns, services, and operational conventions those systems use. Domain-specific sections should
-describe how the platform is applied in that domain, not redefine the platform itself.
+The common platform is the concrete implementation layer beneath the WFMS workflow domains. It consists of the shared
+technologies, code patterns, services, and operational conventions used by the current testbed and production systems.
+Domain-specific sections describe how the platform is applied in each workflow domain.
 
 ### Production And Testbed Convergence
 

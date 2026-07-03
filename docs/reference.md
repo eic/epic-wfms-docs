@@ -4,9 +4,15 @@ Collects reference documents, glossary terms, external links, API references, MC
 
 ## Reference documents and artifacts
 
-- ePIC streaming computing model report: <https://zenodo.org/records/14675920>
-- ePIC WFMS requirements: <https://www.overleaf.com/project/67bdf89a3d44a138da503dea>
-- PanDA documentation: <https://panda-wms.readthedocs.io/>
+- **ePIC Distributed Workflow Management System requirements**: <https://www.overleaf.com/project/67bdf89a3d44a138da503dea>
+- **The ePIC Streaming Computing Model**: <https://zenodo.org/records/14675920>
+- **PanDA documentation**: <https://panda-wms.readthedocs.io/>
+- **PanDA paper**: <https://link.springer.com/article/10.1007/s41781-024-00114-3>
+- **Rucio paper**: <https://link.springer.com/article/10.1007/s41781-019-0026-3>
+- **iDDS paper**: <https://link.springer.com/article/10.1140/epjc/s10052-025-15275-7>
+- **EIC/ePIC Software Statement of Principles**: <https://eic.github.io/activities/principles.html>
+- **Streaming workflow testbed architecture**: <https://github.com/BNLNPPS/swf-testbed/blob/main/docs/architecture.md>
+- **epicprod implementation repository**: <https://github.com/BNLNPPS/swf-monitor>
 
 ## Glossary
 

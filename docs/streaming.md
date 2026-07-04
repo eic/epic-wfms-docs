@@ -84,7 +84,7 @@ container environment distributed over CVMFS — the same payload environment pr
 EICrecon reconstruction payload has run successfully in the testbed.
 
 Fast processing cannot pay a per-slice startup cost: the payload must run as a standing process that accepts work as
-it arrives. This integration is an area of very active development, in collaboration with EICrecon developers at JLab.
+it arrives. This integration is an area of active development, in collaboration with EICrecon developers at JLab.
 The worker transformation (`swf-transform`) runs EICrecon as a persistent process and feeds it slice work over ZeroMQ
 messaging; the worker lifecycle layer (`swf-panda-workers`) provisions and scales the worker pool through iDDS and
 PanDA on run lifecycle signals and observed slice processing times. The payload capabilities this demands — event

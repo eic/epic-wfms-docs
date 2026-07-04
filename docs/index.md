@@ -21,7 +21,7 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 - **Organization** describes the organization of WFMS efforts and how the work is coordinated
 - **Timeline** describes the development and use of the system as Collaboration needs evolve over the coming decade, culminating in physics datataking in the mid-2030s
 - **References** collects reference documents, glossary terms, external links, API references, MCP references, and requirements material
-- **Diagram Gallery** collects all the system diagrams in one place
+- **Diagram Gallery** collects all the system diagrams
 
 Suggested entry points by reader: physicists requesting or consuming production data — Concepts, Production System,
 Physics Configuration System, and Distributed Analysis; production and validation operators — Operations and the

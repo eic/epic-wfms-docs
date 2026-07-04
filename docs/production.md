@@ -6,7 +6,7 @@ curation that steer it.
 
 ## epicprod Overview
 
-epicprod is the automated production system running ePIC simulation and reconstruction campaigns. It carries a
+epicprod is the automated production system for ePIC simulation and reconstruction campaigns. It carries a
 production request from community submission through physics configuration, campaign preparation, PanDA execution, and
 cataloged data products, with AI assistance and human control points along the whole path. The operating principle set
 in Foundations, maximal automation with minimal operations effort, shapes each stage: the routine mechanics are

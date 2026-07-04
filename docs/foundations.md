@@ -19,7 +19,7 @@ The present system has two active implementation fronts, building from a common 
 - **epicprod**, the automated production system. It gathers and integrates production requests from the community,
   establishes the physics configurations that define request production tasks, and documents and manages present, past
   and future production campaigns. It configures execution-ready tasks and executes them on a distributed computing
-  infrastructure using PanDA and Rucio, with robust and comprehensive monitoring from drill-down expert diagnostics to
+  infrastructure using PanDA and Rucio, with comprehensive monitoring from drill-down expert diagnostics to
   user-friendly overviews. Maximal automation and AI integration throughout the system enable high quality production
   operations with minimal human operations effort.
 
@@ -92,7 +92,7 @@ reliable human control.
 
 Further workflow domains are foreseen and are starting to be addressed: distributed CI using PanDA-accessed resources,
 calibration workflows combining orchestration tools like Snakemake with the ePIC WFMS platform, and analysis workflows
-that can benefit from the platform, e.g. by leveraging distributed resources and/or centrally managed execution.
+that can benefit from the platform, e.g. by using distributed resources and/or centrally managed execution.
 
 The foundation is therefore one platform serving multiple workflow domains. Streaming, production, validation,
 calibration, distributed CI, and analysis have distinct operational needs, but they should converge on shared

@@ -32,7 +32,9 @@ The `swf-*` repositories implement the current platform. `swf-testbed` is the um
 configuration, orchestration, and documentation. `swf-monitor` is the central web and database application, covering
 monitoring, APIs, and the epicprod implementation. `swf-common-lib` holds shared agent, messaging, logging, and Rucio
 helper code; code used by more than one component belongs there. Agent repositories (`swf-daqsim-agent`,
-`swf-data-agent`, `swf-processing-agent`, `swf-fastmon-agent`) implement specific testbed roles.
+`swf-data-agent`, `swf-processing-agent`, `swf-fastmon-agent`) implement specific testbed roles. The fast-processing
+worker layer is implemented in `swf-transform` (the worker-node payload transformation, processing slice messages
+through the reconstruction payload) and `swf-panda-workers` (worker lifecycle coordination with iDDS and PanDA).
 
 The three core repositories (`swf-testbed`, `swf-monitor`, `swf-common-lib`) advance together on coordinated branches.
 
@@ -113,8 +115,10 @@ ePIC fast streaming processing will always be an iDDS domain.
 
 The testbed uses a layered workflow model: TOML for human-editable configuration and parameters, Python/SimPy for
 execution and simulation patterns that need rapid iteration, and Snakemake as the layer where dependency
-management is central, as in calibration and other multi-step orchestration. Snakemake integration in a form amenable
-to driving real ePIC calibration and CI workflows is under development.
+management is central, as in calibration and other multi-step orchestration. Snakemake integration for real ePIC
+calibration and CI workflows is well advanced: a Snakemake executor plugin for PanDA is published, ePIC benchmark
+workflows have run in CI through an HTCondor executor, and the first eicweb CI jobs have submitted work to BNL
+through PanDA.
 
 ## Data Management
 
@@ -273,6 +277,8 @@ wrangle-ai is the rapid asynchronous executor for bounded LLM operations such as
 For browser-triggered LLM operations, swf-monitor calls corun-ai over REST, corun-ai creates and executes a work item,
 and completion returns to swf-monitor through a callback converted into an SSE browser notification: LLM results reach
 the requesting page the moment they complete.
+
+[![corun-ai — LLM execution and artifact service](diagrams/corun_ai.svg)](diagrams/corun_ai.svg)
 
 [![High-level epicprod LLM and distributed computing integration](diagrams/epicprod_llm_ops_highlevel_tw.svg)](diagrams/epicprod_llm_ops_highlevel_tw.svg)
 

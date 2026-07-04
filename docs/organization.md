@@ -45,8 +45,11 @@ them.
 
 E2 involvement is being built from working participation. Compute resources are integrated as PanDA queues — through
 OSG-routed submission and as direct queues where that simplifies operations — and storage joins as Rucio storage
-elements, as with the Canadian resource contributions associated with Manitoba's participation. The E2 model of
-foundations, global facilities with well defined responsibilities, grows from these first integrations.
+elements, as with the Canadian resource contributions associated with Manitoba's participation: a PanDA queue at
+Manitoba's GREX facility is established, with further queues in progress at Simon Fraser University and on commercial
+cloud. HPC resources are integrated the same way, with NERSC Perlmutter queues in production use, now including GPU
+queues. The E2 model of foundations, global facilities with well defined responsibilities, grows from these first
+integrations.
 
 ## External Projects and Systems
 

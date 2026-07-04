@@ -29,8 +29,8 @@
 
   <!-- Control messages arrow to iDDS -->
   <line x1="350" y1="115" x2="350" y2="155" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowhead-green)"/>
-  <text x="430" y="132" font-size="10" fill="#2e7d32">/topic/panda.workers</text>
-  <text x="430" y="145" font-size="9" fill="#2e7d32">run_imminent + target_worker_count</text>
+  <text x="342" y="132" text-anchor="end" font-size="10" fill="#2e7d32">/topic/panda.workers</text>
+  <text x="342" y="145" text-anchor="end" font-size="9" fill="#2e7d32">run_imminent + target_worker_count</text>
 
   <!-- === iDDS: Central Workflow Manager === -->
   <rect x="250" y="160" width="200" height="55" rx="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>

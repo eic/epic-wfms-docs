@@ -13,10 +13,20 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 - **Streaming Workflows** documents post-DAQ workflows during datataking
 - **Production System** documents the epicprod automated production system
 - **Validation** documents WFMS support for ePIC validation activities
+- **Calibration** documents WFMS support for calibration workflows, the multi-step orchestration domain
+- **Distributed CI** documents ePIC software validation running on PanDA-accessed distributed resources
 - **Distributed Analysis** describes the support for distributed and managed analysis workflows
 - **Operations** describes how the WFMS is operated
 - **Organization** describes the organization of WFMS efforts and how the work is coordinated
 - **Timeline** describes the development and utilization of the system to meet Collaboration needs as they evolve over the next decade, culminating in physics datataking in the mid 2030s
-- **References** collects reference documents, glossary terms, external links, API references, MCP references, diagrams, and requirements material
+- **References** collects reference documents, glossary terms, external links, API references, MCP references, and requirements material
+- **Diagram Gallery** collects all the system diagrams in one place
 
-This documentation is maintained in the [eic/epic-wfms-docs](https://github.com/eic/epic-wfms-docs) repository.
+Suggested entry points by reader: physicists requesting or consuming production data — Concepts, Production System,
+and Distributed Analysis; production and validation operators — Operations and the runbook links in References; DAQ
+and streaming collaborators — Foundations and Streaming Workflows; contributors and facility participants —
+Architecture, WFMS Platform, and Organization.
+
+This documentation is the system description; per-component design and operational detail lives with the
+implementations, linked from [References](reference.md). The documentation is maintained in the
+[eic/epic-wfms-docs](https://github.com/eic/epic-wfms-docs) repository.

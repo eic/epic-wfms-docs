@@ -1,6 +1,6 @@
 # Streaming Workflows
 
-Documents post-DAQ workflows during datataking: E0 to E1 dataflow, STF/TF processing, fast processing for low-latency control room/AI analytics and validation, prompt processing of STF files, fast monitoring, E2 integration in streaming workflows, and current/near term realizations in the streaming workflow testbed.
+Documents post-DAQ workflows during datataking: E0 to E1 dataflow, STF/TF processing, fast processing for low-latency control room/AI analytics and validation, prompt processing of STF files, streaming reconstruction integration, fast monitoring, E2 integration in streaming workflows, and current/near term realizations in the streaming workflow testbed.
 
 [![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
 
@@ -53,13 +53,32 @@ rather than a workflow redesign.
 Fast processing exists for latency: first results from the data stream in O(10 sec) to inform control room operations
 and AI tools of current detector and machine performance. TF samples are skimmed from arriving STFs, divided into TF
 slices, and distributed to a standing pool of workers running the reconstruction payload — EICrecon for ePIC
-production, a placeholder in current testbed exercises. Slice results flow to low-latency analytics and monitoring
+production, now being integrated into the testbed workers. Slice results flow to low-latency analytics and monitoring
 consumers.
 
 The latency budget rules out provisioning workers on demand. The pipeline pre-provisions a configurable worker pool at
 run start: run-imminent signals carry the target worker count, iDDS and Harvester establish semi-persistent PanDA
 worker jobs on the compute resources, and the workers consume slices for the duration of the run and exit at run end.
 Slice-level state — queued, processing, completed, failed with bounded retry — is tracked in the monitor database.
+
+## Streaming Reconstruction Integration
+
+Streaming reconstruction itself is not WFMS scope: EICrecon, its configuration, and its physics performance belong to
+ePIC software. The WFMS integrates reconstruction as the payload of streaming processing, and the integration is a
+workflow concern in its own right, with different requirements in the two latency regimes.
+
+Prompt processing integrates reconstruction conventionally: EICrecon processes STF files as PanDA jobs in the ePIC
+container environment distributed over CVMFS — the same payload environment production uses. Prompt processing with an
+EICrecon reconstruction payload has run successfully in the testbed.
+
+Fast processing cannot pay a per-slice startup cost: the payload must run as a standing process that accepts work as
+it arrives. This integration is an area of very active development, in collaboration with EICrecon developers at JLab.
+The worker transformation (`swf-transform`) runs EICrecon as a persistent process and feeds it slice work over ZeroMQ
+messaging; the worker lifecycle layer (`swf-panda-workers`) provisions and scales the worker pool through iDDS and
+PanDA on run lifecycle signals and observed slice processing times. The payload capabilities this demands — event
+windowing directed by messages, remote input over XRootD, and clean process termination — are contributed upstream to
+EICrecon, and message-driven EICrecon is available in the ePIC container stack. The integration is exercised against
+real campaign simulation outputs.
 
 ## Monitoring And Validation
 
@@ -91,11 +110,21 @@ tasks. `swf-fastmon-agent` samples TF-level data from available STFs and records
 A fast processing agent creates TF slices from the samples, broadcasts the run and target worker count to the worker
 layer to provision the standing pool, distributes slices, and collects results.
 
+The agents are configured, launched, and supervised through a common management layer, controlled from the CLI and,
+equivalently, by AI assistants through MCP:
+
+[![Testbed agent management](diagrams/testbed_agent_management.svg)](diagrams/testbed_agent_management.svg)
+
 Two streaming workflows are realized today. The prompt processing workflow takes simulated runs from run-imminent
 through dataset creation, STF registration, and PanDA task submission over the run dataset. The fast processing
 workflow takes the same runs through TF sampling, slice creation, and slice processing on the pre-provisioned worker
 pool. Both are driven by TOML workflow
 configurations and tracked end to end in the monitor.
+
+Concurrent testbed users share one infrastructure and operate independently, isolated by namespace and per-user agent
+identity:
+
+[![Testbed multi-user isolation](diagrams/testbed_multi_user.svg)](diagrams/testbed_multi_user.svg)
 
 The fast processing pipeline and its worker management are diagrammed below: the agent pipeline from simulated DAQ to
 PanDA workers, and the iDDS/PanDA/Harvester detail behind the standing worker pool.
@@ -103,5 +132,8 @@ PanDA workers, and the iDDS/PanDA/Harvester detail behind the standing worker po
 [![Fast processing pipeline](diagrams/fast-processing-pipeline-v10.svg)](diagrams/fast-processing-pipeline-v10.svg)
 
 [![iDDS PanDA detail](diagrams/idds-panda-detail-v1.svg)](diagrams/idds-panda-detail-v1.svg)
+
+The integration of the real EICrecon payload into these workers is described in
+[Streaming Reconstruction Integration](#streaming-reconstruction-integration) above.
 
 [^streaming-computing-model]: The ePIC Streaming Computing Model. <https://zenodo.org/records/14675920>

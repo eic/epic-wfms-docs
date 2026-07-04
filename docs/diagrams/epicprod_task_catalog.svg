@@ -155,5 +155,4 @@
   <text x="530" y="608" font-size="13" fill="#ad1457" font-style="italic">status feedback &amp; controls</text>
 
   <!-- Footer -->
-  <text x="600" y="846" text-anchor="middle" font-size="12" fill="#999">v0.7 · 2026-05-17 · request intake variant · accompanies docs/EPICPROD_TASK_CATALOG.md</text>
 </svg>

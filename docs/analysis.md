@@ -9,7 +9,8 @@ shared execution helps: analysis workloads too large for local resources, system
 derived data over campaign outputs, and common analysis passes that many groups would otherwise run separately. PanDA
 brings a proven capability here — it has served large-scale distributed user analysis for ATLAS for two decades — so
 the execution machinery exists; the ePIC questions are which analysis patterns benefit from managed execution and how
-they are packaged, to be worked out with the analysis community as the need matures.
+they are packaged, to be worked out with the analysis community as the need matures. Managed production of campaign
+benchmark analyses over newly produced data is a first candidate.
 
 Analysis is a foreseen workflow domain rather than an operating one. The requirements place it in WFMS scope, the
 platform serves it today through data access and metadata services, and managed analysis workflows are the growth path.

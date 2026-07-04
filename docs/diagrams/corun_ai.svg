@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 610" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="caGray" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="610" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="700" y="36" text-anchor="middle" font-size="25" font-weight="bold" fill="#1a1a1a">corun-ai — LLM Execution and Artifact Service</text>
+  <text x="700" y="62" text-anchor="middle" font-size="16" font-style="italic" fill="#555555">Two faces: an interactive research site, and the REST AI back end of the WFMS</text>
+
+  <!-- ===== Inputs (left) ===== -->
+  <rect x="50" y="110" width="270" height="115" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="185" y="138" text-anchor="middle" font-size="16" font-weight="bold" fill="#17365d">corun-ai website</text>
+  <text x="185" y="162" text-anchor="middle" font-size="13.5" fill="#333333">Interactive research use</text>
+  <text x="185" y="182" text-anchor="middle" font-size="13.5" fill="#333333">Configure and run LLM studies</text>
+  <text x="185" y="202" text-anchor="middle" font-size="13.5" fill="#333333">Browse, annotate, discuss results</text>
+
+  <rect x="50" y="420" width="270" height="115" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="185" y="448" text-anchor="middle" font-size="16" font-weight="bold" fill="#17365d">REST interface</text>
+  <text x="185" y="472" text-anchor="middle" font-size="13.5" fill="#333333">Service use — the WFMS back end</text>
+  <text x="185" y="492" text-anchor="middle" font-size="13.5" fill="#333333">epicprod requests assessments,</text>
+  <text x="185" y="512" text-anchor="middle" font-size="13.5" fill="#333333">reports, comment replies</text>
+
+  <!-- Lane arrows into mechanics -->
+  <line x1="320" y1="167" x2="376" y2="167" stroke="#555555" stroke-width="2.2" marker-end="url(#caGray)"/>
+  <line x1="320" y1="477" x2="376" y2="477" stroke="#555555" stroke-width="2.2" marker-end="url(#caGray)"/>
+
+  <!-- ===== Mechanics (center) ===== -->
+  <rect x="380" y="110" width="380" height="425" rx="10" fill="#dcdcf0" stroke="#3f3f8f" stroke-width="2.5"/>
+  <text x="570" y="140" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#26265e">LLM execution</text>
+
+  <rect x="405" y="158" width="330" height="56" rx="6" fill="#ffffff" stroke="#3f3f8f" stroke-width="1.3"/>
+  <text x="570" y="180" text-anchor="middle" font-size="14" font-weight="bold" fill="#26265e">Execution configuration</text>
+  <text x="570" y="202" text-anchor="middle" font-size="13" fill="#333333">User prompt × system prompt × model × MCP tools</text>
+
+  <rect x="405" y="226" width="330" height="56" rx="6" fill="#ffffff" stroke="#3f3f8f" stroke-width="1.3"/>
+  <text x="570" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#26265e">Two execution paths</text>
+  <text x="570" y="270" text-anchor="middle" font-size="13" fill="#333333">Work queue · wrangle-ai rapid executor</text>
+
+  <rect x="405" y="294" width="330" height="76" rx="6" fill="#ffffff" stroke="#3f3f8f" stroke-width="1.3"/>
+  <text x="570" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#26265e">Models</text>
+  <text x="570" y="338" text-anchor="middle" font-size="13" fill="#333333">Claude · Gemini · ChatGPT · open source</text>
+  <text x="570" y="358" text-anchor="middle" font-size="12.5" fill="#333333">APIs, and self-hosted via remote inference workers</text>
+
+  <rect x="405" y="382" width="330" height="56" rx="6" fill="#ffffff" stroke="#3f3f8f" stroke-width="1.3"/>
+  <text x="570" y="404" text-anchor="middle" font-size="14" font-weight="bold" fill="#26265e">MCP tool sets</text>
+  <text x="570" y="426" text-anchor="middle" font-size="13" fill="#333333">Selected per execution</text>
+
+  <text x="570" y="472" text-anchor="middle" font-size="13.5" font-style="italic" fill="#3d3d6b">Try, learn, compare, evaluate.</text>
+  <text x="570" y="496" text-anchor="middle" font-size="13.5" font-style="italic" fill="#3d3d6b">All AI work is R&amp;D!</text>
+
+  <!-- Lane arrows into store -->
+  <line x1="760" y1="167" x2="816" y2="167" stroke="#555555" stroke-width="2.2" marker-end="url(#caGray)"/>
+  <line x1="760" y1="477" x2="816" y2="477" stroke="#555555" stroke-width="2.2" marker-end="url(#caGray)"/>
+
+  <!-- ===== Artifact store ===== -->
+  <rect x="820" y="110" width="270" height="425" rx="10" fill="#f1f8e9" stroke="#538135" stroke-width="2.5"/>
+  <text x="955" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a3311">Durable artifact store</text>
+  <text x="955" y="196" text-anchor="middle" font-size="13.5" fill="#333333">Versioned artifact groups</text>
+  <text x="955" y="222" text-anchor="middle" font-size="13.5" fill="#333333">Append-only history of AI artifacts</text>
+  <text x="955" y="242" text-anchor="middle" font-size="13" fill="#555555">(polish not allowed; cut a new version)</text>
+  <text x="955" y="270" text-anchor="middle" font-size="13.5" fill="#333333">Model &amp; prompt provenance</text>
+  <text x="955" y="296" text-anchor="middle" font-size="13.5" fill="#333333">Comment threads on artifacts</text>
+  <text x="955" y="342" text-anchor="middle" font-size="13.5" fill="#333333">Human experts engage with</text>
+  <text x="955" y="362" text-anchor="middle" font-size="13.5" fill="#333333">users and AIs — commenting,</text>
+  <text x="955" y="382" text-anchor="middle" font-size="13.5" fill="#333333">appraising, scoring AI artifacts</text>
+  <text x="955" y="424" text-anchor="middle" font-size="13.5" font-style="italic" fill="#555555">Every product lands here</text>
+
+  <!-- Lane arrows into products -->
+  <line x1="1090" y1="167" x2="1146" y2="167" stroke="#555555" stroke-width="2.2" marker-end="url(#caGray)"/>
+  <line x1="1090" y1="477" x2="1146" y2="477" stroke="#555555" stroke-width="2.2" marker-end="url(#caGray)"/>
+
+  <!-- ===== Products (right) ===== -->
+  <rect x="1150" y="110" width="220" height="115" rx="8" fill="#ffffff" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="1260" y="138" text-anchor="middle" font-size="15" font-weight="bold" fill="#17365d">Presented on the site</text>
+  <text x="1260" y="162" text-anchor="middle" font-size="13.5" fill="#333333">Software reports</text>
+  <text x="1260" y="182" text-anchor="middle" font-size="13.5" fill="#333333">Documentation syntheses</text>
+  <text x="1260" y="202" text-anchor="middle" font-size="13.5" fill="#333333">Comparison threads</text>
+
+  <rect x="1150" y="420" width="220" height="115" rx="8" fill="#ffffff" stroke="#ad1457" stroke-width="2.5"/>
+  <text x="1260" y="448" text-anchor="middle" font-size="15" font-weight="bold" fill="#8c1045">Returned over REST</text>
+  <text x="1260" y="476" text-anchor="middle" font-size="13.5" fill="#333333">epicprod assessments, reports,</text>
+  <text x="1260" y="498" text-anchor="middle" font-size="13.5" fill="#333333">replies — shown on WFMS pages</text>
+</svg>

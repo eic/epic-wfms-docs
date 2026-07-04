@@ -11,7 +11,7 @@
   <rect width="1200" height="720" fill="#ffffff"/>
 
   <!-- ============ Title ============ -->
-  <text x="600" y="38" text-anchor="middle" font-size="17" font-weight="bold">ePIC AI infrastructure stack — current status</text>
+  <text x="600" y="38" text-anchor="middle" font-size="17" font-weight="bold">ePIC AI infrastructure stack</text>
 
   <!-- ================================================================ -->
   <!-- ============ L3 (TOP): Applications ============ -->

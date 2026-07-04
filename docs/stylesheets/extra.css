@@ -1,0 +1,6 @@
+/* Set off the View PDF utility link from the document outline */
+.md-nav--primary > .md-nav__list > .md-nav__item:last-child {
+  margin-top: 1.2em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}

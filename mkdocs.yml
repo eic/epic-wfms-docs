@@ -6,10 +6,14 @@ repo_name: eic/epic-wfms-docs
 theme:
   name: material
   features:
-    - navigation.sections
     - navigation.indexes
+    - navigation.expand
     - navigation.top
+    - toc.integrate
     - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
@@ -28,16 +32,22 @@ plugins:
 
 nav:
   - Home: index.md
-  - Foundations: foundations.md
-  - Concepts: concepts.md
-  - Architecture: architecture.md
-  - WFMS Platform: platform.md
-  - Streaming Workflows: streaming.md
-  - Production System: production.md
-  - Validation: validation.md
-  - Distributed Analysis: analysis.md
-  - Operations: operations.md
-  - Organization: organization.md
-  - Timeline: timeline.md
+  - The System:
+    - Foundations: foundations.md
+    - Concepts: concepts.md
+    - Architecture: architecture.md
+    - WFMS Platform: platform.md
+  - Workflow Domains:
+    - Streaming Workflows: streaming.md
+    - Production System: production.md
+    - Validation: validation.md
+    - Calibration: calibration.md
+    - Distributed CI: ci.md
+    - Distributed Analysis: analysis.md
+  - Operating the System:
+    - Operations: operations.md
+    - Organization: organization.md
+    - Timeline: timeline.md
   - References: reference.md
+  - Diagram Gallery: gallery.md
   - View PDF: https://epic-wfms-docs.readthedocs.io/_/downloads/en/latest/pdf/

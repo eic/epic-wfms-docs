@@ -193,8 +193,8 @@ and prompt provenance.
 ### AI Tool Coverage
 
 The MCP instrumentation has grown out of the WFMS work into broad coverage of the systems ePIC AI clients need:
-PanDA job diagnostics and operational state, PCS physics configuration, testbed control, Rucio data management,
-XRootD remote I/O and uproot data reading, code cross-reference over the ePIC software repositories (LXR), GitHub
+PanDA job diagnostics and operational state, PCS physics configuration, testbed control, read-only database inquiry,
+Rucio data management, XRootD remote I/O and uproot data reading, code cross-reference over the ePIC software repositories (LXR), GitHub
 repository inquiries, embedded-documentation retrieval, and Zenodo documents. AI services are built on this
 instrumentation: the Mattermost bot serving collaboration-wide questions on production and testbed operations,
 production operations analysis with drill-down diagnostics, software documentation analysis, and pull-request review
@@ -252,7 +252,9 @@ bounded action paths that humans operate, following the AI integration approach 
 ### Alarms
 
 The alarm system concentrates operator attention where it is needed. Alarms are derived from monitored state, attached
-to the relevant object or service, and visible in both detail and summary views.
+to the relevant object or service, and visible in both detail and summary views. Alarm conditions are operator-defined
+and held in an alarm registry, evaluated on a frequent schedule against monitor state, with triggered alarms notifying
+by email as well as appearing in the views. It is the first alarm system fielded in the PanDA ecosystem.
 
 Alarms serve the minimal-effort operations goal: automation handles routine conditions, and the alarm stream defines
 what needs human or AI attention. The capability applies to production operations now and extends to testbed and
@@ -268,8 +270,9 @@ provenance.
 For epicprod, swf-monitor supplies production context and renders the production-facing pages while corun-ai stores and
 serves the LLM artifacts: assessments of tasks, jobs, queues, and campaigns; LLM replies in comment discussions;
 human-authored campaign narratives that give LLMs context for reasoning; and daily campaign reports analyzing status
-and progress. swf-monitor records pointers to these artifacts rather than copying generated content into production
-records. This implements the architectural rule that AI outputs become artifacts in the system: attached to the
+and progress. Its current applications are codoc-ai, producing on-request analyses of production, site performance,
+and failure modes, and argus-ai, the validation assessment application described in Validation. swf-monitor records
+pointers to these artifacts rather than copying generated content into production records. This implements the architectural rule that AI outputs become artifacts in the system: attached to the
 relevant object, open to comment, and available as context for later assessments and reports. The role grows with the
 system; assessment coverage across workflow domains, deeper diagnostics, campaign reporting, and testbed analytics on
 streaming workflow behavior all build on the same service.

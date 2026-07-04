@@ -21,7 +21,10 @@ operational detail behind this section.
 Physics working groups and detector groups request production datasets through the collaboration's request form. PCS
 mirrors each form response into a read-only questionnaire record, giving the collaboration a browsable view of all
 requests and giving production records a single upstream reference for request provenance
-([questionnaire design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_QUESTIONNAIRE.md)).
+([questionnaire design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_QUESTIONNAIRE.md)). The request
+cycle follows the collaboration's monthly campaign rhythm: requests are coordinated through the physics working groups
+and detector subsystem collaborations, validated by the production working group, and prioritized through the
+collaboration's physics and technical coordination before the monthly production list is frozen for the campaign.
 
 Triage turns submissions into structured production records. An operator links a response to one or more production
 request records — one submission frequently spans several beam energies or Q² ranges — and composes each request from
@@ -32,23 +35,10 @@ duplicating them.
 
 ## Physics Configuration System (PCS)
 
-PCS is the configuration layer of epicprod: a catalog of the physics and processing definitions from which production
-tasks are composed. Four tag types classify the stages of production — physics (p), event generation (e), simulation
-(s), and reconstruction (r) — organized under physics categories, each tag carrying a parameter set appropriate to its
-type; a fifth type, background (k), is not a stage but an orthogonal overlay composed into a dataset alongside the
-stage tags. Datasets bind tags into a defined data product, with sample variants discriminating
-same-configuration samples that differ in generation details. Production configs hold the execution-side settings, and
-a production task binds tags, dataset, and configuration into a submit-ready specification. PCS is documented in
-[PCS.md](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/PCS.md).
-
-Identity is carried by composed names. A task's name is built from its tag labels and variant fields, and that composed
-name is the task's identity throughout the system: catalog pages, links, the API, and the output dataset namespace in
-Rucio all use it. The name states the physics configuration; the database key appears nowhere a person or a URL would
-carry it.
-
-PCS entities follow a draft-refine-lock lifecycle in a two-pane browse and compose interface. Locked entities are
-stable references for production; new work derives from existing entities by copy and edit, so a campaign's tasks can
-be cloned and adjusted for the next campaign rather than rebuilt.
+PCS is the configuration layer of epicprod: the catalog of physics and processing definitions — tags, datasets,
+sample variants, and production configs — from which production tasks are composed, with identity carried through
+composed names. As the principal place where physicists meet the production system, it has its own section:
+[Physics Configuration System](pcs.md).
 
 ## Campaign Management
 
@@ -92,7 +82,9 @@ and access references, so a physicist can go from a physics configuration to its
 
 Third-party event-generation inputs are cataloged on the same footing. EVGEN datasets in JLab Rucio are swept into the
 catalog and matched to the requests they serve, so a task's inputs and outputs are both visible beside the
-configuration that consumes and produces them.
+configuration that consumes and produces them. On-the-fly event generation in the production payload is the planned
+evolution of the input path, replacing staged inputs where generators support it, beginning with a Pythia8 proof of
+concept.
 
 ## AI Assistance
 

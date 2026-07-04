@@ -13,7 +13,9 @@ group's record — agendas, the production website, and the operations chat chan
 
 Development is coordinated through the shared repositories: contribution is by branch and pull request on the core
 repositories, which advance together on coordinated branches, and this documentation is the common reference for what
-the system is and where it is going. Because the workflow domains share one platform, effort invested in either front
+the system is and where it is going. Plans and designs are developed as repository documents that drive AI
+co-development: AI assistants relearn the system continually from the documentation and code, so development knowledge
+carries no single point of failure. Because the workflow domains share one platform, effort invested in either front
 strengthens both, and WFMS progress is reported into the ePIC software and computing meetings and collaboration
 meetings, where the collaboration's decision points on the system's trajectory are taken.
 

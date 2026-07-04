@@ -115,6 +115,12 @@ In [Production System](production.md) — the detailed LLM operations architectu
 
 [![Detailed epicprod LLM operations architecture](diagrams/epicprod_llm_ops_architecture.svg)](diagrams/epicprod_llm_ops_architecture.svg)
 
+### The Physics Configuration System
+
+In [Physics Configuration System](pcs.md) — from the tag catalog through dataset composition and the composed name to the submit-ready campaign task.
+
+[![The Physics Configuration System](diagrams/pcs_system.svg)](diagrams/pcs_system.svg)
+
 ### The Validation Loop
 
 In [Validation](validation.md) — availability, Hydra validation, AI assessment, record, and expert signoff between the WFMS and ePIC validation; proposal-stage interfaces dashed.

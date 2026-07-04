@@ -25,9 +25,9 @@ registered into it.
 
 **Tag** — a named parameter set capturing the configuration of one production stage: physics (p), event generation
 (e), simulation (s), and reconstruction (r), with physics tags grouped by category. A fifth type, background (k), is
-not a stage but an orthogonal overlay — a named background configuration composed into a dataset alongside the stage
-tags. A tag is `draft` (editable) or `locked` (immutable, a one-way transition), so a configuration used in production
-never changes meaning.
+an orthogonal overlay — a named background configuration composed into a dataset alongside the stage tags, keeping
+signal and background configurations independent and avoiding tag growth across signal-background combinations. A tag is `draft` (editable) or `locked` (immutable, a one-way transition), so a configuration used in
+production never changes meaning.
 
 **Dataset** — the concrete production unit: one sample, produced by a single task. Its identity composes the
 classification tags with any sample-variant discriminator into the composed name. A sample normally registers as a
@@ -55,8 +55,9 @@ configuration, and the sample-variant name. A whole-task rerun appends a further
 name itself — the PanDA task name and the output dataset name — which is what keeps repeated submissions clash-free;
 the catalog resolves any `.tryN` name back to the same campaign task (see logical and physical names below).
 
-The composed name states the physics configuration and serves as the task's identity in catalog pages, links, and the
-API, and as the produced Rucio dataset name and PanDA task name. The version segment is the detector version — it
+The composed name states the physics configuration and carries the identity in a compact form usable in entity naming:
+it serves as the task's identity in catalog pages, links, and the API, and names the PanDA task, the produced Rucio
+datasets, and the files within them. The version segment is the detector version — it
 describes the conditions of the produced data; campaign membership is bookkeeping and does not rename the identity.
 
 **Logical and physical names** — the composed name is the stable logical identity. Physical names append reserved

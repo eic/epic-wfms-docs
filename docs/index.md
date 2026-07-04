@@ -12,6 +12,7 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 - **WFMS Platform** covers the realization of the architecture with specific technology and implementation choices
 - **Streaming Workflows** documents post-DAQ workflows during datataking
 - **Production System** documents the epicprod automated production system
+- **Physics Configuration System** documents PCS, where physicists meet the production system: the tag catalog, dataset composition, composed-name identity, and the browse and compose interface
 - **Validation** documents WFMS support for ePIC validation activities
 - **Calibration** documents WFMS support for calibration workflows, the multi-step orchestration domain
 - **Distributed CI** documents ePIC software validation running on PanDA-accessed distributed resources
@@ -23,7 +24,8 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 - **Diagram Gallery** collects all the system diagrams in one place
 
 Suggested entry points by reader: physicists requesting or consuming production data — Concepts, Production System,
-and Distributed Analysis; production and validation operators — Operations and the runbook links in References; DAQ
+Physics Configuration System, and Distributed Analysis; production and validation operators — Operations and the
+runbook links in References; DAQ
 and streaming collaborators — Foundations and Streaming Workflows; contributors and facility participants —
 Architecture, WFMS Platform, and Organization.
 

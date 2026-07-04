@@ -31,6 +31,9 @@ The credentialed operations agent is deliberately decoupled from routine deploys
 fresh from the deploy tree, so a script fix is live on the next dispatch, while the agent process itself is restarted
 only by deliberate operator action. This documentation follows the same continuous practice, rebuilding on every push.
 
+The production services presently share the testbed platform at BNL. Requirements for dedicated long-term hosting of
+the production services have been developed, with provisioning planned for FY27.
+
 ## Monitoring and Incident Response
 
 The monitoring posture is cached health, visible everywhere. The operations agent maintains a system status record of

@@ -40,6 +40,7 @@ nav:
   - Workflow Domains:
     - Streaming Workflows: streaming.md
     - Production System: production.md
+    - Physics Configuration System: pcs.md
     - Validation: validation.md
     - Calibration: calibration.md
     - Distributed CI: ci.md

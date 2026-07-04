@@ -286,6 +286,8 @@ the requesting page the moment they complete.
 
 [![corun-ai — LLM execution and artifact service](diagrams/corun_ai.svg)](diagrams/corun_ai.svg)
 
+The LLM and automated services of epicprod in one view — human-gated assistance and credentialed automation:
+
 [![High-level epicprod LLM and distributed computing integration](diagrams/epicprod_llm_ops_highlevel_tw.svg)](diagrams/epicprod_llm_ops_highlevel_tw.svg)
 
 ## Authentication

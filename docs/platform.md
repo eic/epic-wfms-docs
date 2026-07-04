@@ -242,7 +242,9 @@ remain reusable from cron and operator scripts, and privileged service logic sta
 The bot interface is a natural-language chat layer over MCP tools and selected REST-backed operations. Bots run as
 persistent services with conversational access to the same structured state the browser and REST interfaces expose:
 testbed status, PanDA tasks and jobs, queues, PCS entities, and LLM artifacts, so operational questions get answers
-grounded in live system state.
+grounded in live system state. A
+[demo video](https://drive.google.com/file/d/1VXIJJHfCaqE2iK_5QawJNamciGhFVQEI/view) (June 2026) shows the
+production bot at work.
 
 Bot authority is a per-domain policy: the production bot informs, assesses, and answers, while workflow actions remain
 with operators and the operations agent; a testbed bot or testbed mode can be more active where that suits workflow

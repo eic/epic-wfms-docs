@@ -13,6 +13,12 @@ In [Foundations](foundations.md) — the Echelon model: E0 detector and DAQ, the
 
 [![The ePIC computing model](diagrams/epic_computing_model.svg)](diagrams/epic_computing_model.svg)
 
+### Lifecycles
+
+In [Concepts](concepts.md) — the state machines of the campaign task (with PanDA tail retry and operator rerun controls), the campaign staging, and the tag lock.
+
+[![Lifecycles](diagrams/lifecycles.svg)](diagrams/lifecycles.svg)
+
 ### The ePIC Workflow Management System
 
 In [Architecture](architecture.md) — the platform anchor: workflow domains served by shared web/database, agent, AI, data and workflow management layers over the Echelon resources.
@@ -108,3 +114,15 @@ In [Production System](production.md) — the detailed LLM operations architectu
 In [Validation](validation.md) — availability, Hydra validation, AI assessment, record, and expert signoff between the WFMS and the ePIC validation program; proposal-stage interfaces dashed.
 
 [![The validation loop](diagrams/validation_loop.svg)](diagrams/validation_loop.svg)
+
+### The WFMS Timeline
+
+In [Timeline](timeline.md) — the three-year plan and the decade arc to physics datataking.
+
+[![The WFMS timeline](diagrams/wfms_timeline.svg)](diagrams/wfms_timeline.svg)
+
+### Streaming Computing Planning — FY25–FY31
+
+In [Timeline](timeline.md) — the joint DAQ, computing, and AI planning lanes, the context for the WFMS out-years.
+
+[![Streaming computing planning FY25-FY31](diagrams/streaming_planning_fy.svg)](diagrams/streaming_planning_fy.svg)

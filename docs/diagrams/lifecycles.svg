@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 660" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="lcBlack" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="660" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="620" y="36" text-anchor="middle" font-size="25" font-weight="bold" fill="#1a1a1a">Lifecycles</text>
+
+  <!-- ===== Campaign task ===== -->
+  <text x="60" y="106" font-size="16.5" font-weight="bold" fill="#17365d">Campaign task</text>
+
+  <rect x="60" y="124" width="180" height="70" rx="8" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="150" y="152" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Draft</text>
+  <text x="150" y="176" text-anchor="middle" font-size="13" fill="#333333">Every incomplete state</text>
+
+  <line x1="240" y1="159" x2="326" y2="159" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <text x="285" y="114" text-anchor="middle" font-size="13" fill="#1a1a1a">Checks pass, operator confirms</text>
+
+  <rect x="330" y="124" width="180" height="70" rx="8" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="420" y="152" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Ready</text>
+  <text x="420" y="176" text-anchor="middle" font-size="13" fill="#333333">Submittable</text>
+
+  <line x1="510" y1="159" x2="596" y2="159" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <text x="545" y="114" text-anchor="middle" font-size="13" fill="#1a1a1a">Submitted via the prod-ops agent</text>
+
+  <rect x="600" y="124" width="200" height="70" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="700" y="152" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Submitted</text>
+  <text x="700" y="176" text-anchor="middle" font-size="13" fill="#333333">Running under PanDA</text>
+
+  <path d="M 660 124 C 660 84, 740 84, 740 124" stroke="#1a1a1a" stroke-width="2" fill="none" marker-end="url(#lcBlack)"/>
+  <text x="700" y="86" text-anchor="middle" font-size="13" fill="#1a1a1a">PanDA auto-retries the tail — failed or missing jobs</text>
+
+  <path d="M 660 194 C 660 232, 740 232, 740 194" stroke="#1a1a1a" stroke-width="2" fill="none" marker-end="url(#lcBlack)"/>
+  <text x="730" y="252" text-anchor="middle" font-size="13" fill="#1a1a1a">Operator retry controls after site/config fix —</text>
+  <text x="730" y="271" text-anchor="middle" font-size="13" fill="#1a1a1a">raise the retry limit (open task), reopen and retry</text>
+  <text x="730" y="290" text-anchor="middle" font-size="13" fill="#1a1a1a">the tail (completed task), or whole-task rerun (.tryN)</text>
+
+  <line x1="800" y1="144" x2="946" y2="108" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <line x1="800" y1="159" x2="946" y2="165" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <line x1="800" y1="174" x2="946" y2="222" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <text x="870" y="102" text-anchor="middle" font-size="13" fill="#1a1a1a">PanDA outcome</text>
+
+  <rect x="950" y="88" width="196" height="46" rx="8" fill="#f1f8e9" stroke="#538135" stroke-width="2.5"/>
+  <text x="1048" y="117" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#1a3311">Completed</text>
+
+  <clipPath id="partialClip"><rect x="950" y="142" width="196" height="46" rx="8"/></clipPath>
+  <g clip-path="url(#partialClip)">
+    <rect x="950" y="142" width="196" height="46" fill="#f1f8e9"/>
+    <rect x="1126" y="142" width="20" height="46" fill="#f1948a"/>
+  </g>
+  <rect x="950" y="142" width="196" height="46" rx="8" fill="none" stroke="#538135" stroke-width="2.5"/>
+  <text x="1042" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a3311">Partial / recoverable</text>
+
+  <rect x="950" y="196" width="196" height="46" rx="8" fill="#fbe9e7" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="1048" y="225" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#7b241c">Failed</text>
+
+  <line x1="1162" y1="186" x2="1162" y2="96" stroke="#1a1a1a" stroke-width="2" marker-end="url(#lcBlack)"/>
+  <text x="1172" y="145" font-size="13" fill="#1a1a1a">Retry</text>
+  <text x="1162" y="224" font-size="13" fill="#1a1a1a">Fix</text>
+
+  <!-- ===== Campaign ===== -->
+  <text x="60" y="306" font-size="16.5" font-weight="bold" fill="#17365d">Campaign</text>
+
+  <rect x="60" y="324" width="240" height="70" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="180" y="352" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Prepping</text>
+  <text x="180" y="376" text-anchor="middle" font-size="13" fill="#333333">Mutable — new tasks and clones</text>
+
+  <line x1="300" y1="359" x2="426" y2="359" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <text x="363" y="341" text-anchor="middle" font-size="13" fill="#1a1a1a">Campaign start</text>
+
+  <rect x="430" y="324" width="240" height="70" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="550" y="352" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Current</text>
+  <text x="550" y="376" text-anchor="middle" font-size="13" fill="#333333">Live — submission and status</text>
+
+  <line x1="670" y1="359" x2="796" y2="359" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <text x="733" y="341" text-anchor="middle" font-size="13" fill="#1a1a1a">Campaign closeout</text>
+
+  <rect x="800" y="324" width="240" height="70" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="920" y="352" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Past</text>
+  <text x="920" y="376" text-anchor="middle" font-size="13" fill="#333333">Frozen archive — the record</text>
+
+  <!-- ===== Tag ===== -->
+  <text x="60" y="486" font-size="16.5" font-weight="bold" fill="#17365d">Tag</text>
+
+  <rect x="60" y="504" width="240" height="70" rx="8" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="180" y="532" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Draft</text>
+  <text x="180" y="556" text-anchor="middle" font-size="13" fill="#333333">Editable</text>
+
+  <line x1="300" y1="539" x2="426" y2="539" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#lcBlack)"/>
+  <text x="363" y="521" text-anchor="middle" font-size="13" fill="#1a1a1a">Lock — one way</text>
+
+  <rect x="430" y="504" width="240" height="70" rx="8" fill="#f1f8e9" stroke="#538135" stroke-width="2.5"/>
+  <text x="550" y="532" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Locked</text>
+  <text x="550" y="556" text-anchor="middle" font-size="13" fill="#333333">Immutable — meaning never changes</text>
+
+  <text x="750" y="545" font-size="13.5" font-style="italic" fill="#555555">A configuration used in production is a stable reference forever</text>
+
+  <path d="M 140 574 C 140 610, 220 610, 220 574" stroke="#1a1a1a" stroke-width="2" fill="none" marker-end="url(#lcBlack)"/>
+  <text x="252" y="630" font-size="13" fill="#1a1a1a">Copy any tag · edit while draft · compose new tags from existing ones</text>
+</svg>

@@ -101,6 +101,10 @@ campaigns preserve all task parameters as the production record.
 **Campaign narrative** — a human-authored account of a campaign's goals, priorities, and evolution. It is shared
 context for operators and LLMs: daily reports and assessments reason against it.
 
+The lifecycles above in one view:
+
+[![Lifecycles](diagrams/lifecycles.svg)](diagrams/lifecycles.svg)
+
 ## Execution
 
 **PanDA task** — the executable unit in PanDA, identified by its JEDI task ID; PanDA breaks it into **jobs** brokered

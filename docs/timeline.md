@@ -4,6 +4,12 @@ Describes the development and utilization of the system to meet Collaboration ne
 
 Current production and streaming testbed use, calibration, CI, test beams, streaming challenges, scaling exercises, commissioning, early data-taking, and mature operations.
 
+[![The WFMS timeline](diagrams/wfms_timeline.svg)](diagrams/wfms_timeline.svg)
+
+The out-years align with the joint planning of DAQ, computing, and AI:
+
+[![Streaming computing planning FY25-FY31](diagrams/streaming_planning_fy.svg)](diagrams/streaming_planning_fy.svg)
+
 ## Three year activity timeline
 
 The near term is anchored in operating systems. Monthly production campaigns run on epicprod today, and each campaign

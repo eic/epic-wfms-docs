@@ -29,6 +29,7 @@ plugins:
 nav:
   - Home: index.md
   - Foundations: foundations.md
+  - Concepts: concepts.md
   - Architecture: architecture.md
   - WFMS Platform: platform.md
   - Streaming Workflows: streaming.md

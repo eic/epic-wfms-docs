@@ -11,6 +11,8 @@ in the previous section. The domains have varying operational requirements, but 
 services where practical, from workflow orchestration and data management through monitoring, human controls, and AI
 assistance.
 
+[![The ePIC Workflow Management System](diagrams/wfms_platform.svg)](diagrams/wfms_platform.svg)
+
 The architecture is agent and service oriented, and prioritizes full access to system information at all detail
 levels by operators, users and AI agents. Information management begins with a comprehensive, centralized back end database
 capturing all system information and state. Persistent databases and document/artifact stores operating on a common
@@ -29,12 +31,6 @@ Agent services drawing on MCP and REST perform credentialed or long-running acti
 in several ways: regular cron-like invocation, integration as discrete steps in a workflow, human triggered by natural language interaction
 with a bot or LLM, or human triggered via web interface. Agents operate using no-latency messaging to/from an
 asynchronous worker queue, accommodating the macroscopic times (seconds to minutes) that LLM and distributed service operations take to complete.
-
-### epicprod Production System
-
-The epicprod production system architecture schematic illustrates many of these architectural elements.
-
-[![epicprod production system](diagrams/epicprod_system.svg)](diagrams/epicprod_system.svg)
 
 ## Data And Control Flow
 

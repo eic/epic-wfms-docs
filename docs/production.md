@@ -12,6 +12,8 @@ automated, and people make the decisions. The implementation lives in the
 [swf-monitor repository](https://github.com/BNLNPPS/swf-monitor), whose documentation carries the design and
 operational detail behind this section.
 
+[![epicprod production system](diagrams/epicprod_system.svg)](diagrams/epicprod_system.svg)
+
 ## Production Requests
 
 Physics working groups and detector groups request production datasets through the collaboration's request form. PCS
@@ -29,9 +31,10 @@ duplicating them.
 ## Physics Configuration System (PCS)
 
 PCS is the configuration layer of epicprod: a catalog of the physics and processing definitions from which production
-tasks are composed. Five tag types classify the stages of production — physics (p), event generation (e), simulation
-(s), reconstruction (r), and background (k) — organized under physics categories, each tag carrying a parameter set
-appropriate to its type. Datasets bind tags into a defined data product, with sample variants discriminating
+tasks are composed. Four tag types classify the stages of production — physics (p), event generation (e), simulation
+(s), and reconstruction (r) — organized under physics categories, each tag carrying a parameter set appropriate to its
+type; a fifth type, background (k), is not a stage but an orthogonal overlay composed into a dataset alongside the
+stage tags. Datasets bind tags into a defined data product, with sample variants discriminating
 same-configuration samples that differ in generation details. Production configs hold the execution-side settings, and
 a production task binds tags, dataset, and configuration into a submit-ready specification. PCS is documented in
 [PCS.md](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/PCS.md).
@@ -78,8 +81,10 @@ conditions that need attention.
 
 ## Data Products
 
+[![ePIC production dataflow](diagrams/epicprod_dataflow.svg)](diagrams/epicprod_dataflow.svg)
+
 Produced data are cataloged as the primary product of the system. Outputs are registered in JLab Rucio under the
-composed task name: reconstruction outputs at the RECO and FULL levels and the associated log datasets. The catalog
+composed task name: RECO reconstruction outputs and the associated log datasets. The catalog
 gathers this lineage onto the task record, linking expected and observed outputs with their Rucio identifiers, status,
 and access references, so a physicist can go from a physics configuration to its data products in one place.
 

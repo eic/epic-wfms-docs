@@ -185,6 +185,18 @@ names, agent names, workflow execution IDs, section slugs, and document artifact
 the source system, artifact type, subject reference, producing user or service, and, for LLM-generated artifacts, model
 and prompt provenance.
 
+### AI Tool Coverage
+
+The MCP instrumentation has grown out of the WFMS work into broad coverage of the systems ePIC AI clients need:
+PanDA job diagnostics and operational state, PCS physics configuration, testbed control, Rucio data management,
+XRootD remote I/O and uproot data reading, code cross-reference over the ePIC software repositories (LXR), GitHub
+repository inquiries, embedded-documentation retrieval, and Zenodo documents. AI services are built on this
+instrumentation: the Mattermost bot serving collaboration-wide questions on production and testbed operations,
+production operations analysis with drill-down diagnostics, software documentation analysis, and pull-request review
+grounded in codebase knowledge. The stack — ePIC services, MCP instrumentation, AI services — is diagrammed below.
+
+[![ePIC AI infrastructure stack](diagrams/epic_ai_stack.svg)](diagrams/epic_ai_stack.svg)
+
 ## Agents And Services
 
 ### Agent Infrastructure

@@ -17,7 +17,7 @@
   <rect width="1200" height="880" fill="#ffffff"/>
 
   <!-- ============ Title ============ -->
-  <text x="600" y="32" text-anchor="middle" font-size="18" font-weight="bold">LLM and Distributed Computing Services Integration in epicprod</text>
+  <text x="600" y="32" text-anchor="middle" font-size="18" font-weight="bold">LLM and Distributed Computing Services Integration in epicprod — Detailed Architecture</text>
   <text x="600" y="54" text-anchor="middle" font-size="12" font-style="italic" fill="#555">production context in swf-monitor &#160;·&#160; LLM execution &amp; artifacts in corun-ai &#160;·&#160; production credentials in the ops agent &#160;·&#160; results pushed over one SSE relay</text>
 
   <!-- ============ Browser row ============ -->

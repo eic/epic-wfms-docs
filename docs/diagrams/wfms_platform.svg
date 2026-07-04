@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 780" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="wpArrowGray" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="9" refX="9" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#7f7f7f"/>
+    </marker>
+    <marker id="wpArrowNavy" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="11" refX="11" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 z" fill="#17365d"/>
+    </marker>
+    <marker id="wpArrowGreen" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="11" refX="11" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 z" fill="#538135"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1260" height="780" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="630" y="40" text-anchor="middle" font-size="26" font-weight="bold" fill="#1a1a1a">The ePIC Workflow Management System</text>
+  <text x="630" y="66" text-anchor="middle" font-size="16.5" font-style="italic" fill="#555555">A shared platform serving the ePIC workflow domains</text>
+
+  <!-- People -->
+  <rect x="70" y="88" width="1120" height="58" rx="8" fill="#fce5cd" stroke="#c55a11" stroke-width="2"/>
+  <text x="630" y="112" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a1a1a">ePIC collaboration &amp; experts</text>
+  <text x="630" y="136" text-anchor="middle" font-size="14.5" fill="#333333">Physics working groups (PWGs) · detector subsystem collaborations (DSCs) · production &amp; validation experts · operators — humans make the decisions</text>
+
+  <line x1="630" y1="148" x2="630" y2="168" stroke="#7f7f7f" stroke-width="2" marker-end="url(#wpArrowGray)"/>
+
+  <!-- Workflow domains -->
+  <rect x="70" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="156" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Streaming</text>
+  <text x="156" y="222" text-anchor="middle" font-size="14" fill="#555555">Testbed is operating</text>
+
+  <rect x="259" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="345" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Production</text>
+  <text x="345" y="222" text-anchor="middle" font-size="14" fill="#555555">epicprod is operating</text>
+
+  <rect x="448" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="534" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Validation</text>
+  <text x="534" y="222" text-anchor="middle" font-size="14" fill="#555555">Integration proposed</text>
+
+  <rect x="637" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="723" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Calibration</text>
+  <text x="723" y="222" text-anchor="middle" font-size="14" fill="#555555">In development</text>
+
+  <rect x="826" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="912" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Distributed CI</text>
+  <text x="912" y="222" text-anchor="middle" font-size="14" fill="#555555">In development</text>
+
+  <rect x="1015" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="1101" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Analysis</text>
+  <text x="1101" y="222" text-anchor="middle" font-size="14" fill="#555555">Foreseen</text>
+
+  <line x1="630" y1="240" x2="630" y2="272" stroke="#7f7f7f" stroke-width="2" marker-end="url(#wpArrowGray)"/>
+
+  <!-- Web and database platform -->
+  <rect x="70" y="280" width="1120" height="94" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="630" y="306" text-anchor="middle" font-size="17" font-weight="bold" fill="#17365d">Shared web services &amp; database platform — swf-monitor</text>
+  <text x="630" y="330" text-anchor="middle" font-size="15" fill="#333333">Browser pages · REST APIs · MCP tools · bot chat</text>
+  <text x="630" y="352" text-anchor="middle" font-size="15" fill="#333333">One PostgreSQL database of all operational state and history · live browser updating (SSE)</text>
+
+  <!-- Credential boundary -->
+  <text x="1188" y="392" text-anchor="end" font-size="14.5" font-weight="bold" fill="#c00000">Credential boundary — no service credential above this line</text>
+  <line x1="70" y1="400" x2="1190" y2="400" stroke="#c00000" stroke-width="2" stroke-dasharray="10,6"/>
+  <line x1="630" y1="376" x2="630" y2="404" stroke="#7f7f7f" stroke-width="2" marker-end="url(#wpArrowGray)"/>
+
+  <!-- Agents and AI services -->
+  <rect x="70" y="412" width="545" height="96" rx="8" fill="#e9def1" stroke="#7030a0" stroke-width="2.5"/>
+  <text x="342" y="438" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#3b1e56">Message-driven agents</text>
+  <text x="342" y="462" text-anchor="middle" font-size="14.5" fill="#333333">The credential holders — submission, data operations, retrievals</text>
+  <text x="342" y="484" text-anchor="middle" font-size="14.5" fill="#333333">Event-driven over the message bus (ActiveMQ)</text>
+
+  <rect x="645" y="412" width="545" height="96" rx="8" fill="#dcdcf0" stroke="#3f3f8f" stroke-width="2.5"/>
+  <text x="917" y="438" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#26265e">AI services</text>
+  <text x="917" y="462" text-anchor="middle" font-size="14.5" fill="#333333">Assessments · reports · comment threads · conversational bots</text>
+  <text x="917" y="484" text-anchor="middle" font-size="14" fill="#333333">Harnessed LLM execution with durable artifacts (corun-ai · wrangle-ai)</text>
+
+  <line x1="630" y1="510" x2="630" y2="528" stroke="#7f7f7f" stroke-width="2" marker-end="url(#wpArrowGray)"/>
+
+  <!-- Data and workload management -->
+  <rect x="70" y="534" width="545" height="78" rx="8" fill="#d6e8cc" stroke="#538135" stroke-width="2.5"/>
+  <text x="342" y="566" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a3311">Data management — Rucio, XRootD</text>
+  <text x="342" y="592" text-anchor="middle" font-size="14.5" fill="#333333">Data catalog · metadata · datasets · replicas · placement · transfers</text>
+
+  <rect x="645" y="534" width="545" height="78" rx="8" fill="#d6e8cc" stroke="#538135" stroke-width="2.5"/>
+  <text x="917" y="566" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a3311">Workflow management — PanDA, iDDS</text>
+  <text x="917" y="592" text-anchor="middle" font-size="14.5" fill="#333333">Tasks (JEDI) · jobs · brokerage · workers (Harvester)</text>
+
+  <line x1="630" y1="614" x2="630" y2="632" stroke="#7f7f7f" stroke-width="2" marker-end="url(#wpArrowGray)"/>
+
+  <!-- Resources -->
+  <rect x="70" y="638" width="1120" height="102" rx="8" fill="#f5f5f5" stroke="#7f7f7f" stroke-width="2"/>
+  <text x="630" y="664" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Distributed resources — the Echelons</text>
+  <rect x="82" y="676" width="262" height="52" rx="6" fill="#e8e8e8" stroke="#7f7f7f" stroke-width="1.5"/>
+  <text x="213" y="707" text-anchor="middle" font-size="16" fill="#333333">E0 — DAQ interface</text>
+  <rect x="360" y="676" width="262" height="52" rx="6" fill="#e8e8e8" stroke="#7f7f7f" stroke-width="1.5"/>
+  <text x="491" y="707" text-anchor="middle" font-size="16" fill="#333333">E1 — host lab data centers</text>
+  <rect x="638" y="676" width="262" height="52" rx="6" fill="#e8e8e8" stroke="#7f7f7f" stroke-width="1.5"/>
+  <text x="769" y="707" text-anchor="middle" font-size="16" fill="#333333">E2 — global facilities</text>
+  <rect x="916" y="676" width="262" height="52" rx="6" fill="#e8e8e8" stroke="#7f7f7f" stroke-width="1.5"/>
+  <text x="1047" y="707" text-anchor="middle" font-size="16" fill="#333333">E3 — institutions &amp; users</text>
+
+  <!-- Side rails -->
+  <line x1="40" y1="110" x2="40" y2="726" stroke="#17365d" stroke-width="2.5" marker-end="url(#wpArrowNavy)"/>
+  <text x="28" y="418" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#17365d" transform="rotate(-90 28 418)">Control — requests, approvals, actions</text>
+
+  <line x1="1220" y1="726" x2="1220" y2="110" stroke="#538135" stroke-width="2.5" marker-end="url(#wpArrowGreen)"/>
+  <text x="1234" y="418" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#538135" transform="rotate(90 1234 418)">State &amp; results — monitoring, notification, artifacts</text>
+</svg>

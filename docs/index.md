@@ -7,6 +7,7 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 ## Documentation Structure
 
 - **Foundations** defines the WFMS scope, requirements basis, streaming computing model alignment, computing use cases, Echelon model, and butterfly model
+- **Concepts** defines the working vocabulary of the system: streaming data units, configuration and identity, requests, campaign tasks, campaigns, and their lifecycles
 - **Architecture** describes the overall WFMS design: common system structure, data/control flow, human-in-the-loop automation, AI integration
 - **WFMS Platform** covers the realization of the architecture with specific technology and implementation choices
 - **Streaming Workflows** documents post-DAQ workflows during datataking
@@ -17,3 +18,5 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 - **Organization** describes the organization of WFMS efforts and how the work is coordinated
 - **Timeline** describes the development and utilization of the system to meet Collaboration needs as they evolve over the next decade, culminating in physics datataking in the mid 2030s
 - **References** collects reference documents, glossary terms, external links, API references, MCP references, diagrams, and requirements material
+
+This documentation is maintained in the [eic/epic-wfms-docs](https://github.com/eic/epic-wfms-docs) repository.

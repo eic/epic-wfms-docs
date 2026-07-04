@@ -60,6 +60,8 @@ Raw data flows from E0 to both E1 sites, establishing geographically
 separated raw-data copies and preserving flexibility in how ePIC assigns downstream processing roles between BNL and
 JLab, and other facilities.
 
+[![The ePIC computing model](diagrams/epic_computing_model.svg)](diagrams/epic_computing_model.svg)
+
 ## Streaming Computing Model Alignment
 
 The ePIC streaming computing model drives the WFMS architecture from the start. ePIC data processing begins with a

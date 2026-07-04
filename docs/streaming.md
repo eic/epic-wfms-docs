@@ -93,8 +93,8 @@ layer to provision the standing pool, distributes slices, and collects results.
 
 Two streaming workflows are realized today. The prompt processing workflow takes simulated runs from run-imminent
 through dataset creation, STF registration, and PanDA task submission over the run dataset. The fast processing
-workflow takes the same runs through TF sampling, slice creation (15 slices per sampled STF in the default
-configuration), and slice processing on the pre-provisioned worker pool. Both are driven by TOML workflow
+workflow takes the same runs through TF sampling, slice creation, and slice processing on the pre-provisioned worker
+pool. Both are driven by TOML workflow
 configurations and tracked end to end in the monitor.
 
 The fast processing pipeline and its worker management are diagrammed below: the agent pipeline from simulated DAQ to

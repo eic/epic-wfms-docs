@@ -10,7 +10,7 @@ fronts have different near-term purposes, but they are deliberately based on the
 workflow services, Rucio and XRootD data handling, message-driven agents, a shared monitor/database service, REST and
 MCP interfaces, browser-based operational pages, AI bot interfaces, and harnessed LLM AI services.
 
-## Production And Testbed Convergence
+## Production and Testbed Convergence
 
 The two implementation fronts exercise complementary parts of the platform. Production carries the immediate
 operational needs: campaign definition, task creation, PanDA execution, data product accounting, monitoring, human
@@ -38,7 +38,7 @@ through the reconstruction payload) and `swf-panda-workers` (worker lifecycle co
 
 The three core repositories (`swf-testbed`, `swf-monitor`, `swf-common-lib`) advance together on coordinated branches.
 
-## Web And Database Stack
+## Web and Database Stack
 
 ### swf-monitor
 
@@ -56,7 +56,7 @@ state, cached system status, LLM artifact pointers, and production metadata.
 
 Django models and migrations define the schema. JSON fields hold extensible metadata; structured fields are used where
 filtering, linking, constraints, or operator workflows require them. The pervasive use of JSON fields makes the
-system flexible and adaptable to include new knowledge, state and functionality. 
+system flexible and adaptable to include new knowledge, state and functionality.
 
 ### Browser Pages
 
@@ -75,7 +75,7 @@ events, persists relevant messages, and relays selected events to browsers throu
 Operations-agent completions and corun-ai callbacks reach production pages the same way. SSE carries only the
 notification; on receipt, pages refresh their state from the database or REST.
 
-## Workflow And Workload Management
+## Workflow and Workload Management
 
 ### PanDA
 
@@ -83,10 +83,9 @@ PanDA[^panda] is the distributed workload management system for both fronts: it 
 work to sites, and records task and job state. epicprod uses it for campaign tasks; the testbed uses it to execute
 prompt and streaming workflows.
 
-swf-monitor presents PanDA task and job state through ePIC-specific task, job, queue, and system views that for
-ePIC purposes supplant
-the default ATLAS PanDA monitor with production task links, campaign context, payload-log access, Rucio output views, and
-LLM assessments.
+swf-monitor presents PanDA task and job state through task, job, queue, and system views tailored to ePIC,
+supplanting the default ATLAS PanDA monitor with production task links, campaign context, payload-log access, Rucio
+output views, and LLM assessments.
 
 [![PanDA in ePIC](diagrams/panda_in_epic.svg)](diagrams/panda_in_epic.svg)
 
@@ -110,7 +109,7 @@ transformation, and workflow state must be coordinated beyond single task submis
 complex workflows, able to handle future streaming and production workflow expansion.
 PanDA also has an internal workflow capability under development, for workflows integral to PanDA's management of
 an overall task; PanDA has full and direct awareness and control of a multi-stage task, rather than delegating to iDDS.
-As this capability matures it will be reviewed for possible application in ePIC WFMS. The complex workflows of 
+As this capability matures it will be reviewed for possible application in ePIC WFMS. The complex workflows of
 ePIC fast streaming processing will always be an iDDS domain.
 
 ### Workflow Descriptions
@@ -132,7 +131,7 @@ records and exposes production data products (EVGEN inputs, RECO outputs, and lo
 Rucio DIDs (dataset identifiers), scopes, RSEs, rules, replicas, and metadata are operational objects,
 presented beside workflow state in monitor pages and task catalogs.
 
-### XRootD And FTS
+### XRootD and FTS
 
 XRootD is the file access and transfer protocol for the testbed and production paths. Rucio drives data movement through
 FTS (the File Transfer Service); agents also use XRootD directly for direct read operations, including
@@ -171,7 +170,7 @@ The testbed emulates elements of the E0-E1-E2 workflow with local services and c
 storage roles are represented by distinct RSEs and XRootD paths even when implemented on the same host during
 development, so workflow and dataflow logic can be exercised before the physical facilities and final data paths exist.
 
-## Metadata And APIs
+## Metadata and APIs
 
 REST APIs are the programmatic interface for browser pages, scripts, agents, service-to-service calls, and automation;
 command-line clients and operational scripts work through REST endpoints rather than Django internals or direct
@@ -203,7 +202,7 @@ grounded in codebase knowledge. The stack — ePIC services, MCP instrumentation
 
 [![ePIC AI infrastructure stack](diagrams/epic_ai_stack.svg)](diagrams/epic_ai_stack.svg)
 
-## Agents And Services
+## Agents and Services
 
 ### Agent Infrastructure
 
@@ -224,7 +223,7 @@ control queue for single-consumer credentialed work. Destination names carry the
 prefix, and the choice between topic and queue follows the delivery semantics. Durable subscriptions are used sparingly
 because they create broker-side state and can accumulate messages.
 
-### Workflow And Operations Agents
+### Workflow and Operations Agents
 
 The testbed agent set models the streaming workflow. `swf-daqsim-agent` simulates DAQ state and STF generation.
 `swf-data-agent` receives DAQ messages, creates run datasets, manages Rucio STF handling, and notifies processing and
@@ -259,7 +258,7 @@ Alarms serve the minimal-effort operations goal: automation handles routine cond
 what needs human or AI attention. The capability applies to production operations now and extends to testbed and
 eventual E0-E1 operations, where streaming latencies demand automated detection and notification.
 
-### corun-ai And wrangle-ai
+### corun-ai and wrangle-ai
 
 corun-ai is the LLM execution and durable artifact service of the platform, central to its AI integration: much of the
 AI functionality of the WFMS will be delivered through it. It runs LLM work under its own credentials and configuration

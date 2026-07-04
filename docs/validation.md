@@ -1,8 +1,9 @@
 # Validation
 
-Documents WFMS support for ePIC validation activities across production, streaming, data products, sites, resources, and AI-based validation assessment.
+This section documents WFMS support for ePIC validation, across produced data, streaming, sites and resources, and
+AI-based validation assessment.
 
-## Validation scope
+## Validation Scope
 
 Validation in the WFMS spans the full latency range of the streaming computing model: detector and data evaluation
 within seconds on the fast streaming path, data-quality evaluation of prompt processing over minutes and hours,
@@ -11,11 +12,11 @@ data products themselves, the production and streaming workflows that make them,
 on.
 
 Science data product validation itself is not WFMS territory. The criteria, the evaluation, and the authority to sign
-off belong to the ePIC validation program and its experts and tools. The WFMS provides services to that program:
+off belong to ePIC validation and its experts and tools. The WFMS provides services to that effort:
 availability notification when data products are ready, produced-data references and access, execution of validation
 workloads on the platform, AI assessment machinery, and recording of validation outcomes against the production record.
 
-## WFMS integrations with ePIC Validation
+## WFMS Integrations with ePIC Validation
 
 ePIC validation is anchored by Hydra, the ePIC validation application, which produces validation plots from data. The
 WFMS integrates with Hydra rather than duplicating it, through two interfaces now at the proposal stage
@@ -33,7 +34,7 @@ is new and ready to validate. A live event delivers a per-unit notification the 
 the same SSE path that serves browser notification, including to external subscribers through the remote streaming
 proxy.
 
-## Campaign readiness and signoff
+## Campaign Readiness and Signoff
 
 Validation feeds readiness decisions back into production. Validation experts evaluate produced data and their signoff
 gates what a campaign does next: whether a configuration is production-ready, whether produced samples are released for
@@ -45,7 +46,7 @@ Validation state belongs on the catalog record. Outcomes, assessments, and signo
 task, dataset, and campaign they concern, so the production record carries its validation history alongside its
 configuration and its data products.
 
-## Data product validation
+## Data Product Validation
 
 The unit of data product validation is the task/dataset — the unit that completes and can be validated. Completion is
 determined by PanDA, and epicprod signals availability as each unit completes, carrying completeness with it (expected
@@ -57,7 +58,7 @@ belongs to the validation application and experts.
 Validation can also address groups: one evaluation can cover a request's set of produced datasets or a benchmark
 collection, independent of the per-unit availability signal.
 
-## Site and resource validation
+## Site and Resource Validation
 
 The operational health of sites and resources is validated continuously through the platform's monitoring: queue and
 site state, error summaries by site and type, resource usage, and worker state, with the alarm system carrying
@@ -66,7 +67,7 @@ designated validation workloads against a site or queue — a controlled workloa
 Distributed CI, running ePIC software validation on PanDA-accessed resources, is the adjacent workflow domain built on
 the same capability.
 
-## AI based validation assessment
+## AI-Based Validation Assessment
 
 argus-ai, the assessment application of the corun-ai service
 ([design note](https://github.com/BNLNPPS/corun-ai/blob/master/docs/argus-ai.md)), provides AI assessment of validation
@@ -83,4 +84,4 @@ and a run can reason over the current target, its reference or benchmark, and pr
 is a valid judgment. Completed assessments are delivered to every destination registered for the request — the web
 interface, the chat channel through the bot, and registered REST endpoints — with the requestor recorded. Like all AI
 outputs in the system, validation assessments carry provenance and are open to comment; they inform the human signoff
-decisions of the validation program rather than replacing them.
+decisions of ePIC validation rather than replacing them.

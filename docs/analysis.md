@@ -1,6 +1,8 @@
 # Distributed Analysis
 
-Describes the support for distributed and managed analysis workflows, with the expectation that such workflows supplement and support individual standalone analysis. The analysis workflow domain: E3/user computing, notebooks and APIs, analysis data access, reproducibility, and future analysis orchestration.
+This section describes WFMS support for distributed and managed analysis workflows, which supplement rather than
+replace individual standalone analysis: E3 and user computing, data access, notebooks and programmatic interfaces,
+reproducibility, and the growth path toward managed analysis.
 
 ## Distributed Analysis Workflow Domain
 
@@ -15,7 +17,7 @@ benchmark analyses over newly produced data is a first candidate.
 Analysis is a foreseen workflow domain rather than an operating one. The requirements place it in WFMS scope, the
 platform serves it today through data access and metadata services, and managed analysis workflows are the growth path.
 
-## Echelon 3 Support And User Computing
+## Echelon 3 Support and User Computing
 
 Echelon 3 is computing where ePIC physicists are: home institutes, university clusters, and personal machines. The WFMS
 serves E3 rather than managing it. From an E3 environment a physicist can discover data products through the catalog,
@@ -31,7 +33,7 @@ a composed task name states its configuration, and the catalog links it to its o
 locations. Files are readable over XRootD, including remote streaming reads against E1 storage, and Rucio rules can
 place data where analysis needs it.
 
-## Notebooks And Services
+## Notebooks and Services
 
 The platform's REST APIs and MCP tools give notebooks and analysis scripts the same programmatic access that the
 system's own services use: dataset discovery, configuration and provenance metadata, production status, and monitoring

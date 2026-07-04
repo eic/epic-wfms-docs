@@ -1,6 +1,6 @@
 # Calibration
 
-Documents WFMS support for ePIC calibration workflows, the multi-step orchestration domain of the platform.
+This section documents WFMS support for ePIC calibration workflows, the platform's multi-step orchestration domain.
 
 ## Calibration Workflow Domain
 
@@ -10,7 +10,7 @@ and subsequent processing. The calibrations themselves — algorithms, constants
 detector and reconstruction experts; the WFMS contributes the orchestration: dependency-managed multi-step workflows,
 execution on platform resources, and the bookkeeping that records what ran on what.
 
-## Realization On The Platform
+## Realization on the Platform
 
 Calibration is where dependency management is central, and Snakemake is the platform's layer for it, as described in
 [WFMS Platform](platform.md): workflows are described as Snakemake rules, with a published Snakemake executor plugin

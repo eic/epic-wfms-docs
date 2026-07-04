@@ -1,6 +1,8 @@
 # Production System
 
-Documents the epicprod automated production system: request ingest, PCS, campaign management, PanDA execution, data products, LLM assessments and reports, human-in-the-loop controls and curation.
+This section documents epicprod, the ePIC automated production system: request intake, physics configuration,
+campaign management, PanDA execution, data products, LLM assessments and reports, and the human controls and
+curation that steer it.
 
 ## epicprod Overview
 
@@ -92,7 +94,7 @@ Third-party event-generation inputs are cataloged on the same footing. EVGEN dat
 catalog and matched to the requests they serve, so a task's inputs and outputs are both visible beside the
 configuration that consumes and produces them.
 
-## AI assistance
+## AI Assistance
 
 AI assistance appears throughout the production pages as durable, attributed artifacts. Assessments evaluate tasks,
 jobs, queues, and campaigns and are attached to the objects they assess. Comment threads on production objects carry
@@ -111,7 +113,7 @@ agent, and the notification return — is diagrammed below.
 
 [![Detailed epicprod LLM operations architecture](diagrams/epicprod_llm_ops_architecture.svg)](diagrams/epicprod_llm_ops_architecture.svg)
 
-## Human Controls And Curation
+## Human Controls and Curation
 
 Canonical state changes by human hand. Lifecycle transitions — draft to ready, submission, lock, withdraw, retry and
 recovery — are operator decisions exercised through catalog controls. Automation and AI may detect a condition, present

@@ -18,7 +18,7 @@ The system spans post-DAQ streaming processing, global production campaigns, val
 - **Distributed Analysis** describes the support for distributed and managed analysis workflows
 - **Operations** describes how the WFMS is operated
 - **Organization** describes the organization of WFMS efforts and how the work is coordinated
-- **Timeline** describes the development and utilization of the system to meet Collaboration needs as they evolve over the next decade, culminating in physics datataking in the mid 2030s
+- **Timeline** describes the development and use of the system as Collaboration needs evolve over the coming decade, culminating in physics datataking in the mid-2030s
 - **References** collects reference documents, glossary terms, external links, API references, MCP references, and requirements material
 - **Diagram Gallery** collects all the system diagrams in one place
 

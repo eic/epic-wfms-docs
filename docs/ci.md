@@ -1,7 +1,7 @@
 # Distributed CI
 
-Documents WFMS support for distributed continuous integration: ePIC software validation running on PanDA-accessed
-distributed resources.
+This section documents WFMS support for distributed continuous integration: ePIC software validation running on
+PanDA-accessed distributed resources.
 
 ## Distributed CI Workflow Domain
 

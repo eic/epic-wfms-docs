@@ -32,7 +32,7 @@ in several ways: regular cron-like invocation, integration as discrete steps in 
 with a bot or LLM, or human triggered via web interface. Agents operate using no-latency messaging to/from an
 asynchronous worker queue, accommodating the macroscopic times (seconds to minutes) that LLM and distributed service operations take to complete.
 
-## Data And Control Flow
+## Data and Control Flow
 
 WFMS data flow begins with the data products and metadata produced by detector, simulation, reconstruction,
 validation, and analysis workflows. In streaming workflows, the flow starts at the E0-E1 interface,
@@ -57,7 +57,7 @@ curated artifacts provide the state used by dashboards, diagnostics, AI assessme
 overviews. Browser notification uses server-sent events where asynchronous work needs to report completion to an open
 page.
 
-## Human-In-The-Loop Automation
+## Human-in-the-Loop Automation
 
 The architecture is based on maximal automation with explicit human control. AI-equipped automation should reduce routine operations
 effort, expose system state, identify failures, present inferences and interpretations, and carry out approved bounded actions. It

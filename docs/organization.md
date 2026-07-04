@@ -1,8 +1,10 @@
 # Organization
 
-Describes the organization of WFMS efforts and how the work is coordinated, such that efforts are coherent and complementary. Participating ePIC groups, DAQ/S&C collaboration, production operations, E1/E2 facilities, external projects, software management, and contribution processes.
+This section describes how the WFMS effort is organized and coordinated so that contributions remain coherent and
+complementary: the participating ePIC groups, coordination with DAQ and S&C, production operations, the host-lab and
+E2 facilities, external projects, and the contribution process.
 
-## Organizing collaborative efforts
+## Organizing Collaborative Efforts
 
 The standing coordination body for the production side is the ePIC Production Working Group, meeting on the first and
 third Tuesday of each month: the first meeting prepares the upcoming simulation campaign, addressing infrastructure
@@ -18,7 +20,7 @@ meetings, where the collaboration's decision points on the system's trajectory a
 ## Participating Groups
 
 The core WFMS effort is anchored at the host labs, with a deliberately small production operations team supported by
-the automation the system exists to provide. Participation beyond the labs is growing: the University of Manitoba has
+the automation the system exists to provide. Participation beyond the labs is growing: the University of Manitoba
 and Osaka University have joined as participants in the testbed and production, with Manitoba particularly active in
 production. These groups are the first realization of WFMS organization beyond the host labs — the seed of E2-level participation,
 where institutions take defined roles in the system's development and operation.
@@ -27,7 +29,7 @@ Physics working groups and detector subsystem collaborations participate as the 
 they submit production requests, evaluate produced data, and provide production liaisons who carry campaign operations
 knowledge into their groups and requirements back to production.
 
-## DAQ And S&C Coordination
+## DAQ and S&C Coordination
 
 The WFMS is an ePIC Software and Computing activity, and its streaming side is developed in coordination with the DAQ
 effort: the E0-E1 interface — the exit buffer, the STF and TF streams, and the run controls that cross it — is a joint
@@ -35,7 +37,7 @@ design object between DAQ and the WFMS. The streaming computing model and the WF
 S&C products, set the shared direction, and the streaming workflow testbed exists to inform ePIC's decision making on
 the streaming WFMS over the coming years.
 
-## E1/E2 Facility involvement
+## E1/E2 Facility Involvement
 
 BNL and JLab are the two E1 host-lab facilities of the butterfly model, and each anchors complementary parts of the
 present system: PanDA and the WFMS services operate at BNL, while production science data is held in JLab Rucio, with

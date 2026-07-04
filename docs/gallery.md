@@ -63,7 +63,7 @@ In [Streaming Workflows](streaming.md) — the E0-E1 interface: DAQ exit buffer,
 
 ### Prompt Processing Workflow
 
-In [Streaming Workflows](streaming.md) — full-sample processing of every STF as it arrives, from run signals through the filling run dataset to PanDA jobs at the E1s, with the conceptual decision box.
+In [Streaming Workflows](streaming.md) — full-sample processing of STFs as they arrive, from run signals through the filling run dataset to PanDA jobs at the E1s, with the conceptual decision box.
 
 [![Prompt processing workflow](diagrams/prompt_processing_workflow.svg)](diagrams/prompt_processing_workflow.svg)
 
@@ -117,7 +117,7 @@ In [Production System](production.md) — the detailed LLM operations architectu
 
 ### The Validation Loop
 
-In [Validation](validation.md) — availability, Hydra validation, AI assessment, record, and expert signoff between the WFMS and the ePIC validation program; proposal-stage interfaces dashed.
+In [Validation](validation.md) — availability, Hydra validation, AI assessment, record, and expert signoff between the WFMS and ePIC validation; proposal-stage interfaces dashed.
 
 [![The validation loop](diagrams/validation_loop.svg)](diagrams/validation_loop.svg)
 

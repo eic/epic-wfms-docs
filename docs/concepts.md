@@ -4,7 +4,7 @@ The working vocabulary of the WFMS: the data units, configuration entities, iden
 throughout this documentation and in the system's interfaces. Definitions here are the reference; the domain sections
 describe how the concepts are used.
 
-## Streaming data units
+## Streaming Data Units
 
 **Time frame (TF)** — the atomic unit of ePIC streaming data: a contiguous, self-contained slice of the detector data
 stream.
@@ -17,11 +17,11 @@ collect, and what prompt processing consumes.
 Slice size is set by the target latency for control room plots and statistics and for AI assessments — a TF count
 whose reconstruction processing time matches the target, 10-30 seconds in present thinking.
 
-**Run** — a data-taking period. The run lifecycle — run imminent, run start, pause and resume, run end — is broadcast
+**Run** — a datataking period. The run lifecycle — run imminent, run start, pause and resume, run end — is broadcast
 from the DAQ side and drives downstream orchestration. At run start a Rucio run dataset is created; arriving STFs are
 registered into it.
 
-## Production configuration and identity
+## Production Configuration and Identity
 
 **Tag** — a named parameter set capturing the configuration of one production stage: physics (p), event generation
 (e), simulation (s), and reconstruction (r), with physics tags grouped by category. A fifth type, background (k), is
@@ -64,7 +64,7 @@ suffixes when uniqueness requires them: `.tryN` when an entire task is deliberat
 subdivision of very large datasets. Parsing strips the terminal suffixes, so every physical name resolves back to its
 logical identity.
 
-## Requests, campaign tasks, and campaigns
+## Requests, Campaign Tasks, and Campaigns
 
 **Production request** — the structured record of a community request, typically submitted by physics working groups
 and detector subsystem collaborations. A request is deliberately more abstract than an output — it states the physics,
@@ -76,11 +76,12 @@ through its request to the originating submission.
 submits, and accounts for. Its lifecycle:
 
 ```
-draft  →  ready  →  submitted  →  completed | failed
+draft  →  ready  →  submitted  →  completed | partial (recoverable) | failed
 ```
 
 `draft` covers every incomplete state; a task moves to `ready` under readiness checks and operator confirmation,
-`submitted` on submission, and PanDA drives the terminal transitions.
+`submitted` on submission, and PanDA drives the outcome: completed, partial — recoverable by completing the tail —
+or failed.
 
 **PanDA task association** — the record of one physical PanDA submission of a campaign task, preserving the complete
 submission history on the task record. Retry is native to PanDA: failed or missing jobs are retried within the existing PanDA
@@ -111,7 +112,7 @@ The lifecycles above in one view:
 to **queues** at computing sites, executed by workers that Harvester provisions. The PanDA vocabulary is documented in
 full in the [PanDA basic concepts](https://panda-wms.readthedocs.io/en/latest/terminology/terminology.html).
 
-## Platform operational entities
+## Platform Operational Entities
 
 **Agent** — a message-driven service process built on the shared agent base, registered and heartbeating in the
 monitor. Agents implement testbed workflow roles and the credentialed production operations executor.

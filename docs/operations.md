@@ -1,6 +1,9 @@
 # Operations
 
-Describes how the WFMS is operated, as an integrated system and as an amalgamation of different use cases with distinct operational requirements. The common requirement being maximal automation to achieve high quality ops with minimal human effort levels. Deployment, monitoring, incident response, AI/agentic roles, release practices, service ownership, and use case specific operational procedures.
+This section describes how the WFMS is operated — one integrated system whose workflow domains carry distinct
+operational requirements, under the common operating principle of maximal automation for high quality operations at
+minimal human effort. It covers deployment, monitoring, incident response, automation and agents, service ownership,
+and per-domain operational procedures.
 
 ## Operations Model: Maximal Automation
 
@@ -18,7 +21,7 @@ assessments, so an operator reads what changed and what needs action rather than
 no-silent-failures precept described in Platform is an operations precept first: an error that surfaces immediately
 with its diagnostics costs minutes, and an error that hides costs the effort the automation exists to save.
 
-## Continuous Deployment And Releases
+## Continuous Deployment and Releases
 
 Fast development turnaround without loss of operational control is a stated requirement of the system. Development runs
 on coordinated branches across the core repositories, and deployment is scripted and pulls from git, so the repository
@@ -28,7 +31,7 @@ The credentialed operations agent is deliberately decoupled from routine deploys
 fresh from the deploy tree, so a script fix is live on the next dispatch, while the agent process itself is restarted
 only by deliberate operator action. This documentation follows the same continuous practice, rebuilding on every push.
 
-## Monitoring And Incident Response
+## Monitoring and Incident Response
 
 The monitoring posture is cached health, visible everywhere. The operations agent maintains a system status record of
 the services production depends on; pages read the cached state rather than probing services on request, and the
@@ -48,7 +51,7 @@ Incidents are as often data-side as processing-side. Transfer failures, storage 
 dataset integrity carry the same discipline: surfaced, diagnosed through the data management views, and resolved with
 recorded actions.
 
-## Automation And Agents
+## Automation and Agents
 
 Always-on services follow one operational pattern: systemd-managed with automatic restart, burst-capped so a
 persistently failing service lands in a visible failed state instead of flapping indefinitely, and with a deliberate

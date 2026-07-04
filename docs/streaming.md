@@ -1,10 +1,13 @@
 # Streaming Workflows
 
-Documents post-DAQ workflows during datataking: E0 to E1 dataflow, STF/TF processing, fast processing for low-latency control room/AI analytics and validation, prompt processing of STF files, streaming reconstruction integration, fast monitoring, E2 integration in streaming workflows, and current/near term realizations in the streaming workflow testbed.
+This section documents the post-DAQ workflows of datataking: the E0-E1 dataflow, time frame and super time frame
+processing, fast processing for low-latency control room and AI analytics, prompt processing of STFs, streaming
+reconstruction integration, fast monitoring, E2 participation in streaming workflows, and the current realization of
+these workflows in the streaming workflow testbed.
 
 [![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
 
-## E0-E1 Interface - Controls and Dataflows
+## E0-E1 Interface — Controls and Dataflows
 
 The E0-E1 interface is where WFMS responsibility begins. The DAQ system is one system spanning two facilities: the DAQ
 room at IP6 and the DAQ enclave in the BNL data center, connected at 4 Tbps. Super time frame (STF) files are built in
@@ -23,7 +26,7 @@ Control signals cross the interface alongside the data. The run lifecycle — ru
 run end — is broadcast from the DAQ side and drives downstream orchestration: dataset creation, processing task
 establishment, worker provisioning, and run closeout all key off these transitions.
 
-## Timeframes And Super Timeframes
+## Time Frames and Super Time Frames
 
 The time frame (TF) is the atomic unit of ePIC streaming data: a contiguous, self-contained slice of the detector data
 stream. Super time frames aggregate consecutive time frames into file-sized units that serve as the unit of
@@ -38,11 +41,14 @@ processing workers.
 
 ## Prompt STF Processing
 
-Prompt processing is the full-sample processing path: every STF in the run is processed at the E1 facilities as it
-arrives, delivering complete first-pass results over minutes to hours. At run start a Rucio dataset is created for the
+Prompt processing is the full-sample processing path: STFs are processed at the E1 facilities as they arrive,
+delivering complete first-pass results over minutes to hours. At run start a Rucio dataset is created for the
 run; arriving STFs are registered into it and transferred to the E1 buffers. A processing task is established for the
 run in PanDA, and jobs process the STFs as the dataset fills. Results serve detector and physics evaluation well beyond
-what the fast path's sampled data supports.
+what the fast path's sampled data supports. In early datataking the full STF sample is likely to be promptly
+processed, while the detector and software are being debugged and understood; as luminosity and understanding grow,
+the promptly processed fraction is expected to decline, a datataking-era policy choice the decision box below is
+designed to carry.
 
 The prompt processing resource pool is E1 in the baseline and can extend to E2 facilities as capability and policy
 allow; PanDA brokering over queues and Rucio-managed data placement make wider distribution a configuration choice
@@ -56,7 +62,7 @@ which site processes which data.
 
 ## Fast Processing Pipeline
 
-Fast processing exists for latency: first results from the data stream in O(10 sec) to inform control room operations
+Fast processing exists for latency: first results from the data stream in O(10 s) to inform control room operations
 and AI tools of current detector and machine performance. TF samples are skimmed from arriving STFs, divided into TF
 slices, and distributed to a standing pool of workers running the reconstruction payload — EICrecon for ePIC
 production, now being integrated into the testbed workers. Slice results flow to low-latency analytics and monitoring
@@ -86,7 +92,7 @@ windowing directed by messages, remote input over XRootD, and clean process term
 EICrecon, and message-driven EICrecon is available in the ePIC container stack. The integration is exercised against
 real campaign simulation outputs.
 
-## Monitoring And Validation
+## Monitoring and Validation
 
 Fast monitoring consumes sampled TF data at the E1s for near-real-time detector and data quality: fast monitoring
 agents read remotely against the exit buffer or receive delivered samples, and their outputs are available within
@@ -97,7 +103,7 @@ streams.
 The workflows themselves are monitored through the platform's operational state: runs, files, workflow executions,
 messages, agent status, and slice bookkeeping are recorded in the monitor database and presented in live browser views.
 Streaming-side validation operates at the fast end of the validation latency range, evaluating detector performance and
-data quality from the first samples; the broader validation program, through full calibration cycles, is described in
+data quality from the first samples; broader validation, through full calibration cycles, is described in
 the Validation section.
 
 ## Streaming Workflow Testbed
@@ -132,14 +138,14 @@ identity:
 
 [![Testbed multi-user isolation](diagrams/testbed_multi_user.svg)](diagrams/testbed_multi_user.svg)
 
-The fast processing pipeline and its worker management are diagrammed below: the agent pipeline from simulated DAQ to
-PanDA workers, and the iDDS/PanDA/Harvester detail behind the standing worker pool.
+The fast processing pipeline is diagrammed below — the agent pipeline from simulated DAQ to PanDA workers; the
+integration of the real EICrecon payload into these workers is described in
+[Streaming Reconstruction Integration](#streaming-reconstruction-integration) above.
 
 [![Fast processing pipeline](diagrams/fast-processing-pipeline-v10.svg)](diagrams/fast-processing-pipeline-v10.svg)
 
-[![iDDS PanDA detail](diagrams/idds-panda-detail-v1.svg)](diagrams/idds-panda-detail-v1.svg)
+The iDDS/PanDA/Harvester detail behind the standing worker pool:
 
-The integration of the real EICrecon payload into these workers is described in
-[Streaming Reconstruction Integration](#streaming-reconstruction-integration) above.
+[![iDDS PanDA detail](diagrams/idds-panda-detail-v1.svg)](diagrams/idds-panda-detail-v1.svg)
 
 [^streaming-computing-model]: The ePIC Streaming Computing Model. <https://zenodo.org/records/14675920>

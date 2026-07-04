@@ -1,8 +1,9 @@
 # References
 
-Collects reference documents, glossary terms, external links, API references, MCP references, and requirements material. The system diagrams are collected in the [Diagram Gallery](gallery.md).
+This section collects the reference material of the documentation: reference documents and requirements material,
+API and MCP references, and the glossary. The system diagrams are collected in the [Diagram Gallery](gallery.md).
 
-## Reference documents and artifacts
+## Reference Documents and Artifacts
 
 - **This documentation — source repository**: <https://github.com/eic/epic-wfms-docs>
 - **ePIC Distributed Workflow Management System requirements**: <https://www.overleaf.com/project/67bdf89a3d44a138da503dea>
@@ -23,7 +24,7 @@ Collects reference documents, glossary terms, external links, API references, MC
 - **Production request questionnaire design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_QUESTIONNAIRE.md>
 - **argus-ai assessment application design**: <https://github.com/BNLNPPS/corun-ai/blob/master/docs/argus-ai.md>
 
-## API and MCP references
+## API and MCP References
 
 The programmatic interfaces are documented with the implementation:
 
@@ -37,10 +38,16 @@ The programmatic interfaces are documented with the implementation:
 
 - **DDM**: Distributed data management
 - **Echelon**: The ePIC computing model's resource hierarchy: E0, E1, E2, and E3
+- **EVGEN**: Event-generation data, the generator outputs consumed as production inputs
 - **Harvester**: PanDA service that manages worker submission and execution at computing sites
+- **iDDS**: intelligent Data Delivery Service, the workflow orchestration component of the PanDA ecosystem
+- **JEDI**: The PanDA task definition and execution layer
+- **MCP**: Model Context Protocol, the structured tool interface serving AI clients
 - **PanDA**: Production and Distributed Analysis system used for distributed workload management
 - **PCS**: Physics Configuration System, the epicprod subsystem for production configuration and campaign records
+- **RECO**: Reconstruction output data products
 - **Rucio**: Distributed data management system used for dataset, replica, and data-placement management
-- **STF**: Super timeframe, an aggregate unit of streaming detector data used in post-DAQ processing
-- **TF**: Timeframe, a time-slice unit of streaming detector data
+- **SSE**: Server-Sent Events, the push channel delivering asynchronous notifications to browser pages
+- **STF**: Super time frame, an aggregate unit of streaming detector data used in post-DAQ processing
+- **TF**: Time frame, a time-slice unit of streaming detector data
 - **WFMS**: Workflow Management System

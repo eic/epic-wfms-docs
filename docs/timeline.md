@@ -1,8 +1,9 @@
 # Timeline
 
-Describes the development and utilization of the system to meet Collaboration needs as they evolve over the next decade, culminating in physics datataking in the mid 2030s.
-
-Current production and streaming testbed use, calibration, CI, test beams, streaming challenges, scaling exercises, commissioning, early data-taking, and mature operations.
+This section describes the development and use of the system as Collaboration needs evolve over the coming decade,
+culminating in physics datataking in the mid-2030s: from today's production campaigns and testbed exercises through
+calibration and CI, test beams, streaming and scaling challenges, commissioning, and early datataking to steady-state
+operations.
 
 [![The WFMS timeline](diagrams/wfms_timeline.svg)](diagrams/wfms_timeline.svg)
 
@@ -10,7 +11,7 @@ The out-years align with the joint planning of DAQ, computing, and AI:
 
 [![Streaming computing planning FY25-FY31](diagrams/streaming_planning_fy.svg)](diagrams/streaming_planning_fy.svg)
 
-## Three year activity timeline
+## Three Year Activity Timeline
 
 The near term is anchored in operating systems. Monthly production campaigns run on epicprod today, and each campaign
 exercises the newest automation — the campaign cadence is the delivery and validation rhythm for the production side.
@@ -28,7 +29,7 @@ institutional compute and storage toward defined facility roles.
 Through this period the testbed's purpose is to inform: ePIC decision points on the streaming WFMS trajectory are
 taken on the evidence of these exercises.
 
-## The longer high-level timeline
+## The Longer High-Level Timeline
 
 The long-range milestones follow the phases set out in the ePIC streaming computing model report[^streaming-computing-model],
 which groups them by the CD process, the detector construction phase, and commissioning and operations, with priority
@@ -45,8 +46,8 @@ maturing the shared platform the challenges draw on.
 Detector commissioning brings distinct requirements: semi-triggered datataking modes, initial calibrations, the
 introduction of zero suppression, and the gradual extension of near-real-time processing from Echelon 1 to Echelon 2 —
 planned from the experience of the preceding challenges. Early datataking then adopts simpler, more conservative
-approaches while the streaming computing model is progressively deployed and validated against real beam data. Mature
-operations is the end state the system is designed for: the full streaming model in production, around-the-clock
+approaches while the streaming computing model is progressively deployed and validated against real beam data.
+Steady-state operations is the end state the system is designed for: the full streaming model in production, around-the-clock
 datataking operation, and the maximal-automation operations model carrying it with the small expert team ePIC will
 have.
 

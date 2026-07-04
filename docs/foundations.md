@@ -65,7 +65,7 @@ JLab, and other facilities.
 ## Streaming Computing Model Alignment
 
 The ePIC streaming computing model drives the WFMS architecture from the start. ePIC data processing begins with a
-continuous post-DAQ data stream during datataking, delivering first results from E1 processing in O(10sec) to inform
+continuous post-DAQ data stream during datataking, delivering first results from E1 processing in O(10 s) to inform
 control room operations and AI tools of current detector and machine performance, and delivering more complete and digested
 prompt processing from bulk E1 (and possibly E2) resources over minutes and hours. The system must be capable of
 delivering evaluation, validation and calibration results at the latencies ePIC demands, from seconds for detector
@@ -84,7 +84,7 @@ These are the early implementation of WFMS behavior needed for datataking, to in
 streaming WFMS over the next several years.
 
 The epicprod production system exercises the same platform from a different direction. It uses PanDA, monitoring, task
-cataloging, AI based assessments and diagnostics, human-in-the-loop control and curation,
+cataloging, AI-based assessments and diagnostics, human-in-the-loop control and curation,
 and data product cataloging to run the simulation/reconstruction campaign operations that ePIC needs today,
 automated to the greatest extent possible to minimize the demand on the scarce operations effort ePIC has available.
 The production experience feeds the same WFMS design: operational clarity, automation, provenance, site awareness, and

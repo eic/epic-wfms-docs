@@ -88,6 +88,8 @@ ePIC purposes supplant
 the default ATLAS PanDA monitor with production task links, campaign context, payload-log access, Rucio output views, and
 LLM assessments.
 
+[![PanDA in ePIC](diagrams/panda_in_epic.svg)](diagrams/panda_in_epic.svg)
+
 ### JEDI
 
 JEDI is the PanDA task definition and execution layer, used for direct production task submission from PCS. PCS builds

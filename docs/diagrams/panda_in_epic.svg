@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 710" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="peGray" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="peNavy" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="peGreen2" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="peBlue" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="710" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="700" y="36" text-anchor="middle" font-size="25" font-weight="bold" fill="#1a1a1a">PanDA in ePIC</text>
+  <text x="700" y="62" text-anchor="middle" font-size="16" font-style="italic" fill="#555555">The deployed workload management infrastructure</text>
+
+  <!-- Drivers -->
+  <rect x="60" y="92" width="360" height="78" rx="8" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="240" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">epicprod — production campaigns</text>
+  <text x="240" y="148" text-anchor="middle" font-size="13.5" fill="#333333">Campaign tasks via the prod-ops agent</text>
+
+  <rect x="980" y="92" width="360" height="78" rx="8" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="1160" y="118" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Streaming workflow testbed</text>
+  <text x="1160" y="140" text-anchor="middle" font-size="13.5" fill="#333333">Testbed tasks via prompt and fast processing agents</text>
+  <text x="1160" y="160" text-anchor="middle" font-size="12.5" font-style="italic" fill="#555555">Message-driven — fast, (pseudo) real time</text>
+
+  <!-- Verb arrows from drivers -->
+  <line x1="300" y1="170" x2="616" y2="206" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#peNavy)"/>
+  <text x="330" y="216" font-size="13" fill="#1a1a1a">Submit campaign tasks (client API)</text>
+
+  <line x1="980" y1="131" x2="866" y2="240" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#peGreen2)"/>
+  <text x="936" y="156" text-anchor="end" font-size="13" fill="#1a1a1a">Submit prompt processing tasks</text>
+
+  <line x1="1180" y1="170" x2="1084" y2="208" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#peGreen2)"/>
+  <text x="1148" y="203" font-size="13" fill="#1a1a1a">Run imminent — worker counts</text>
+
+  <!-- PanDA hub -->
+  <rect x="560" y="210" width="300" height="104" rx="10" fill="#eaeffa" stroke="#4472c4" stroke-width="3"/>
+  <text x="710" y="242" text-anchor="middle" font-size="17" font-weight="bold" fill="#17365d">PanDA + JEDI server</text>
+  <text x="710" y="268" text-anchor="middle" font-size="13.5" fill="#333333">Tasks refined into jobs</text>
+  <text x="710" y="290" text-anchor="middle" font-size="13.5" fill="#333333">Brokerage · job state · retry · dispatch</text>
+
+  <rect x="560" y="322" width="300" height="48" rx="7" fill="#f8fafd" stroke="#4472c4" stroke-width="1.3"/>
+  <text x="710" y="342" text-anchor="middle" font-size="12.5" fill="#17365d">Identity — PanDA IAM, EIC VO</text>
+  <text x="710" y="360" text-anchor="middle" font-size="12.5" fill="#17365d">EIC/production authorizes official production</text>
+
+  <!-- iDDS -->
+  <rect x="950" y="216" width="200" height="76" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="1050" y="242" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#17365d">iDDS</text>
+  <text x="1050" y="264" text-anchor="middle" font-size="13" fill="#333333">Workflow orchestration</text>
+  <text x="1050" y="282" text-anchor="middle" font-size="13" fill="#333333">for fast processing</text>
+
+  <line x1="946" y1="266" x2="864" y2="274" stroke="#1a1a1a" stroke-width="2" marker-end="url(#peGreen2)"/>
+  <text x="1050" y="312" text-anchor="middle" font-size="13" fill="#1a1a1a">Creates workflows and tasks</text>
+
+  <!-- Monitor -->
+  <rect x="1160" y="372" width="200" height="92" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="1260" y="398" text-anchor="middle" font-size="15" font-weight="bold" fill="#17365d">ePIC monitor</text>
+  <text x="1260" y="420" text-anchor="middle" font-size="12.5" fill="#333333">Task · job · queue · system</text>
+  <text x="1260" y="438" text-anchor="middle" font-size="12.5" fill="#333333">views for ePIC purposes</text>
+  <text x="1260" y="456" text-anchor="middle" font-size="12.5" fill="#333333">Payload logs · MCP tools</text>
+
+  <line x1="862" y1="304" x2="1156" y2="400" stroke="#1a1a1a" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#peGray)"/>
+  <text x="946" y="394" font-size="12.5" fill="#1a1a1a">State for views and MCP</text>
+
+  <!-- Harvester -->
+  <line x1="700" y1="370" x2="700" y2="416" stroke="#1a1a1a" stroke-width="2.2" marker-end="url(#peGray)"/>
+  <text x="686" y="400" text-anchor="end" font-size="13" fill="#1a1a1a">Workers needed per queue</text>
+
+  <rect x="560" y="420" width="300" height="80" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="710" y="448" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#17365d">Harvester</text>
+  <text x="710" y="474" text-anchor="middle" font-size="13.5" fill="#333333">Provisions workers per resource</text>
+
+  <!-- Harvester fan-out -->
+  <line x1="620" y1="500" x2="216" y2="552" stroke="#1a1a1a" stroke-width="2" marker-end="url(#peGray)"/>
+  <line x1="675" y1="500" x2="546" y2="552" stroke="#1a1a1a" stroke-width="2" marker-end="url(#peGray)"/>
+  <line x1="740" y1="500" x2="884" y2="552" stroke="#1a1a1a" stroke-width="2" marker-end="url(#peGray)"/>
+  <line x1="795" y1="500" x2="1218" y2="552" stroke="#1a1a1a" stroke-width="2" marker-end="url(#peGray)"/>
+  <text x="700" y="520" text-anchor="middle" font-size="13" fill="#1a1a1a">Submits pilots</text>
+  <text x="700" y="538" text-anchor="middle" font-size="13" fill="#1a1a1a">which then pull jobs</text>
+
+  <!-- Site enclosures -->
+  <rect x="60" y="556" width="300" height="130" rx="10" fill="none" stroke="#7f7f7f" stroke-width="1.8" stroke-dasharray="7,5"/>
+  <text x="210" y="584" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#1a1a1a">BNL and JLab — host labs</text>
+  <text x="210" y="606" text-anchor="middle" font-size="13" fill="#333333">Production and testbed E1 queues</text>
+  <rect x="140" y="624" width="140" height="36" rx="6" fill="#ffffff" stroke="#bf8f00" stroke-width="1.8"/>
+  <text x="210" y="647" text-anchor="middle" font-size="13" fill="#1a1a1a">Pilots + jobs</text>
+
+  <rect x="400" y="556" width="300" height="130" rx="10" fill="none" stroke="#7f7f7f" stroke-width="1.8" stroke-dasharray="7,5"/>
+  <text x="550" y="584" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#1a1a1a">OSG-routed sites</text>
+  <text x="550" y="606" text-anchor="middle" font-size="13" fill="#333333">Opportunistic and lab resources</text>
+  <rect x="480" y="624" width="140" height="36" rx="6" fill="#ffffff" stroke="#bf8f00" stroke-width="1.8"/>
+  <text x="550" y="647" text-anchor="middle" font-size="13" fill="#1a1a1a">Pilots + jobs</text>
+
+  <rect x="740" y="556" width="300" height="130" rx="10" fill="none" stroke="#7f7f7f" stroke-width="1.8" stroke-dasharray="7,5"/>
+  <text x="890" y="584" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#1a1a1a">NERSC Perlmutter — HPC</text>
+  <text x="890" y="606" text-anchor="middle" font-size="13" fill="#333333">Including GPU queues</text>
+  <rect x="820" y="624" width="140" height="36" rx="6" fill="#ffffff" stroke="#bf8f00" stroke-width="1.8"/>
+  <text x="890" y="647" text-anchor="middle" font-size="13" fill="#1a1a1a">Pilots + jobs</text>
+
+  <rect x="1080" y="556" width="300" height="130" rx="10" fill="none" stroke="#7f7f7f" stroke-width="1.8" stroke-dasharray="7,5"/>
+  <text x="1230" y="584" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#1a1a1a">Manitoba GREX — E2</text>
+  <text x="1230" y="606" text-anchor="middle" font-size="13" fill="#333333">More institutions in progress</text>
+  <rect x="1160" y="624" width="140" height="36" rx="6" fill="#ffffff" stroke="#bf8f00" stroke-width="1.8"/>
+  <text x="1230" y="647" text-anchor="middle" font-size="13" fill="#1a1a1a">Pilots + jobs</text>
+
+</svg>

@@ -19,6 +19,12 @@ In [Architecture](architecture.md) — the platform anchor: workflow domains ser
 
 [![The ePIC Workflow Management System](diagrams/wfms_platform.svg)](diagrams/wfms_platform.svg)
 
+### PanDA in ePIC
+
+In [WFMS Platform](platform.md) — the deployed workload management infrastructure: the two fronts driving PanDA at BNL, identity, the ePIC monitor, and the growing resource landscape.
+
+[![PanDA in ePIC](diagrams/panda_in_epic.svg)](diagrams/panda_in_epic.svg)
+
 ### ePIC AI Infrastructure Stack
 
 In [WFMS Platform](platform.md) — ePIC services, the MCP instrumentation over them, and the AI services built on top.
@@ -42,6 +48,12 @@ In [WFMS Platform](platform.md) — human-gated LLM assistance and credentialed 
 In [Streaming Workflows](streaming.md) — the E0-E1 interface: DAQ exit buffer, STF and TF streams to the E1 facilities, and the streaming workflow testbed scope.
 
 [![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
+
+### Prompt Processing Workflow
+
+In [Streaming Workflows](streaming.md) — full-sample processing of every STF as it arrives, from run signals through the filling run dataset to PanDA jobs at the E1s, with the conceptual decision box.
+
+[![Prompt processing workflow](diagrams/prompt_processing_workflow.svg)](diagrams/prompt_processing_workflow.svg)
 
 ### Fast Processing Pipeline
 
@@ -90,3 +102,9 @@ In [Production System](production.md) — job orchestration and the payload-hand
 In [Production System](production.md) — the detailed LLM operations architecture: SSE relay, LLM executors, credentialed agent, and artifact store.
 
 [![Detailed epicprod LLM operations architecture](diagrams/epicprod_llm_ops_architecture.svg)](diagrams/epicprod_llm_ops_architecture.svg)
+
+### The Validation Loop
+
+In [Validation](validation.md) — availability, Hydra validation, AI assessment, record, and expert signoff between the WFMS and the ePIC validation program; proposal-stage interfaces dashed.
+
+[![The validation loop](diagrams/validation_loop.svg)](diagrams/validation_loop.svg)

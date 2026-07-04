@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 810" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ppGray" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+    <marker id="ppGreen" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#538135"/>
+    </marker>
+    <marker id="ppNavy" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#17365d"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="810" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="500" y="34" text-anchor="middle" font-size="24" font-weight="bold" fill="#1a1a1a">Prompt Processing Workflow</text>
+  <text x="500" y="58" text-anchor="middle" font-size="15" font-style="italic" fill="#555555">Full-sample processing of every STF as it arrives</text>
+
+  <!-- DAQ -->
+  <rect x="280" y="82" width="300" height="64" rx="8" fill="#9fb4de" stroke="#17365d" stroke-width="2.5"/>
+  <text x="430" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#10243f">DAQ — simulated in the testbed</text>
+  <text x="430" y="130" text-anchor="middle" font-size="13.5" fill="#10243f">Broadcasts the run lifecycle</text>
+
+  <line x1="430" y1="146" x2="430" y2="186" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
+  <text x="444" y="170" font-size="13" fill="#555555">Run imminent · start · end</text>
+
+  <!-- Data agent -->
+  <rect x="280" y="190" width="300" height="80" rx="8" fill="#d6e8cc" stroke="#538135" stroke-width="2.5"/>
+  <text x="430" y="216" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a3311">Data Agent</text>
+  <text x="430" y="238" text-anchor="middle" font-size="13.5" fill="#333333">Creates the run dataset at run start</text>
+  <text x="430" y="258" text-anchor="middle" font-size="13.5" fill="#333333">Registers arriving STFs into it</text>
+
+  <!-- Run dataset (left) -->
+  <line x1="280" y1="250" x2="200" y2="318" stroke="#538135" stroke-width="2.2" marker-end="url(#ppGreen)"/>
+  <text x="230" y="292" text-anchor="end" font-size="13" fill="#538135">Create · attach</text>
+
+  <rect x="24" y="322" width="240" height="84" rx="8" fill="#f1f8e9" stroke="#538135" stroke-width="2.5"/>
+  <text x="144" y="348" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#1a3311">Run dataset — Rucio</text>
+  <text x="144" y="370" text-anchor="middle" font-size="13" fill="#333333">Open dataset, filling as STFs arrive</text>
+  <text x="144" y="390" text-anchor="middle" font-size="13" fill="#333333">Replicated to both E1 buffers</text>
+
+  <!-- Data agent to processing agent -->
+  <line x1="430" y1="270" x2="430" y2="318" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
+  <text x="444" y="298" font-size="13" fill="#555555">Run start · STF availability</text>
+
+  <!-- Processing agent -->
+  <rect x="280" y="322" width="300" height="80" rx="8" fill="#d6e8cc" stroke="#538135" stroke-width="2.5"/>
+  <text x="430" y="348" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a3311">Processing Agent</text>
+  <text x="430" y="370" text-anchor="middle" font-size="13.5" fill="#333333">Establishes the prompt processing task</text>
+  <text x="430" y="390" text-anchor="middle" font-size="13.5" fill="#333333">One PanDA task over the run dataset</text>
+
+  <line x1="430" y1="402" x2="430" y2="450" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
+  <text x="444" y="430" font-size="13" fill="#555555">Submit task</text>
+
+  <!-- PanDA -->
+  <rect x="280" y="454" width="300" height="80" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2.5"/>
+  <text x="430" y="480" text-anchor="middle" font-size="16" font-weight="bold" fill="#17365d">PanDA / JEDI</text>
+  <text x="430" y="502" text-anchor="middle" font-size="13.5" fill="#333333">Generates jobs as the dataset fills</text>
+  <text x="430" y="522" text-anchor="middle" font-size="13.5" fill="#333333">Brokered to E1 queues</text>
+
+  <!-- Rucio dataset feeds PanDA -->
+  <line x1="190" y1="406" x2="286" y2="478" stroke="#538135" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#ppGreen)"/>
+  <text x="196" y="452" text-anchor="end" font-size="13" fill="#538135">Arriving files trigger new jobs</text>
+
+  <line x1="430" y1="534" x2="430" y2="582" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
+
+  <!-- E1 jobs -->
+  <rect x="280" y="586" width="300" height="80" rx="8" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
+  <text x="430" y="612" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a1a1a">Processing jobs at the E1s</text>
+  <text x="430" y="634" text-anchor="middle" font-size="13.5" fill="#333333">EICrecon payload in the ePIC container</text>
+  <text x="430" y="654" text-anchor="middle" font-size="13.5" fill="#333333">Outputs and status to the monitor</text>
+
+  <line x1="430" y1="666" x2="430" y2="714" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
+
+  <!-- Run end band -->
+  <rect x="180" y="718" width="500" height="52" rx="8" fill="#f5f5f5" stroke="#7f7f7f" stroke-width="2"/>
+  <text x="430" y="750" text-anchor="middle" font-size="14.5" fill="#333333">Run end — the dataset closes, the task drains and completes</text>
+
+  <!-- Decision box (concept) -->
+  <rect x="680" y="290" width="290" height="170" rx="10" fill="#f6f8fc" stroke="#17365d" stroke-width="2.5" stroke-dasharray="8,5"/>
+  <text x="825" y="318" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#17365d">Decision box</text>
+  <text x="825" y="342" text-anchor="middle" font-size="13" fill="#333333">Notified of run signals and arriving data</text>
+  <text x="825" y="362" text-anchor="middle" font-size="13" fill="#333333">Able to examine the data itself —</text>
+  <text x="825" y="382" text-anchor="middle" font-size="13" fill="#333333">decisions can be based on data content</text>
+  <text x="825" y="402" text-anchor="middle" font-size="13" fill="#333333">Applies ePIC policy — sites, data, load</text>
+  <text x="825" y="422" text-anchor="middle" font-size="13" fill="#333333">Directs which site processes which data</text>
+  <text x="825" y="442" text-anchor="middle" font-size="13" fill="#333333">e.g. per-site subsets of the run dataset</text>
+
+  <line x1="580" y1="240" x2="770" y2="286" stroke="#17365d" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ppNavy)"/>
+  <text x="700" y="256" font-size="12.5" fill="#17365d">Run and data notifications</text>
+
+  <line x1="680" y1="392" x2="586" y2="368" stroke="#17365d" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ppNavy)"/>
+  <text x="672" y="422" text-anchor="end" font-size="12.5" fill="#17365d">Directs E1 processing</text>
+
+  <!-- Monitor -->
+  <rect x="700" y="586" width="250" height="64" rx="8" fill="#eeeeee" stroke="#7f7f7f" stroke-width="2"/>
+  <text x="825" y="612" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a1a1a">Monitor</text>
+  <text x="825" y="634" text-anchor="middle" font-size="13" fill="#333333">Runs · files · task and STF state</text>
+
+  <line x1="580" y1="626" x2="696" y2="620" stroke="#7f7f7f" stroke-width="1.8" stroke-dasharray="4,4" marker-end="url(#ppGray)"/>
+</svg>

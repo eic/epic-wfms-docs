@@ -24,6 +24,8 @@ availability signal from epicprod to Hydra, and an assessment handoff from Hydra
 resulting loop runs from PanDA task completion, through an epicprod availability signal, to Hydra validation plots, to
 an AI assessment delivered as a natural-language judgment — recorded against the task or dataset it evaluates.
 
+[![The validation loop](diagrams/validation_loop.svg)](diagrams/validation_loop.svg)
+
 Availability is offered two ways, built on existing platform capabilities. A campaign-catalog JSON gives a
 comprehensive view of the current campaign — for each task or dataset its configuration tags, campaign, request,
 status, and produced Rucio references with file counts and completeness — which a consumer polls and diffs to find what

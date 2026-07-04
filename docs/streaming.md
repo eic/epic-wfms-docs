@@ -48,6 +48,12 @@ The prompt processing resource pool is E1 in the baseline and can extend to E2 f
 allow; PanDA brokering over queues and Rucio-managed data placement make wider distribution a configuration choice
 rather than a workflow redesign.
 
+The workflow is diagrammed below, including the prompt processing decision box — the conceptual control point,
+notified of run signals and arriving data and able to examine the data itself, that applies ePIC policy to direct
+which site processes which data.
+
+[![Prompt processing workflow](diagrams/prompt_processing_workflow.svg)](diagrams/prompt_processing_workflow.svg)
+
 ## Fast Processing Pipeline
 
 Fast processing exists for latency: first results from the data stream in O(10 sec) to inform control room operations

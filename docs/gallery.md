@@ -13,6 +13,12 @@ In [Foundations](foundations.md) — the Echelon model: E0 detector and DAQ, the
 
 [![The ePIC computing model](diagrams/epic_computing_model.svg)](diagrams/epic_computing_model.svg)
 
+### The Streaming Latency Spectrum
+
+In [Foundations](foundations.md) — result latencies across the streaming computing model, from real-time DAQ validation through fast results, prompt processing, validation, and calibration.
+
+[![The streaming latency spectrum](diagrams/latency_spectrum.svg)](diagrams/latency_spectrum.svg)
+
 ### Lifecycles
 
 In [Concepts](concepts.md) — the state machines of the campaign task (with PanDA tail retry and operator rerun controls), the campaign staging, and the tag lock.

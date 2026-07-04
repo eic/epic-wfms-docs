@@ -74,6 +74,8 @@ The WFMS therefore has to support
 data-driven operation, near-real-time monitoring, prompt processing, calibration feedback, and distributed execution
 as baseline system capabilities.
 
+[![The streaming latency spectrum](diagrams/latency_spectrum.svg)](diagrams/latency_spectrum.svg)
+
 The streaming workflow testbed exercises this model directly. It prototypes the E0 to E1 interface,
 time frame based processing, fast monitoring, Rucio data handling, PanDA task execution,
 a fast agentic message-based infrastructure, monitor-backed

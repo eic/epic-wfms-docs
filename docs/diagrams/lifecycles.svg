@@ -50,7 +50,8 @@
   <clipPath id="partialClip"><rect x="950" y="142" width="196" height="46" rx="8"/></clipPath>
   <g clip-path="url(#partialClip)">
     <rect x="950" y="142" width="196" height="46" fill="#f1f8e9"/>
-    <rect x="1126" y="142" width="20" height="46" fill="#f1948a"/>
+    <rect x="1126" y="142" width="20" height="46" fill="#fbe9e7"/>
+    <line x1="1126" y1="142" x2="1126" y2="188" stroke="#c0392b" stroke-width="1.8"/>
   </g>
   <rect x="950" y="142" width="196" height="46" rx="8" fill="none" stroke="#538135" stroke-width="2.5"/>
   <text x="1042" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a3311">Partial / recoverable</text>

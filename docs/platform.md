@@ -218,7 +218,7 @@ status reporting, and message-level error handling; across the platform, handler
 errors into logs, user-visible messages, or operational summaries.
 
 Production actions are recorded as a structured action stream within the same logging system: every submission, task
-operation, sweep, import, and configuration change logs who did what to what, the outcome, and the measured duration.
+operation, sweep, import, and configuration change logs the action, its subject, the outcome, and the measured duration.
 Each event declares its verbosity class in code, and a runtime policy — held with the rest of the operator-set
 configuration in a database-resident system configuration document, editable in the browser — selects what surfaces
 on live channels, beginning with a live view of the log pages. The stream is the data source for alarms, digests, and

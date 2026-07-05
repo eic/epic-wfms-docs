@@ -217,6 +217,14 @@ logging for diagnostics. BaseAgent carries this into the agent layer with REST l
 status reporting, and message-level error handling; across the platform, handlers, parsers, and service calls report
 errors into logs, user-visible messages, or operational summaries.
 
+Production actions are recorded as a structured action stream within the same logging system: every submission, task
+operation, sweep, import, and configuration change logs who did what to what, the outcome, and the measured duration.
+Each event declares its verbosity class in code, and a runtime policy — held with the rest of the operator-set
+configuration in a database-resident system configuration document, editable in the browser — selects what surfaces
+on live channels, beginning with a live view of the log pages. The stream is the data source for alarms, digests, and
+the LLM reporting and assessment services, which reason over it to answer what happened
+([action stream design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_ACTION_STREAM.md)).
+
 ActiveMQ Artemis is the message broker. Topics carry broadcast events; queues deliver anycast work. Testbed workflow
 messages use broadcast topics for events such as run state and STF availability; production operations use an anycast
 control queue for single-consumer credentialed work. Destination names carry the explicit `/topic/` or `/queue/`

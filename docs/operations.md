@@ -62,8 +62,11 @@ stop distinguished from a crash so supervision does not fight an operator's inte
 
 Autonomous supervision closes the loop. A scheduled supervisor keeps the credentialed agent a true singleton — a second
 consumer on an anycast work queue would steal its requests — verifies liveness with a message round trip, restarts what
-should be running, leaves alone what was deliberately stopped, and prunes reclaimable caches. Scheduled automation also
-carries the routine sweeps: system status refresh, data lineage snapshots, request ingest, and daily reports. The
+should be running, leaves alone what was deliberately stopped, and prunes reclaimable caches. Scheduled automation
+carries the routine sweeps as a nightly catalog synchronization run by the operations agent: request-form ingest,
+catalog imports, association and assimilation of production submitted outside the catalog workflow, Rucio output and
+input snapshots, and cache refreshes — each step recording its outcome and execution time in the production action
+stream, whose freshness the alarm system watches. The
 intended steady state is a system that tends itself, where routine failure modes self-heal and what cannot self-heal
 surfaces as an alarm.
 

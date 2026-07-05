@@ -55,6 +55,12 @@ are submitted, and the catalog presents live status from PanDA and Rucio with di
 monitoring. Past campaigns are a frozen archive with all task parameters preserved. Pre-PCS production has been
 assimilated into past campaigns, making the catalog the complete ePIC production record.
 
+The catalog stays complete by construction: a nightly sweep reads recent ePIC tasks from the PanDA task database,
+associates them with their catalog entries, and assimilates any production submitted outside the catalog workflow —
+creating the campaign, dataset, and task records with the physics classification derived from the task identity.
+Tasks born in the catalog carry full configuration and request lineage; adopted tasks carry what assimilation can
+derive, and the adopted count is a standing measure of migration onto the campaign-task flow.
+
 [![epicprod task catalog](diagrams/epicprod_task_catalog.svg)](diagrams/epicprod_task_catalog.svg)
 
 Each campaign carries a human-authored campaign narrative recording its goals, priorities, and evolution. The narrative

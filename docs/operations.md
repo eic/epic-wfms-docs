@@ -76,7 +76,7 @@ Every service runs under an identified account holding exactly the credentials i
 monitor, and carries its operational artifacts — service unit, environment, scheduled supervision — as part of its
 definition. Ownership is human as well: each service has a responsible operator and an operations document recording
 how it is run, restarted, and diagnosed, with the
-[production operations runbook](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_OPS.md) as the pattern. The runbook discipline
+[production operations runbook](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_OPS.md) as the pattern. The runbook discipline
 is how operational knowledge moves from individuals into the system.
 
 ## Computing Use Case Specifics

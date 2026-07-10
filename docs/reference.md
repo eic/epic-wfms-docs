@@ -20,11 +20,11 @@ API and MCP references, and the glossary. The system diagrams are collected in t
 - **epicprod implementation repository**: <https://github.com/BNLNPPS/swf-monitor>
 - **epicprod production domain repository** (production applications and documentation consolidate here; its `docs/ARCHITECTURE_MAP.md` records what lives where): <https://github.com/BNLNPPS/swf-epicprod>
 - **PCS — Physics Configuration System**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PCS.md>
-- **epicprod task catalog design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_TASK_CATALOG.md>
-- **Production operations runbook**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_OPS.md>
-- **Production operations agent design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_OPS_AGENT.md>
-- **Validation integration plan**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_VALIDATION.md>
-- **Production request questionnaire design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_QUESTIONNAIRE.md>
+- **epicprod task catalog design**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_TASK_CATALOG.md>
+- **Production operations runbook**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_OPS.md>
+- **Production operations agent design**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_OPS_AGENT.md>
+- **Validation integration plan**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_VALIDATION.md>
+- **Production request questionnaire design**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_QUESTIONNAIRE.md>
 - **argus-ai assessment application design**: <https://github.com/BNLNPPS/corun-ai/blob/master/docs/argus-ai.md>
 
 ## API and MCP References

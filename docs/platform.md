@@ -232,7 +232,7 @@ Each event declares its verbosity class in code, and a runtime policy — held w
 configuration in a database-resident system configuration document, editable in the browser — selects what surfaces
 on live channels, beginning with a live view of the log pages. The stream is the data source for alarms, digests, and
 the LLM reporting and assessment services, which reason over it to answer what happened
-([action stream design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_ACTION_STREAM.md)).
+([action stream design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/ACTION_STREAM.md)).
 
 ActiveMQ Artemis is the message broker. Topics carry broadcast events; queues deliver anycast work. Testbed workflow
 messages use broadcast topics for events such as run state and STF availability; production operations use an anycast

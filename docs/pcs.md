@@ -15,7 +15,7 @@ proxied for open collaboration access, and it serves PanDA use beyond production
 the AID2E detector-design project compose PanDA work from the same catalog. The working vocabulary — tags, datasets,
 sample variants, production configs, and the composed name — is defined in [Concepts](concepts.md); this section
 describes the system built on it, with implementation detail in
-[PCS.md](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/PCS.md).
+[PCS.md](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PCS.md).
 
 ## Tags and the Tag Catalog
 

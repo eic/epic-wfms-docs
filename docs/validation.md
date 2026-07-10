@@ -20,7 +20,7 @@ workloads on the platform, AI assessment machinery, and recording of validation 
 
 ePIC validation is anchored by Hydra, the ePIC validation application, which produces validation plots from data. The
 WFMS integrates with Hydra rather than duplicating it, through two interfaces now at the proposal stage
-([validation integration plan](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_VALIDATION.md)): an
+([validation integration plan](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_VALIDATION.md)): an
 availability signal from epicprod to Hydra, and an assessment handoff from Hydra to the AI assessment application. The
 resulting loop runs from PanDA task completion, through an epicprod availability signal, to Hydra validation plots, to
 an AI assessment delivered as a natural-language judgment — recorded against the task or dataset it evaluates.

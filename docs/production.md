@@ -25,7 +25,7 @@ status, interface views, and near-term plans — is the S&C talk
 Physics working groups and detector groups request production datasets through the collaboration's request form. PCS
 mirrors each form response into a read-only questionnaire record, giving the collaboration a browsable view of all
 requests and giving production records a single upstream reference for request provenance
-([questionnaire design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_QUESTIONNAIRE.md)). The request
+([questionnaire design](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_QUESTIONNAIRE.md)). The request
 cycle follows the collaboration's monthly campaign rhythm: requests are coordinated through the physics working groups
 and detector subsystem collaborations, validated by the production working group, and prioritized through the
 collaboration's physics and technical coordination before the monthly production list is frozen for the campaign.
@@ -49,7 +49,7 @@ composed names. As the principal place where physicists meet the production syst
 Campaigns are time-ordered groupings of production tasks, named by year and month (25.10, 26.06). The production task
 catalog is the instrument of campaign management: tasks composed from PCS configuration entities, carrying their full
 parameter sets, staged by campaign lifecycle
-([task catalog design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_TASK_CATALOG.md)).
+([task catalog design](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_TASK_CATALOG.md)).
 
 Prepping campaigns are mutable: operators add new tasks and clones, adjust priorities, withdraw
 entries, and move tasks from draft to ready under readiness checks. The current campaign is the live one: ready tasks

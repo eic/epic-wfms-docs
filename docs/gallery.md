@@ -139,8 +139,5 @@ In [Timeline](timeline.md) — the joint DAQ, computing, and AI planning lanes, 
 
 [![Streaming computing planning FY25-FY31](diagrams/streaming_planning_fy.svg)](diagrams/streaming_planning_fy.svg)
 
-### PCS Data Model (vertical)
-[![PCS data model (vertical)](diagrams/pcs_data_model_tb.svg)](diagrams/pcs_data_model_tb.svg)
-
-### PCS Data Model (horizontal)
-[![PCS data model (horizontal)](diagrams/pcs_data_model_lr.svg)](diagrams/pcs_data_model_lr.svg)
+### PCS Data Model
+[![The PCS data model](diagrams/pcs_data_model.svg)](diagrams/pcs_data_model.svg)

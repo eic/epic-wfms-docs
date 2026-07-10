@@ -70,12 +70,8 @@ request form becomes more structured, the request-to-configuration mapping becom
 ## The PCS Data Model
 
 The data model as implemented, generated from the live Django models:
-entities, their relations, and each entity's identity and relational
-fields, with the remaining fields counted. The complete field-level
-schema is the repository's generated
+every entity with all of its fields and relations. The same schema in
+database form is the repository's generated
 [testbed-schema.dbml](https://github.com/BNLNPPS/swf-monitor/blob/main/testbed-schema.dbml).
-Two arrangements of the same content, pending selection:
 
-[![PCS data model (vertical)](diagrams/pcs_data_model_tb.svg)](diagrams/pcs_data_model_tb.svg)
-
-[![PCS data model (horizontal)](diagrams/pcs_data_model_lr.svg)](diagrams/pcs_data_model_lr.svg)
+[![The PCS data model](diagrams/pcs_data_model.svg)](diagrams/pcs_data_model.svg)

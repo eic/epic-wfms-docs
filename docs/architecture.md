@@ -11,6 +11,11 @@ in the previous section. The domains have varying operational requirements, but 
 services where practical, from workflow orchestration and data management through monitoring, human controls, and AI
 assistance.
 
+The platform/domain separation is carried through to the code organization: platform code lives in the common
+library and the common web and database service, and each workflow domain is a peer application with its own
+repository — the testbed in `swf-testbed`, production in `swf-epicprod` — consuming the platform through its
+service interfaces. Repository organization is described in [Platform](platform.md#repository-organization).
+
 [![The ePIC Workflow Management System](diagrams/wfms_platform.svg)](diagrams/wfms_platform.svg)
 
 The architecture is agent and service oriented, and prioritizes full access to system information at all detail

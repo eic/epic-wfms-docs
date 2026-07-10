@@ -11,8 +11,10 @@ production request from community submission through physics configuration, camp
 cataloged data products, with AI assistance and human control points along the whole path. The operating principle set
 in Foundations, maximal automation with minimal operations effort, shapes each stage: the routine mechanics are
 automated, and people make the decisions. The implementation lives in the
-[swf-monitor repository](https://github.com/BNLNPPS/swf-monitor), whose documentation carries the design and
-operational detail behind this section. The definitive current (June 2026) description of the system as deployed —
+[swf-monitor](https://github.com/BNLNPPS/swf-monitor) and
+[swf-epicprod](https://github.com/BNLNPPS/swf-epicprod) repositories — production-specific components and
+documentation are consolidating in swf-epicprod, running on the platform services of swf-monitor — whose
+documentation carries the design and operational detail behind this section. The definitive current (June 2026) description of the system as deployed —
 status, interface views, and near-term plans — is the S&C talk
 [ePIC Production System: Status and Plans](https://docs.google.com/presentation/d/1Mhc5Isfq0dKOqYbf7fdFQvu7tM86gsKLYx542aYVL0U/edit).
 

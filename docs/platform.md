@@ -29,14 +29,21 @@ per domain.
 ## Repository Organization
 
 The `swf-*` repositories implement the current platform. `swf-testbed` is the umbrella repository for testbed
-configuration, orchestration, and documentation. `swf-monitor` is the central web and database application, covering
-monitoring, APIs, and the epicprod implementation. `swf-common-lib` holds shared agent, messaging, logging, and Rucio
-helper code; code used by more than one component belongs there. Agent repositories (`swf-daqsim-agent`,
-`swf-data-agent`, `swf-processing-agent`, `swf-fastmon-agent`) implement specific testbed roles. The fast-processing
-worker layer is implemented in `swf-transform` (the worker-node payload transformation, processing slice messages
-through the reconstruction payload) and `swf-panda-workers` (worker lifecycle coordination with iDDS and PanDA).
+configuration, orchestration, and documentation. `swf-monitor` is the central web and database application — the
+platform's common monitor, web, API, and database services. `swf-common-lib` holds shared agent, messaging, logging,
+and Rucio helper code; code used by more than one component belongs there.
+[`swf-epicprod`](https://github.com/BNLNPPS/swf-epicprod) (created July 2026) is the production domain's repository,
+a peer application of `swf-testbed`: production-specific applications and documentation consolidate there, shipped
+as Django applications installed into the swf-monitor runtime. The epicprod implementation built to date resides in
+`swf-monitor` and migrates component by component; the swf-epicprod architecture map
+(`docs/ARCHITECTURE_MAP.md`) records each component's home, destination, and consumption interface. Agent
+repositories (`swf-daqsim-agent`, `swf-data-agent`, `swf-processing-agent`, `swf-fastmon-agent`) implement specific
+testbed roles. The fast-processing worker layer is implemented in `swf-transform` (the worker-node payload
+transformation, processing slice messages through the reconstruction payload) and `swf-panda-workers` (worker
+lifecycle coordination with iDDS and PanDA).
 
-The three core repositories (`swf-testbed`, `swf-monitor`, `swf-common-lib`) advance together on coordinated branches.
+The three core repositories (`swf-testbed`, `swf-monitor`, `swf-common-lib`) advance together on coordinated
+branches; `swf-epicprod` is maintained on its main branch outside the coordinated set.
 
 ## Web and Database Stack
 
@@ -45,7 +52,9 @@ The three core repositories (`swf-testbed`, `swf-monitor`, `swf-common-lib`) adv
 `swf-monitor` serves both the testbed and epicprod; the historical name now covers much more than monitoring. It is a
 Django application backed by PostgreSQL, providing the platform's browser pages, REST APIs, and MCP tools and the
 database-backed state beneath them: message history, agent state, PanDA monitoring views, PCS, task catalogs, and LLM
-assessment integration.
+assessment integration. With the production domain consolidating in `swf-epicprod` — whose applications run
+installed within the monitor's envelope — the monitor's own scope returns toward its platform role: the common
+monitor, web, and database service.
 
 ### Database-Backed Operational State
 

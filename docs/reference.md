@@ -18,6 +18,7 @@ API and MCP references, and the glossary. The system diagrams are collected in t
 - **Streaming workflow testbed architecture**: <https://github.com/BNLNPPS/swf-testbed/blob/main/docs/architecture.md>
 - **Testbed progress notes** (working document — meeting notes, progress highlights, technical detail): <https://docs.google.com/document/d/1PUoo-W6dCeOKsD4VubYTgSxBHBUb4D5dYfVy1oLYh7E/edit>
 - **epicprod implementation repository**: <https://github.com/BNLNPPS/swf-monitor>
+- **epicprod production domain repository** (production applications and documentation consolidate here; its `docs/ARCHITECTURE_MAP.md` records what lives where): <https://github.com/BNLNPPS/swf-epicprod>
 - **PCS — Physics Configuration System**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/PCS.md>
 - **epicprod task catalog design**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_TASK_CATALOG.md>
 - **Production operations runbook**: <https://github.com/BNLNPPS/swf-monitor/blob/main/docs/EPICPROD_OPS.md>

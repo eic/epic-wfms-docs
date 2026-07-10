@@ -27,11 +27,11 @@
   <!-- Workflow domains -->
   <rect x="70" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
   <text x="156" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Streaming</text>
-  <text x="156" y="222" text-anchor="middle" font-size="14" fill="#555555">Testbed is operating</text>
+  <text x="156" y="222" text-anchor="middle" font-size="14" fill="#555555">swf-testbed &#183; operating</text>
 
   <rect x="259" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2.5"/>
   <text x="345" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Production</text>
-  <text x="345" y="222" text-anchor="middle" font-size="14" fill="#555555">epicprod is operating</text>
+  <text x="345" y="222" text-anchor="middle" font-size="14" fill="#555555">swf-epicprod &#183; operating</text>
 
   <rect x="448" y="172" width="173" height="64" rx="7" fill="#fdf3e0" stroke="#bf8f00" stroke-width="2" stroke-dasharray="5,4"/>
   <text x="534" y="198" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#1a1a1a">Validation</text>

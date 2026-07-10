@@ -66,3 +66,16 @@ monitoring.
 Production requests reach PCS through the triage described in [Production System](production.md): an operator links
 the request to the tags and datasets that realize it. The mapping is a human operations process at present; as the
 request form becomes more structured, the request-to-configuration mapping becomes more programmatic.
+
+## The PCS Data Model
+
+The data model as implemented, generated from the live Django models:
+entities, their relations, and each entity's identity and relational
+fields, with the remaining fields counted. The complete field-level
+schema is the repository's generated
+[testbed-schema.dbml](https://github.com/BNLNPPS/swf-monitor/blob/main/testbed-schema.dbml).
+Two arrangements of the same content, pending selection:
+
+[![PCS data model (vertical)](diagrams/pcs_data_model_tb.svg)](diagrams/pcs_data_model_tb.svg)
+
+[![PCS data model (horizontal)](diagrams/pcs_data_model_lr.svg)](diagrams/pcs_data_model_lr.svg)

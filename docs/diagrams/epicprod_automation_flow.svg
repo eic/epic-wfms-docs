@@ -98,9 +98,6 @@
   <text x="346" y="548" font-size="14" fill="#38761d">Doesn't replace ops refinement</text>
   <text x="358" y="568" font-size="14" fill="#38761d">of campaign plans</text>
 
-  <text x="40" y="624" font-size="14" fill="#4472c4">https://epic-devcloud.org/prod</text>
-  <text x="40" y="644" font-size="14" fill="#4472c4">https://pandaserver02.sdcc.bnl.gov/swf-monitor</text>
-
   <!-- loop back to the catalog -->
   <polyline points="326,492 165,492 165,350 745,350 745,332" fill="none" stroke="#7f7f7f" stroke-width="2" stroke-dasharray="7,5" marker-end="url(#arrowGrey)"/>
   <text x="300" y="342" text-anchor="middle" font-size="14.5" font-style="italic" fill="#7f7f7f">Each campaign, the cycle repeats</text>

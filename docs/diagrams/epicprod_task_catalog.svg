@@ -98,7 +98,7 @@
   <text x="970" y="320" text-anchor="middle" font-weight="bold" font-size="16" fill="#0d47a1">Prepping Campaign(s)</text>
   <text x="970" y="338" text-anchor="middle" font-size="13" font-style="italic" fill="#1565c0">mutable · accepting new + clones</text>
   <line x1="830" y1="350" x2="1110" y2="350" stroke="#90caf9" stroke-width="1"/>
-  <text x="970" y="376" text-anchor="middle" font-size="14" font-weight="bold">26.08 (draft) …</text>
+  <text x="970" y="376" text-anchor="middle" font-size="14" font-weight="bold">26.07 (draft) …</text>
   <text x="970" y="398" text-anchor="middle" font-size="14">tasks: draft → ready</text>
   <text x="970" y="418" text-anchor="middle" font-size="14">readiness checks</text>
   <text x="970" y="446" text-anchor="middle" font-size="14" fill="#555">Operator actions</text>

@@ -97,6 +97,12 @@ In [Production System](production.md) — the production workflow stages, LLM se
 
 [![epicprod production system](diagrams/epicprod_system.svg)](diagrams/epicprod_system.svg)
 
+### End to End Production Automation
+
+In [Production System](production.md) — the automation stage by stage, request intake to the next campaign, with the human control points.
+
+[![End to end production automation](diagrams/epicprod_automation_flow.svg)](diagrams/epicprod_automation_flow.svg)
+
 ### ePIC Automated Production Workflow
 
 In [Production System](production.md) — the production workflow and the task catalog staged by campaign lifecycle.

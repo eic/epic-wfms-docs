@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowNavy" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#17365d"/>
+    </marker>
+    <marker id="arrowGrey" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#7f7f7f"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="650" fill="#ffffff"/>
+
+  <text x="600" y="38" text-anchor="middle" font-size="26" font-weight="bold" fill="#1a1a1a">End to End Production Automation</text>
+  <text x="600" y="66" text-anchor="middle" font-size="15" font-style="italic" fill="#555555">Agent-driven automation from physics requests to campaign transitions — information and human-controlled actions via browser UI and Mattermost bot</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="96" width="250" height="232" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="165" y="126" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Request</text>
+  <text x="165" y="150" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">Physicists ask for physics</text>
+  <text x="56" y="182" font-size="14" fill="#38761d">New data-driven form guides</text>
+  <text x="68" y="202" font-size="14" fill="#38761d">with what already exists</text>
+  <text x="56" y="228" font-size="14" fill="#38761d">Auto-ingest from current</text>
+  <text x="68" y="248" font-size="14" fill="#38761d">Google form until replaced</text>
+
+  <line x1="292" y1="212" x2="326" y2="212" stroke="#17365d" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <rect x="330" y="96" width="250" height="232" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="455" y="126" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Physics configuration</text>
+  <text x="455" y="150" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">Tags define the physics</text>
+  <text x="346" y="182" font-size="14" fill="#38761d">Tags compose to named physics</text>
+  <text x="358" y="202" font-size="14" fill="#38761d">configs, tasks, datasets</text>
+  <text x="346" y="228" font-size="14" fill="#38761d">Tag types: physics, event</text>
+  <text x="358" y="248" font-size="14" fill="#38761d">generator, simulation,</text>
+  <text x="358" y="268" font-size="14" fill="#38761d">reconstruction, background</text>
+  <text x="346" y="294" font-size="14" fill="#38761d">Delivers executable tasks</text>
+  <text x="358" y="314" font-size="14" fill="#38761d">for campaign</text>
+
+  <line x1="582" y1="212" x2="616" y2="212" stroke="#17365d" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <rect x="620" y="96" width="250" height="232" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="745" y="126" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Campaign catalog</text>
+  <text x="745" y="150" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">Past, current, future campaigns</text>
+  <text x="636" y="182" font-size="14" fill="#38761d">Dynamic campaign presentation,</text>
+  <text x="648" y="202" font-size="14" fill="#38761d">filtering, controls</text>
+  <text x="636" y="228" font-size="14" fill="#38761d">Agents auto-sync with requests,</text>
+  <text x="648" y="248" font-size="14" fill="#38761d">Rucio data, legacy campaign</text>
+  <text x="648" y="268" font-size="14" fill="#38761d">info sources</text>
+
+  <line x1="872" y1="212" x2="906" y2="212" stroke="#17365d" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <rect x="910" y="96" width="250" height="232" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="1035" y="126" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Submission &amp; ops</text>
+  <text x="1035" y="150" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">PanDA, Rucio used via ops agent</text>
+  <text x="926" y="182" font-size="14" fill="#38761d">One-click submit &amp; other</text>
+  <text x="938" y="202" font-size="14" fill="#38761d">task management</text>
+  <text x="926" y="228" font-size="14" fill="#38761d">Deep PanDA monitoring,</text>
+  <text x="938" y="248" font-size="14" fill="#38761d">AI AskPanDA diagnostics</text>
+  <text x="926" y="274" font-size="14" fill="#38761d">AI campaign assessments,</text>
+  <text x="938" y="294" font-size="14" fill="#38761d">daily/weekly reports via</text>
+  <text x="938" y="314" font-size="14" fill="#38761d">research agents</text>
+
+  <!-- wrap to row 2 -->
+  <line x1="1035" y1="328" x2="1035" y2="376" stroke="#17365d" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <!-- Row 2 (right to left) -->
+  <rect x="910" y="380" width="250" height="224" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="1035" y="410" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Data products</text>
+  <text x="1035" y="434" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">Rucio-registered outputs</text>
+  <text x="926" y="462" font-size="14" fill="#38761d">Agent detects arrivals nightly</text>
+  <text x="938" y="482" font-size="14" fill="#38761d">and on demand</text>
+  <text x="926" y="508" font-size="14" fill="#38761d">Available data presented per</text>
+  <text x="938" y="528" font-size="14" fill="#38761d">task, physics configuration,</text>
+  <text x="938" y="548" font-size="14" fill="#38761d">campaign</text>
+  <text x="926" y="574" font-size="14" fill="#38761d">Data availability progress view</text>
+
+  <line x1="906" y1="492" x2="872" y2="492" stroke="#17365d" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <rect x="620" y="380" width="250" height="224" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="745" y="410" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Campaign progression</text>
+  <text x="745" y="434" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">AI proposes, humans decide</text>
+  <text x="636" y="462" font-size="14" fill="#38761d">LLM learns from human sources</text>
+  <text x="648" y="482" font-size="14" fill="#38761d">e.g. PS&amp;C meeting talks</text>
+  <text x="636" y="508" font-size="14" fill="#38761d">Creates deterministic proposals</text>
+  <text x="648" y="528" font-size="14" fill="#38761d">for campaign content,</text>
+  <text x="648" y="548" font-size="14" fill="#38761d">transitions — continuing, new,</text>
+  <text x="648" y="568" font-size="14" fill="#38761d">ending physics configs</text>
+  <text x="636" y="594" font-size="14" fill="#38761d">Humans decide progression</text>
+
+  <line x1="616" y1="492" x2="582" y2="492" stroke="#17365d" stroke-width="3" marker-end="url(#arrowNavy)"/>
+
+  <rect x="330" y="380" width="250" height="224" rx="8" fill="#eaeffa" stroke="#4472c4" stroke-width="2"/>
+  <text x="455" y="410" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#17365d">Next campaign</text>
+  <text x="455" y="434" text-anchor="middle" font-size="14" font-style="italic" fill="#555555">The catalog self-perpetuates</text>
+  <text x="346" y="462" font-size="14" fill="#38761d">An ops expert click applies</text>
+  <text x="358" y="482" font-size="14" fill="#38761d">current campaign + progression</text>
+  <text x="358" y="502" font-size="14" fill="#38761d">decisions to create the next</text>
+  <text x="358" y="522" font-size="14" fill="#38761d">campaign alpha version</text>
+  <text x="346" y="548" font-size="14" fill="#38761d">Doesn't replace ops refinement</text>
+  <text x="358" y="568" font-size="14" fill="#38761d">of campaign plans</text>
+
+  <text x="40" y="624" font-size="14" fill="#4472c4">https://epic-devcloud.org/prod</text>
+  <text x="40" y="644" font-size="14" fill="#4472c4">https://pandaserver02.sdcc.bnl.gov/swf-monitor</text>
+
+  <!-- loop back to the catalog -->
+  <polyline points="326,492 165,492 165,350 745,350 745,332" fill="none" stroke="#7f7f7f" stroke-width="2" stroke-dasharray="7,5" marker-end="url(#arrowGrey)"/>
+  <text x="300" y="342" text-anchor="middle" font-size="14.5" font-style="italic" fill="#7f7f7f">Each campaign, the cycle repeats</text>
+</svg>

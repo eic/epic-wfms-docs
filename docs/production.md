@@ -20,6 +20,10 @@ status, interface views, and near-term plans — is the S&C talk
 
 [![epicprod production system](diagrams/epicprod_system.svg)](diagrams/epicprod_system.svg)
 
+The same path stage by stage — the automation each stage carries, and the human control points:
+
+[![End to end production automation](diagrams/epicprod_automation_flow.svg)](diagrams/epicprod_automation_flow.svg)
+
 ## Production Requests
 
 Physics working groups and detector groups request production datasets through the collaboration's request form. PCS

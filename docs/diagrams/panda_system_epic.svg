@@ -87,10 +87,11 @@
   <line x1="830" y1="400" x2="746" y2="417" stroke="#444" stroke-width="1.4" marker-end="url(#ah)"/>
 
   <!-- AI (below Users) -->
-  <rect x="140" y="430" width="250" height="88" rx="10" fill="white" stroke="#7c3aed" stroke-width="1.8"/>
+  <rect x="140" y="430" width="250" height="106" rx="10" fill="white" stroke="#7c3aed" stroke-width="1.8"/>
   <text x="265" y="457" text-anchor="middle" font-size="16" font-weight="bold" fill="#7c3aed">AI assistance</text>
   <text x="265" y="477" text-anchor="middle" font-size="12.5" fill="#555">bots · assessments · proposals</text>
   <text x="265" y="494" text-anchor="middle" font-size="11.5" font-style="italic" fill="#777">Served by many live-state MCP tools</text>
+  <text x="265" y="511" text-anchor="middle" font-size="11.5" font-style="italic" fill="#777">AI actions are human-gated proposals</text>
   <line x1="265" y1="247" x2="265" y2="430" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ahPurple)" marker-start="url(#ahPurple)"/>
   <line x1="390" y1="462" x2="496" y2="443" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ah)" marker-start="url(#ah)"/>
 

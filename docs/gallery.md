@@ -37,6 +37,12 @@ In [WFMS Platform](platform.md) — the deployed workload management infrastruct
 
 [![PanDA in ePIC](diagrams/panda_in_epic.svg)](diagrams/panda_in_epic.svg)
 
+### PanDA System — As Operating in ePIC
+
+In [WFMS Platform](platform.md) — the generic PanDA architecture in its ePIC operating context: task sources, JEDI and iDDS, the server hub, per-resource Harvesters and pilots, Rucio, monitoring, and AI assistance.
+
+[![PanDA system as operating in ePIC](diagrams/panda_system_epic.svg)](diagrams/panda_system_epic.svg)
+
 ### ePIC AI Infrastructure Stack
 
 In [WFMS Platform](platform.md) — ePIC services, the MCP instrumentation over them, and the AI services built on top.

@@ -73,6 +73,13 @@
 
   <line x1="430" y1="666" x2="430" y2="714" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
 
+  <!-- Reconstructed outputs to Rucio -->
+  <rect x="24" y="586" width="240" height="80" rx="8" fill="#f1f8e9" stroke="#538135" stroke-width="2.5"/>
+  <text x="144" y="612" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#1a1a1a">Reconstructed STFs — Rucio</text>
+  <text x="144" y="633" text-anchor="middle" font-size="12.5" fill="#333333">Reconstruction outputs registered</text>
+  <text x="144" y="651" text-anchor="middle" font-size="12.5" fill="#333333">in Rucio — the full-sample product</text>
+  <line x1="280" y1="626" x2="268" y2="626" stroke="#555555" stroke-width="2.2" marker-end="url(#ppGray)"/>
+
   <!-- Run end band -->
   <rect x="180" y="718" width="500" height="52" rx="8" fill="#f5f5f5" stroke="#7f7f7f" stroke-width="2"/>
   <text x="430" y="750" text-anchor="middle" font-size="14.5" fill="#333333">Run end — the dataset closes, the task drains and completes</text>
@@ -90,8 +97,8 @@
   <line x1="580" y1="240" x2="770" y2="286" stroke="#17365d" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ppNavy)"/>
   <text x="700" y="256" font-size="12.5" fill="#17365d">Run and data notifications</text>
 
-  <line x1="680" y1="392" x2="586" y2="368" stroke="#17365d" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ppNavy)"/>
-  <text x="672" y="422" text-anchor="end" font-size="12.5" fill="#17365d">Directs E1 processing</text>
+  <line x1="680" y1="440" x2="586" y2="482" stroke="#17365d" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ppNavy)"/>
+  <text x="678" y="470" text-anchor="end" font-size="12.5" fill="#17365d">Directs E1 processing</text>
 
   <!-- Monitor -->
   <rect x="700" y="586" width="250" height="64" rx="8" fill="#eeeeee" stroke="#7f7f7f" stroke-width="2"/>

@@ -67,9 +67,15 @@ In [Streaming Workflows](streaming.md) — the E0-E1 interface: DAQ exit buffer,
 
 [![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
 
+### The Streaming Workflow Testbed
+
+In [Streaming Workflows](streaming.md) — the first two testbed workflows on the common WFMS platform: prompt processing of STF files on arrival, and fast TF streaming processing on persistent PanDA-managed workers, with the decision box, AI assessment agents, and swf-monitor alongside.
+
+[![The streaming workflow testbed](diagrams/testbed_workflows.svg)](diagrams/testbed_workflows.svg)
+
 ### Prompt Processing Workflow
 
-In [Streaming Workflows](streaming.md) — full-sample processing of STFs as they arrive, from run signals through the filling run dataset to PanDA jobs at the E1s, with the conceptual decision box.
+In [Streaming Workflows](streaming.md) — full-sample processing of STFs as they arrive, from run signals through the filling run dataset to PanDA jobs at the E1s and Rucio-registered reconstructed outputs, with the conceptual decision box.
 
 [![Prompt processing workflow](diagrams/prompt_processing_workflow.svg)](diagrams/prompt_processing_workflow.svg)
 

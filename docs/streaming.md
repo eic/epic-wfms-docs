@@ -7,6 +7,12 @@ these workflows in the streaming workflow testbed.
 
 [![E0-E1 workflow schematic](diagrams/E0-E1_workflow_schematic.svg)](diagrams/E0-E1_workflow_schematic.svg)
 
+The testbed operates this scope — right of the red line — through its first two workflows on the common WFMS
+platform: prompt processing of STF files on arrival, and fast TF streaming processing on persistent
+PanDA-managed workers.
+
+[![The streaming workflow testbed](diagrams/testbed_workflows.svg)](diagrams/testbed_workflows.svg)
+
 ## E0-E1 Interface — Controls and Dataflows
 
 The E0-E1 interface is where WFMS responsibility begins. The DAQ system is one system spanning two facilities: the DAQ

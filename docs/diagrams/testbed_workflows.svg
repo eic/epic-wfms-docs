@@ -147,7 +147,7 @@
   <!-- swf-monitor (floating, top right) -->
   <rect x="1210" y="84" width="250" height="104" rx="10" fill="#fff2cc" stroke="#f1c232" stroke-width="2.5"/>
   <text x="1335" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#111">swf-monitor</text>
-  <text x="1335" y="145" text-anchor="middle" font-size="13" fill="#333">UIs and APIs</text>
+  <text x="1335" y="145" text-anchor="middle" font-size="13" fill="#333">UIs, APIs, system data</text>
   <text x="1335" y="166" text-anchor="middle" font-size="13" fill="#333">web · DB · REST · MCP</text>
 
   <!-- DISpatcher bot (under swf-monitor) -->

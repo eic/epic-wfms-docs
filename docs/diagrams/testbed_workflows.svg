@@ -156,6 +156,12 @@
   <text x="1335" y="236" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#674ea7">DISpatcher</text>
   <text x="1335" y="258" text-anchor="middle" font-size="12" fill="#333">Mattermost bot</text>
 
+  <!-- corun-ai (below AI assessment agents, connected) -->
+  <line x1="722" y1="642" x2="722" y2="660" stroke="#666" stroke-width="1.8"/>
+  <rect x="622" y="660" width="200" height="66" rx="10" fill="#d9d2e9" stroke="#8e7cc3" stroke-width="1.8"/>
+  <text x="722" y="688" text-anchor="middle" font-size="14" font-weight="bold" fill="#674ea7">corun-ai</text>
+  <text x="722" y="708" text-anchor="middle" font-size="11.5" fill="#333">LLM research harness</text>
+
   <!-- ===== Shared platform band ===== -->
   <rect x="50" y="762" width="1400" height="112" rx="12" fill="#F6F7F8" stroke="#333" stroke-width="1.8"/>
   <text x="80" y="794" font-size="16" font-weight="bold" fill="#111">The shared WFMS platform</text>

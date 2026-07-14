@@ -48,8 +48,8 @@
 
   <rect x="240" y="414" width="320" height="68" rx="9" fill="#d9ead3" stroke="#6aa84f" stroke-width="2"/>
   <text x="400" y="438" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#111">Processing Agent</text>
-  <text x="400" y="455" text-anchor="middle" font-size="11.5" fill="#333">establishes the prompt processing task</text>
-  <text x="400" y="470" text-anchor="middle" font-size="11.5" fill="#333">one PanDA task over the run dataset</text>
+  <text x="400" y="455" text-anchor="middle" font-size="11.5" fill="#333">Establishes the prompt processing task</text>
+  <text x="400" y="470" text-anchor="middle" font-size="11.5" fill="#333">for each Echelon 1</text>
 
   <line x1="400" y1="482" x2="400" y2="496" stroke="#444" stroke-width="1.6" marker-end="url(#ah)"/>
 

@@ -60,9 +60,15 @@ The prompt processing resource pool is E1 in the baseline and can extend to E2 f
 allow; PanDA brokering over queues and Rucio-managed data placement make wider distribution a configuration choice
 rather than a workflow redesign.
 
-The workflow is diagrammed below, including the prompt processing decision box — the conceptual control point,
-notified of run signals and arriving data and able to examine the data itself, that applies ePIC policy to direct
-which site processes which data.
+The workflow is diagrammed below, including the prompt processing decision box — the conceptual control point that
+applies ePIC policy to direct which site processes which data. The data agent at the DAQ exit buffer examines each
+STF on arrival, with the roughly half-second spacing between STFs leaving ample time, and extracts from the data
+itself any criteria beyond the metadata bearing on whether and where the STF is processed. It feeds the metadata and
+the data-derived information to the decision box, which applies policy and returns its decisions to the data agent.
+The data agent then registers the STF into the archival dataset collecting the run's complete STF sample and, as the
+decisions require, into the subset datasets instanced at the E1 facilities for prompt processing. PanDA processing is
+triggered by subset dataset content: the task at each E1 consumes its dataset as it fills, so the decisions drive
+what PanDA processes at each site.
 
 [![Prompt processing workflow](diagrams/prompt_processing_workflow.svg)](diagrams/prompt_processing_workflow.svg)
 

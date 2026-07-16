@@ -47,7 +47,7 @@ with STF building, or skimmed from STFs sitting in the exit buffer, and are smal
 seconds. Downstream, sampled TFs are further divided into TF slices, the parallel work units distributed to fast
 processing workers.
 
-The two grains in one view — time order within an STF, any order among STFs, and the fast sampling path:
+Time order within an STF, any order among STFs, and the sampling and streaming paths, in one view:
 
 [![Time frames and super time frames](diagrams/tf_stf_explainer.svg)](diagrams/tf_stf_explainer.svg)
 

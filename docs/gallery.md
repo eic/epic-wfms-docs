@@ -84,8 +84,8 @@ In [Streaming Workflows](streaming.md) — the first two testbed workflows on th
 
 ### Time Frames and Super Time Frames
 
-In [Streaming Workflows](streaming.md) — one stream, two grains: the contiguous TF stream with its file markers,
-time order within an STF against any-order distribution among STFs, and the fast path sampling the files.
+In [Streaming Workflows](streaming.md) — the contiguous TF stream with its file markers, time order within an STF
+against any-order processing among STFs, and the sampling and direct-stream paths.
 
 [![Time frames and super time frames](diagrams/tf_stf_explainer.svg)](diagrams/tf_stf_explainer.svg)
 

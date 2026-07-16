@@ -49,6 +49,15 @@ In [WFMS Platform](platform.md) — ePIC services, the MCP instrumentation over 
 
 [![ePIC AI infrastructure stack](diagrams/epic_ai_stack.svg)](diagrams/epic_ai_stack.svg)
 
+### The MCP-Based AI Backplane
+
+In [WFMS Platform](platform.md) — MCP spanning the machine, DAQ, Echelon 1, and global computing, with the AI
+consumers riding it; DAQ and EIC Controls taps per the DAQ AI-readiness plan. Served from the
+[MCP service documentation](https://github.com/BNLNPPS/swf-monitor/blob/infra/baseline-v39/docs/MCP.md)
+in swf-monitor, where it evolves.
+
+[![The MCP-based AI backplane](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)
+
 ### corun-ai — LLM Execution and Artifact Service
 
 In [WFMS Platform](platform.md) — the corun-ai system: an interactive research site and the REST AI back end of the WFMS, sharing one execution machinery and artifact store.

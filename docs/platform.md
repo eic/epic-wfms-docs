@@ -216,6 +216,13 @@ grounded in codebase knowledge. The stack — ePIC services, MCP instrumentation
 
 [![ePIC AI infrastructure stack](diagrams/epic_ai_stack.svg)](diagrams/epic_ai_stack.svg)
 
+The instrumentation extends across the E0-E1 interface. The DAQ AI-readiness plan (J. Landgraf, July 2026) plans MCP
+servers for slow-controls readout, DAQ monitoring and logging, the run log database, and EIC Controls readout, with
+LLM control of run control a candidate — forming, with the deployed Echelon 1 service, an MCP-based AI backplane from
+the machine through the DAQ to global computing:
+
+[![The MCP-based AI backplane](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)
+
 ## Agents and Services
 
 ### Agent Infrastructure

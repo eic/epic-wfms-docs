@@ -28,9 +28,11 @@ archiving, prompt processing, and prompt monitoring. The TF stream is a fast sub
 with data available to E1 consumers within a few seconds of datataking; it feeds fast monitoring and fast processing.
 Candidate TF delivery mechanisms are messaging and direct XRootD reads against the exit buffer.
 
-Control signals cross the interface alongside the data. The run lifecycle — run imminent, run start, pause and resume,
-run end — is broadcast from the DAQ side and drives downstream orchestration: dataset creation, processing task
-establishment, worker provisioning, and run closeout all key off these transitions.
+Control signals cross the interface alongside the data. Datataking state — collider, detector, DAQ and calibration
+state, definitive in E0 and mirrored in E1 — is carried as operational metadata on the data and messages crossing the
+interface; the [datataking state machine](#the-datataking-state-machine) defines it. The run lifecycle — run imminent,
+run start, pause and resume, run end — is broadcast from the DAQ side and drives downstream orchestration: dataset
+creation, processing task establishment, worker provisioning, and run closeout all key off these transitions.
 
 ## Time Frames and Super Time Frames
 
@@ -159,5 +161,22 @@ integration of the real EICrecon payload into these workers is described in
 The iDDS/PanDA/Harvester detail behind the standing worker pool:
 
 [![iDDS PanDA detail](diagrams/idds-panda-detail-v1.svg)](diagrams/idds-panda-detail-v1.svg)
+
+### The Datataking State Machine
+
+The datataking state model at the E0-E1 interface is a set of states and substates describing collider, detector, DAQ
+and calibration state: states `off`, `no_beam`, `beam`, `run`, `calib`, and `test`, with readiness substates carrying
+the progression to good for physics and data-flavor substates marking the kind of information flowing. State is
+maintained in a database kept current in real time, definitive in E0 and mirrored in E1, and carried as operational
+metadata on the data and messages crossing the interface, recording the state at the time of the message.
+
+The testbed implements the first version of the model: the simulated DAQ drives all testbed activity through it,
+state flows through the system as stamped messages and in STF filenames, and the baseline workflows exercise most of
+the model in daily operation. The proposed evolution, converging with the DAQ group's run-control design, generalizes
+the (state, substate) pair to a global state carrying the E0 run-control elements — detector participation and
+slow-controls status — with state changes as events appended to a queryable state history. The definition and its
+proposed evolution are maintained in the
+[E0-E1 state machine document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-state-machine.md), input
+to the E0-E1 interface formalization in the ePIC Streaming Computing Model report.
 
 [^streaming-computing-model]: The ePIC Streaming Computing Model. <https://zenodo.org/records/14675920>

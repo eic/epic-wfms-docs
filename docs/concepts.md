@@ -19,7 +19,8 @@ whose reconstruction processing time matches the target, 10-30 seconds in presen
 
 **Run** — a datataking period. The run lifecycle — run imminent, run start, pause and resume, run end — is broadcast
 from the DAQ side and drives downstream orchestration. At run start a Rucio run dataset is created; arriving STFs are
-registered into it.
+registered into it. The lifecycle is part of the
+[datataking state machine](streaming.md#the-datataking-state-machine) at the E0-E1 interface.
 
 ## Production Configuration and Identity
 

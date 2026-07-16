@@ -103,6 +103,15 @@ In [Streaming Workflows](streaming.md) — shared infrastructure with independen
 
 [![Testbed multi-user isolation](diagrams/testbed_multi_user.svg)](diagrams/testbed_multi_user.svg)
 
+### The E0-E1 Global State
+
+In [Streaming Workflows](streaming.md) — the global state across a datataking arc: core state and readiness over time,
+with detector participation, slow controls, and data flows as concurrent lanes. Served from the
+[state machine document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-state-machine.md)
+in swf-testbed, where it evolves.
+
+[![The E0-E1 global state](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)
+
 ### epicprod — the ePIC Production System
 
 In [Production System](production.md) — the production workflow stages, LLM services, and credentialed operations of epicprod.

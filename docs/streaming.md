@@ -179,4 +179,9 @@ proposed evolution are maintained in the
 [E0-E1 state machine document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-state-machine.md), input
 to the E0-E1 interface formalization in the ePIC Streaming Computing Model report.
 
+The global state across a datataking arc — concurrent components alongside the exclusive core state, where a vertical
+cut is the state at an instant:
+
+[![The E0-E1 global state](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)
+
 [^streaming-computing-model]: The ePIC Streaming Computing Model. <https://zenodo.org/records/14675920>

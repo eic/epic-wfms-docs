@@ -82,6 +82,13 @@ In [Streaming Workflows](streaming.md) — the first two testbed workflows on th
 
 [![The streaming workflow testbed](diagrams/testbed_workflows.svg)](diagrams/testbed_workflows.svg)
 
+### Time Frames and Super Time Frames
+
+In [Streaming Workflows](streaming.md) — one stream, two grains: the contiguous TF stream with its file markers,
+time order within an STF against any-order distribution among STFs, and the fast path sampling the files.
+
+[![Time frames and super time frames](diagrams/tf_stf_explainer.svg)](diagrams/tf_stf_explainer.svg)
+
 ### Prompt Processing Workflow
 
 In [Streaming Workflows](streaming.md) — full-sample processing of STFs as they arrive, from run signals through the filling run dataset to PanDA jobs at the E1s and Rucio-registered reconstructed outputs, with the conceptual decision box.

@@ -58,7 +58,8 @@ The host-lab symmetry of the
 the butterfly model expresses symmetry in computing capability between the two host labs.
 Raw data flows from E0 to both E1 sites, establishing geographically
 separated raw-data copies and preserving flexibility in how ePIC assigns downstream processing roles between BNL and
-JLab, and other facilities.
+JLab, and other facilities. The requirements state that the two E1s operate as one integrated distributed system with
+failover: if one E1 goes down, the other takes over.
 
 [![The ePIC computing model](diagrams/epic_computing_model.svg)](diagrams/epic_computing_model.svg)
 
@@ -69,7 +70,7 @@ continuous post-DAQ data stream during datataking, delivering first results from
 control room operations and AI tools of current detector and machine performance, and delivering more complete and digested
 prompt processing from bulk E1 (and possibly E2) resources over minutes and hours. The system must be capable of
 delivering evaluation, validation and calibration results at the latencies ePIC demands, from seconds for detector
-and data evaluation/validation to ~2 weeks for full calibration cycles.
+and data evaluation/validation to 2-3 weeks for full calibration cycles.
 The WFMS therefore has to support
 data-driven operation, near-real-time monitoring, prompt processing, calibration feedback, and distributed execution
 as baseline system capabilities.

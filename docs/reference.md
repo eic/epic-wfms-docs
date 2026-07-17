@@ -8,6 +8,7 @@ API and MCP references, and the glossary. The system diagrams are collected in t
 - **This documentation — source repository**: <https://github.com/eic/epic-wfms-docs>
 - **ePIC Distributed Workflow Management System requirements**: <https://www.overleaf.com/project/67bdf89a3d44a138da503dea>
 - **The ePIC Streaming Computing Model**: <https://zenodo.org/records/14675920>
+- **E0-E1 interface document** (the interface as understood in 2026; input to the September 2026 Streaming Computing Model formalization): <https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-interface.md>
 - **ePIC Production System: Status and Plans** (ePIC S&C meeting talk, June 24 2026 — the definitive current (June 2026) description of the production system, with interface views and near-term plans): <https://docs.google.com/presentation/d/1Mhc5Isfq0dKOqYbf7fdFQvu7tM86gsKLYx542aYVL0U/edit>
 - **Production bot demo video** (June 2026): <https://drive.google.com/file/d/1VXIJJHfCaqE2iK_5QawJNamciGhFVQEI/view>
 - **PanDA documentation**: <https://panda-wms.readthedocs.io/>

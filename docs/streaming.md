@@ -40,6 +40,11 @@ it is primarily a cybersecurity matter: too early to take up, and belonging more
 software and computing. It is likely to be addressed in a preliminary way when the DAQ sets up its first proto-enclave
 around the end of 2026.
 
+The interface as a whole (architecture, definitions, state model, latency, calibration and conditions, information
+and control, AI readiness) is described in the
+[E0-E1 interface document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-interface.md),
+input to the interface formalization in the ePIC Streaming Computing Model report.
+
 ## Time Frames and Super Time Frames
 
 The time frame (TF) is the atomic unit of ePIC streaming data: a contiguous, self-contained slice of the detector data
@@ -72,8 +77,8 @@ The prompt processing resource pool is E1 in the baseline and can extend to E2 f
 allow; PanDA brokering over queues and Rucio-managed data placement make wider distribution a configuration choice
 rather than a workflow redesign.
 
-The workflow is diagrammed below, including the prompt processing decision box — the conceptual control point that
-applies ePIC policy to direct which site processes which data. The data agent at the DAQ exit buffer examines each
+The workflow is diagrammed below, including the prompt processing decision box, a planned control point that will
+apply ePIC policy to direct which site processes which data. In this design, the data agent at the DAQ exit buffer examines each
 STF on arrival, with the roughly half-second spacing between STFs leaving ample time, and extracts from the data
 itself any criteria beyond the metadata bearing on whether and where the STF is processed. It feeds the metadata and
 the data-derived information to the decision box, which applies policy and returns its decisions to the data agent.

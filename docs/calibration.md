@@ -5,7 +5,7 @@ This section documents WFMS support for ePIC calibration workflows, the platform
 ## Calibration Workflow Domain
 
 Calibration closes the slowest loop of the streaming computing model: from first detector evaluation within seconds
-to full calibration cycles of up to about two weeks, calibrations produced from streamed data feed back into prompt
+to full calibration cycles of up to 2-3 weeks, calibrations produced from streamed data feed back into prompt
 and subsequent processing. The calibrations themselves — algorithms, constants, and their validity — belong to the
 detector and reconstruction experts; the WFMS contributes the orchestration: dependency-managed multi-step workflows,
 execution on platform resources, and the bookkeeping that records what ran on what.

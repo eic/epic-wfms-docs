@@ -171,7 +171,7 @@ workflow-stage metadata. Workflow state and data-product state are inspectable t
 ## Distributed Resources Integration
 
 The platform expresses the Echelon model defined in Foundations through workflow processing destinations,
-a prompt processing 'decision box' determining E1 processing, data locations, site state,
+a planned prompt processing 'decision box' determining E1 processing, data locations, site state,
 queue state, and monitoring views. The same abstractions serve present testbed emulation and future distributed facility scale
 operation.
 

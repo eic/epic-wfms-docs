@@ -42,7 +42,7 @@ around the end of 2026.
 
 The interface as a whole (architecture, definitions, state model, latency, calibration and conditions, information
 and control, AI readiness) is described in the
-[E0-E1 interface document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-interface.md),
+[E0-E1 interface document](https://github.com/BNLNPPS/swf-testbed/blob/main/docs/e0-e1-interface.md),
 input to the interface formalization in the ePIC Streaming Computing Model report.
 
 ## Time Frames and Super Time Frames
@@ -191,12 +191,12 @@ the model in daily operation. The proposed evolution, converging with the DAQ gr
 the (state, substate) pair to a global state carrying the E0 run-control elements — detector participation and
 slow-controls status — with state changes as events appended to a queryable state history. The definition and its
 proposed evolution are maintained in the
-[E0-E1 state machine document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-state-machine.md), input
+[E0-E1 state machine document](https://github.com/BNLNPPS/swf-testbed/blob/main/docs/e0-e1-state-machine.md), input
 to the E0-E1 interface formalization in the ePIC Streaming Computing Model report.
 
 The global state across a datataking arc — concurrent components alongside the exclusive core state, where a vertical
 cut is the state at an instant:
 
-[![The E0-E1 global state](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)
+[![The E0-E1 global state](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/main/docs/images/e0-e1-global-state-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/main/docs/images/e0-e1-global-state-v1.svg)
 
 [^streaming-computing-model]: The ePIC Streaming Computing Model. <https://zenodo.org/records/14675920>

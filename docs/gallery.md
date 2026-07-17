@@ -53,10 +53,10 @@ In [WFMS Platform](platform.md) — ePIC services, the MCP instrumentation over 
 
 In [WFMS Platform](platform.md) — MCP spanning the machine, DAQ, Echelon 1, and global computing, with the AI
 consumers riding it; DAQ and EIC Controls taps per the DAQ AI-readiness plan. Served from the
-[MCP service documentation](https://github.com/BNLNPPS/swf-monitor/blob/infra/baseline-v39/docs/MCP.md)
+[MCP service documentation](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/MCP.md)
 in swf-monitor, where it evolves.
 
-[![The MCP-based AI backplane](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)
+[![The MCP-based AI backplane](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/main/docs/mcp-ai-backplane-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/main/docs/mcp-ai-backplane-v1.svg)
 
 ### corun-ai — LLM Execution and Artifact Service
 
@@ -123,10 +123,10 @@ In [Streaming Workflows](streaming.md) — shared infrastructure with independen
 
 In [Streaming Workflows](streaming.md) — the global state across a datataking arc: core state and readiness over time,
 with detector participation, slow controls, and data flows as concurrent lanes. Served from the
-[state machine document](https://github.com/BNLNPPS/swf-testbed/blob/infra/baseline-v39/docs/e0-e1-state-machine.md)
+[state machine document](https://github.com/BNLNPPS/swf-testbed/blob/main/docs/e0-e1-state-machine.md)
 in swf-testbed, where it evolves.
 
-[![The E0-E1 global state](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/infra/baseline-v39/docs/images/e0-e1-global-state-v1.svg)
+[![The E0-E1 global state](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/main/docs/images/e0-e1-global-state-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-testbed/main/docs/images/e0-e1-global-state-v1.svg)
 
 ### epicprod — the ePIC Production System
 

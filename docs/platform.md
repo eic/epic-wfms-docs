@@ -221,7 +221,7 @@ servers for slow-controls readout, DAQ monitoring and logging, the run log datab
 LLM control of run control a candidate — forming, with the deployed Echelon 1 service, an MCP-based AI backplane from
 the machine through the DAQ to global computing:
 
-[![The MCP-based AI backplane](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/infra/baseline-v39/docs/mcp-ai-backplane-v1.svg)
+[![The MCP-based AI backplane](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/main/docs/mcp-ai-backplane-v1.svg)](https://raw.githubusercontent.com/BNLNPPS/swf-monitor/main/docs/mcp-ai-backplane-v1.svg)
 
 ## Agents and Services
 

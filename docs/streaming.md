@@ -34,6 +34,12 @@ interface; the [datataking state machine](#the-datataking-state-machine) defines
 run start, pause and resume, run end — is broadcast from the DAQ side and drives downstream orchestration: dataset
 creation, processing task establishment, worker provisioning, and run closeout all key off these transitions.
 
+Control in the E1-to-E0 direction — an Echelon 1 result influencing detector or DAQ configuration — is not yet
+developed. Beyond the communication and information exchange mechanisms already in hand and exercised in the testbed,
+it is primarily a cybersecurity matter: too early to take up, and belonging more to the host facilities than to ePIC
+software and computing. It is likely to be addressed in a preliminary way when the DAQ sets up its first proto-enclave
+around the end of 2026.
+
 ## Time Frames and Super Time Frames
 
 The time frame (TF) is the atomic unit of ePIC streaming data: a contiguous, self-contained slice of the detector data

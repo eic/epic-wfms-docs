@@ -17,3 +17,11 @@ Calibration is where dependency management is central, and Snakemake is the plat
 dispatching work through PanDA and a Rucio storage plugin in development for data handling. The integration is well
 advanced — ePIC benchmark workflows run in CI through these executors — and calibration workflows on the platform
 come into use in the near-term window of the [Timeline](timeline.md).
+
+## Conditions Database
+
+A conditions database collects the measured parameters that processing and interpretation depend on: calibration
+measurements, distilled slow-controls parameters, and alignment measurements. ePIC has not yet taken up the conditions
+database in software and computing; the intent is established, and the step awaits a use case that calls for it. A
+candidate is identified: nopayloaddb, the HSF reference conditions database implementation developed at BNL, which
+received a preliminary and favorable ePIC evaluation in 2024.

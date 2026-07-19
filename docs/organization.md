@@ -8,20 +8,19 @@ E2 facilities, external projects, and the contribution process.
 
 The standing coordination body for the production side is the ePIC Production Working Group, meeting on the first and
 third Tuesday of each month: the first meeting prepares the upcoming simulation campaign, addressing infrastructure
-changes and incorporating new physics datasets, and the second reviews current production and works new challenges. The
-group's record — agendas, the production website, and the operations chat channel — is the shared operational context.
+changes and incorporating new physics datasets, and the second reviews current production and works new challenges.
 
 Development is coordinated through the shared repositories: contribution is by branch and pull request on the core
 repositories, which advance together on coordinated branches, and this documentation is the common reference for what
 the system is and where it is going. Plans and designs are developed as repository documents that drive AI
 co-development: AI assistants relearn the system continually from the documentation and code, so development knowledge
 carries no single point of failure. Because the workflow domains share one platform, effort invested in either front
-strengthens both, and WFMS progress is reported into the ePIC software and computing meetings and collaboration
-meetings, where the collaboration's decision points on the system's trajectory are taken.
+strengthens both, and WFMS progress is reported into the ePIC software and computing meetings, where decision points on
+the system's trajectory are taken.
 
 ## Participating Groups
 
-The core WFMS effort is anchored at the host labs, with a deliberately small production operations team supported by
+The core WFMS effort is anchored at the host labs, with a small production operations team supported by
 the automation the system exists to provide. Participation beyond the labs is growing: the University of Manitoba
 and Osaka University have joined as participants in the testbed and production, with Manitoba particularly active in
 production. These groups are the first realization of WFMS organization beyond the host labs — the seed of E2-level participation,
@@ -29,14 +28,14 @@ where institutions take defined roles in the system's development and operation.
 
 Physics working groups and detector subsystem collaborations participate as the system's customers and as contributors:
 they submit production requests, evaluate produced data, and provide production liaisons who carry campaign operations
-knowledge into their groups and requirements back to production.
+knowledge into their groups and requirements and requests back to production.
 
 ## DAQ and S&C Coordination
 
 The WFMS is an ePIC Software and Computing activity, and its streaming side is developed in coordination with the DAQ
 effort: the E0-E1 interface — the exit buffer, the STF and TF streams, and the run controls that cross it — is a joint
-design object between DAQ and the WFMS. The streaming computing model and the WFMS requirements document, both ePIC
-S&C products, set the shared direction, and the streaming workflow testbed exists to inform ePIC's decision making on
+design responsibility between DAQ and the WFMS. The streaming computing model and the WFMS requirements document,
+both ePIC S&C products, set the shared direction, and the streaming workflow testbed informs ePIC's decision making on
 the streaming WFMS over the coming years.
 
 ## E1/E2 Facility Involvement

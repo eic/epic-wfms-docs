@@ -59,9 +59,9 @@ integrations.
 The WFMS builds on established, externally maintained systems and engages their projects rather than forking them,
 consistent with the [EIC/ePIC Software Statement of Principles](https://eic.github.io/activities/principles.html).
 PanDA, JEDI, iDDS, Harvester, and the pilot are products of the BNL-led PanDA project, and ePIC WFMS development
-proceeds in direct coordination with the PanDA core team — the JEDI task-injection path used by epicprod was designed
-with and agreed by the PanDA developers. Rucio is a community project with ePIC instances operated at the labs, and
-ePIC operational experience returns upstream as contributed features and fixes. Hydra is the ePIC validation
+proceeds in direct coordination with the PanDA core team, for example the JEDI task-injection path used by epicprod was
+designed with and agreed by the PanDA developers. Rucio is a community project with ePIC instances operated at the
+labs, and ePIC operational experience returns upstream as contributed features and fixes. Hydra is the ePIC validation
 application from JLab, integrated through the interfaces described in Validation. The OSG provides the distributed
 submission fabric for much of the resource pool, and the ePIC software stack — containers, CVMFS distribution, and the
 supporting CI — is the payload environment the WFMS executes.

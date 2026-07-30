@@ -17,7 +17,7 @@
   <text x="750" y="60" text-anchor="middle" font-size="13.5" font-style="italic" fill="#666">The first streaming testbed workflows on the common WFMS platform</text>
 
   <!-- DAQ (shared source) -->
-  <rect x="600" y="84" width="300" height="72" rx="10" fill="#cfe2f3" stroke="#3d85c6" stroke-width="2"/>
+  <rect x="600" y="84" width="300" height="72" rx="10" fill="#d9ead3" stroke="#6aa84f" stroke-width="2"/>
   <text x="750" y="112" text-anchor="middle" font-size="15" font-weight="bold" fill="#111">DAQ — simulated in the testbed</text>
   <text x="750" y="132" text-anchor="middle" font-size="12" fill="#333">broadcasts the run lifecycle · emits STFs</text>
 

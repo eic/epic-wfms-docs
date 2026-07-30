@@ -171,7 +171,7 @@ The fast processing pipeline is diagrammed below — the agent pipeline from sim
 integration of the real EICrecon payload into these workers is described in
 [Streaming Reconstruction Integration](#streaming-reconstruction-integration) above.
 
-[![Fast processing pipeline](diagrams/fast-processing-pipeline-v10.svg)](diagrams/fast-processing-pipeline-v10.svg)
+[![Fast processing pipeline](diagrams/fast-processing-pipeline-v11.svg)](diagrams/fast-processing-pipeline-v11.svg)
 
 The iDDS/PanDA/Harvester detail behind the standing worker pool:
 

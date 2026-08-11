@@ -50,6 +50,7 @@ nav:
     - Operations: operations.md
     - Organization: organization.md
     - Timeline: timeline.md
+  - APIs: apis.md
   - References: reference.md
   - Diagram Gallery: gallery.md
   - View PDF: https://epic-wfms-docs.readthedocs.io/_/downloads/en/latest/pdf/

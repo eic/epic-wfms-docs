@@ -95,6 +95,11 @@ composed task name: RECO reconstruction outputs and the associated log datasets.
 gathers this lineage onto the task record, linking expected and observed outputs with their Rucio identifiers, status,
 and access references, so a physicist can go from a physics configuration to its data products in one place.
 
+Delivery is accounted over time as well as in totals. A nightly rebuild derives, from the Rucio record, a per-day
+account of the files and data volume each physics configuration delivered; the campaign delivery view renders it as
+the campaign's delivery history — the daily production yield an operator watches — alongside cumulative delivered
+totals per configuration.
+
 Third-party event-generation inputs are cataloged on the same footing. EVGEN datasets in JLab Rucio are swept into the
 catalog and matched to the requests they serve, so a task's inputs and outputs are both visible beside the
 configuration that consumes and produces them. On-the-fly event generation in the production payload is the planned

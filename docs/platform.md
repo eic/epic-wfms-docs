@@ -67,6 +67,11 @@ Django models and migrations define the schema. JSON fields hold extensible meta
 filtering, linking, constraints, or operator workflows require them. The pervasive use of JSON fields makes the
 system flexible and adaptable to include new knowledge, state and functionality.
 
+Beside current state and its per-record history, the platform keeps a coherent state history: the snapper-ai service
+captures a snapshot of a system's state whenever it changes, so the state at any past moment can be answered and the
+evolution between two moments compared. Operational pages embed its time-history panels — the PanDA activity and
+campaign delivery views draw on it — and the same history serves programmatic and AI clients through MCP tools.
+
 ### Browser Pages
 
 Pages are server-rendered Django templates with targeted JavaScript for filtering, selection, asynchronous actions, and

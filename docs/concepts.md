@@ -108,7 +108,7 @@ always a deliberate operator action.
 **Campaign narrative** — a human-authored account of a campaign's goals, priorities, and evolution. It is shared
 context for operators and LLMs: daily reports and assessments reason against it.
 
-The lifecycles above in one view:
+The conceptual arc of the lifecycles in one view:
 
 [![Lifecycles](diagrams/lifecycles.svg)](diagrams/lifecycles.svg)
 

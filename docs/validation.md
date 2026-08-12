@@ -19,20 +19,23 @@ workloads on the platform, AI assessment machinery, and recording of validation 
 ## WFMS Integrations with ePIC Validation
 
 ePIC validation is anchored by Hydra, the ePIC validation application, which produces validation plots from data. The
-WFMS integrates with Hydra rather than duplicating it, through two interfaces now at the proposal stage
+WFMS integrates with Hydra rather than duplicating it, through two interfaces
 ([validation integration plan](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_VALIDATION.md)): an
-availability signal from epicprod to Hydra, and an assessment handoff from Hydra to the AI assessment application. The
+availability signal from epicprod to Hydra, and an assessment handoff from Hydra to the AI assessment application.
+The first version of the interface is operating — open completion and campaign-catalog reads and the authenticated
+results receiver, served on both the internal and collaboration faces (see [APIs](apis.md)) — ahead of the Hydra-side
+integration that will consume it. The
 resulting loop runs from PanDA task completion, through an epicprod availability signal, to Hydra validation plots, to
 an AI assessment delivered as a natural-language judgment — recorded against the task or dataset it evaluates.
 
 [![The validation loop](diagrams/validation_loop.svg)](diagrams/validation_loop.svg)
 
-Availability is offered two ways, built on existing platform capabilities. A campaign-catalog JSON gives a
-comprehensive view of the current campaign — for each task or dataset its configuration tags, campaign, request,
-status, and produced Rucio references with file counts and completeness — which a consumer polls and diffs to find what
-is new and ready to validate. A live event delivers a per-unit notification the moment a unit becomes available, over
-the same SSE path that serves browser notification, including to external subscribers through the remote streaming
-proxy.
+Availability is offered two ways, built on existing platform capabilities. A campaign-catalog JSON — part of the
+operating first version — gives a comprehensive view of the current campaign — for each task or dataset its
+configuration tags, campaign, request, status, and produced Rucio references with file counts and completeness —
+which a consumer polls and diffs to find what is new and ready to validate. A live event, the planned complement,
+delivers a per-unit notification the moment a unit becomes available, over the same SSE path that serves browser
+notification, including to external subscribers through the remote streaming proxy.
 
 ## Campaign Readiness and Signoff
 

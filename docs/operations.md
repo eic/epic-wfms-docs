@@ -48,7 +48,9 @@ Incident response is drill-down and bounded action. Diagnosis runs from the camp
 queue, or site, with error summaries at each level and the complete payload log one click from the job page. An AI
 assessment can be requested on the spot to summarize and interpret what the operator is looking at. Response actions —
 retry, recovery, resubmission, priority changes — are the same catalog controls used in routine operation, executed
-through the operations agent and recorded on the production record.
+through the operations agent and recorded on the production record. Task actions are verified operations: each
+request becomes a durable record that tracks the command from acceptance to the observed PanDA state change, and the
+record names the requesting operator even though the command reaches PanDA under the system's credential.
 
 Incidents are as often data-side as processing-side. Transfer failures, storage pressure, log-upload contention, and
 dataset integrity carry the same discipline: surfaced, diagnosed through the data management views, and resolved with

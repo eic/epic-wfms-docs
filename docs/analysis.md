@@ -14,8 +14,10 @@ the execution machinery exists; the ePIC questions are which analysis patterns b
 they are packaged, to be worked out with the analysis community as the need matures. Managed production of campaign
 benchmark analyses over newly produced data is a first candidate.
 
-Analysis is a foreseen workflow domain rather than an operating one. The requirements place it in WFMS scope, the
-platform serves it today through data access and metadata services, and managed analysis workflows are the growth path.
+Analysis is in first use as a workflow domain. PanDA user analysis tasks run on the same resources as production,
+under a fair-share split that protects production while serving analysis, with a dedicated analysis monitoring view
+presenting user tasks and jobs. The requirements place the domain in WFMS scope, the platform serves it today through
+data access and metadata services, and managed analysis workflows are the growth path.
 
 ## Echelon 3 Support and User Computing
 

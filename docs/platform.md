@@ -245,7 +245,7 @@ errors into logs, user-visible messages, or operational summaries.
 
 Production actions are recorded as a structured action stream within the same logging system: every submission, task
 operation, sweep, import, and configuration change logs the action, its subject, the outcome, and the measured duration.
-Each event declares its verbosity class in code, and a runtime policy — held with the rest of the operator-set
+Each incident declares its verbosity class in code, and a runtime policy — held with the rest of the operator-set
 configuration in a database-resident system configuration document, editable in the browser — selects what surfaces
 on live channels, beginning with a live view of the log pages. The stream is the data source for alarms, digests, and
 the LLM reporting and assessment services, which reason over it to answer what happened
@@ -284,6 +284,25 @@ Bot authority is a per-domain policy: the production bot informs, assesses, and 
 with operators and the operations agent; a testbed bot or testbed mode can be more active where that suits workflow
 experimentation. As confidence in harnessed AI operation grows, bots are a natural interface for exercising the same
 bounded action paths that humans operate, following the AI integration approach set out in Architecture.
+
+### Notification System
+
+Notifications extend the action stream into a routed delivery system. Every recorded action is a named incident with
+structured attributes. Consumers — external feed systems and in-process delivery plugins — register subscriptions
+naming the incidents and attribute filters they want; a router matches each new incident against the subscriptions and
+delivers per subscriber. The emitting code declares only the incident; it never names a recipient.
+
+Delivery follows the subscription's mode. Buffered pull writes one notice row per subscriber, drained over REST from
+the consumer's side, so an external system consumes its feed while credentials stay entirely on its own side. Push
+plugins deliver in process; the first is the Mattermost publisher for the collaboration's `#epicprod-live` channel,
+whose incident selection is itself an ordinary subscription. The nightly testbed run delivers a daily heartbeat notice
+into the operator's feed through the same path.
+
+The notification system end to end — production systems record incidents, the router matches consumer-registered
+subscriptions, and matched incidents reach external feeds and channels
+([notification design](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/NOTICE_ROUTING.md)):
+
+[![Notification system](diagrams/notification_system.svg)](diagrams/notification_system.svg)
 
 ### Alarms
 

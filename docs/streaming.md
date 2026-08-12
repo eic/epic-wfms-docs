@@ -93,9 +93,9 @@ what PanDA processes at each site.
 
 Fast processing exists for latency: first results from the data stream in O(10 s) to inform control room operations
 and AI tools of current detector and machine performance. TF samples are skimmed from arriving STFs, divided into TF
-slices, and distributed to a standing pool of workers running the reconstruction payload — EICrecon for ePIC
-production, now being integrated into the testbed workers. Slice results flow to low-latency analytics and monitoring
-consumers.
+slices, and distributed to a standing pool of workers running the reconstruction payload — message-driven EICrecon,
+integrated into the testbed workers as described under Streaming Reconstruction Integration below. Slice results flow
+to low-latency analytics and monitoring consumers.
 
 The latency budget rules out provisioning workers on demand. The pipeline pre-provisions a configurable worker pool at
 run start: run-imminent signals carry the target worker count, iDDS and Harvester establish semi-persistent PanDA

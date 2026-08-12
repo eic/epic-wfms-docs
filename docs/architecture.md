@@ -85,9 +85,10 @@ The architecture favors visible state, explicit control points, auditable action
 
 AI services consume
 structured WFMS context and produce assessments, comments, reports, summaries, and recommendations. Operational
-authority remains with the relevant human and programmatic/deterministic service components. If and when confidence in
-granting AI actionable functionality is established, the same programmatic action interfaces that humans operate can
-be made available to AIs, e.g. through appropriate MCP tools.
+authority remains with the relevant human and programmatic/deterministic service components. The path to AI
+actionable functionality has its first realization in operation: an AI composes a deterministic action as a proposal,
+and it executes only on human approval, through the same programmatic action interfaces that humans operate. As
+confidence grows, further action paths can open the same way, e.g. through appropriate MCP tools.
 
 The same architectural pattern applies beyond production. Streaming workflows, validation, calibration, distributed
 CI, and analysis can all expose structured state through APIs and MCP tools. AI systems can then reason over current

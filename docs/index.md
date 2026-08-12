@@ -1,6 +1,6 @@
 # ePIC Workflow Management System
 
-The ePIC Workflow Management System (WFMS) provides the shared workflow, data-management, monitoring, automation, and operations layer for ePIC computing.
+The ePIC Workflow Management System (WFMS) provides the shared workflow and dataflow orchestration, monitoring, automation, and operations layer for ePIC computing.
 
 The system spans post-DAQ streaming processing, global production campaigns, validation workflows, calibration, distributed CI, and analysis workflow support. These are workflow domains on one common distributed platform rather than separate systems. Two implementation fronts operate today — the streaming workflow testbed and the epicprod automated production system — building toward the full model.
 

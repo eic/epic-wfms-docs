@@ -13,7 +13,8 @@ The out-years align with the joint planning of DAQ, computing, and AI:
 
 ## Three Year Activity Timeline
 
-The near term is anchored in operating systems. Monthly production campaigns are moving to epicprod today. The
+The near term is anchored in operating systems. Monthly production campaigns operate under epicprod today, with task
+injection moving into the system at the campaign boundary. The
 campaign cadence is the delivery and validation rhythm for the production side of the WFMS.
 The automation buildout continues through this period: request ingest and requester notification, the validation loop
 with Hydra and AI assessment, deepening AI operations and reporting, and the steady conversion of operator procedures

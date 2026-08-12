@@ -20,8 +20,9 @@ connecting them.
 Two implementation fronts operate on the common platform.
 
 **epicprod**, the automated production system, runs ePIC simulation and reconstruction campaigns on the monthly
-campaign rhythm, and the campaigns are moving to it now (July 2026). It carries a production request from physicist submission
-through physics configuration, campaign preparation, PanDA execution, cataloged data products, and (soon) validation, with AI throughout the process synthesising, evaluating, and formulating active decisions for human approval (human always in the loop). The request
+campaign rhythm. The 26.07 campaign is the transitional one: produced through the pre-existing submission path and
+fully cataloged in epicprod, with task injection moving into the system for the next campaign. It carries a production request from physicist submission
+through physics configuration, campaign preparation, PanDA execution, cataloged data products, and (soon) validation, with AI throughout the process synthesizing, evaluating, and formulating active decisions for human approval (human always in the loop). The request
 interface and the Physics Configuration System (PCS) are the principal places where physicists meet the system: the
 request interface carries a group's production needs into the system and tracks them, and PCS is the configuration
 layer, a catalog of physics and processing definitions from which tasks are composed, with a composed name carrying

@@ -55,10 +55,11 @@ catalog is the instrument of campaign management: tasks composed from PCS config
 parameter sets, staged by campaign lifecycle
 ([task catalog design](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_TASK_CATALOG.md)).
 
-Prepping campaigns are mutable: operators add new tasks and clones, adjust priorities, withdraw
+Future campaigns are mutable: operators add new tasks and clones, adjust priorities, withdraw
 entries, and move tasks from draft to ready under readiness checks. The current campaign is the live one: ready tasks
 are submitted, and the catalog presents live status from PanDA and Rucio with diagnostic drill-down, analytics, and AI
-monitoring. Past campaigns are a frozen archive with all task parameters preserved. Pre-PCS production has been
+monitoring. The last and past campaigns preserve all task parameters as the archive, and any campaign with data still
+arriving keeps full active presentation as a producing campaign. Pre-PCS production has been
 assimilated into past campaigns, making the catalog the complete ePIC production record.
 
 The catalog stays complete by construction: a nightly sweep reads recent ePIC tasks from the PanDA task database,

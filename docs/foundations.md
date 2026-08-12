@@ -7,8 +7,8 @@ The WFMS foreseen by ePIC for physics operations is not presently realized, nor 
 
 ## WFMS Scope
 
-The ePIC Workflow Management System (WFMS) is the shared workflow, data management, monitoring, automation, and
-operations layer for ePIC computing, from datataking to global production.
+The ePIC Workflow Management System (WFMS) is the shared workflow and dataflow orchestration, monitoring, automation,
+and operations layer for ePIC computing, from datataking to global production.
 It encompasses streaming and production — including workflows that combine aspects of both —
 in a common WFMS platform for the experiment, spanning post-DAQ E0-E1 streaming processing, global production campaigns,
 validation workflows, distributed analysis support, calibration, distributed CI, and future datataking operations.
@@ -97,7 +97,7 @@ that can benefit from the platform, e.g. by using distributed resources and/or c
 
 The foundation is therefore one platform serving multiple workflow domains. Streaming, production, validation,
 calibration, distributed CI, and analysis have distinct operational needs, but they should converge on shared
-services, shared data models where practical, shared monitoring, and shared operational discipline.
+services, shared monitoring, and shared operational discipline.
 
 [^wfms-requirements]: ePIC Distributed Workflow Management System requirements. <https://www.overleaf.com/project/67bdf89a3d44a138da503dea>
 

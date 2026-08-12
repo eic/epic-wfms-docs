@@ -87,19 +87,23 @@ or failed.
 
 **PanDA task association** — the record of one physical PanDA submission of a campaign task, preserving the complete
 submission history on the task record. Retry is native to PanDA: failed or missing jobs are retried within the existing PanDA
-task, under the same name, and the efficient course is always to complete the tail of the existing task. Only the
-special case of deliberately rerunning an entire task — essentially cloning it — creates a new submission under a
-`.tryN` name, a case that serves mainly system testing on small test tasks.
+task, under the same name, and the efficient course is usually to complete the tail of the existing task.
+Deliberately rerunning an entire task — a fresh submission under a `.tryN` name with a new output namespace — is the
+production operation for the cases in-task retry cannot serve, such as a task whose recorded outcomes misstate what
+its jobs produced.
 
 **Campaign** — a time-ordered grouping of production tasks, named by year and month (25.10, 26.06). Campaigns stage the
 catalog:
 
 ```
-prepping (mutable)  →  current (live)  →  past (frozen archive)
+future (in preparation)  →  current (live)  →  last  →  past (frozen archive)
 ```
 
-Prepping campaigns accept new tasks and clones; the current campaign is where submission and live status happen; past
-campaigns preserve all task parameters as the production record.
+A future campaign accepts new tasks and clones; the current campaign is where submission and live status happen; the
+last campaign keeps full active presentation while its data still moves; past campaigns preserve all task parameters
+as the production record. A campaign with data arriving — whatever slot it occupies — is additionally presented as
+*producing*, a derived condition rather than a stored stage, and the transition of a producing campaign to current is
+always a deliberate operator action.
 
 **Campaign narrative** — a human-authored account of a campaign's goals, priorities, and evolution. It is shared
 context for operators and LLMs: daily reports and assessments reason against it.

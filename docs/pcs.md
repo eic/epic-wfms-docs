@@ -36,7 +36,9 @@ Datasets bind tags into a defined data product — one sample, produced by a sin
 discriminating same-configuration samples produced separately. The composed name built from these entities carries the
 identity in a compact form usable in entity naming — tasks, datasets, and files: catalog pages, links, the API, the
 PanDA task name, and the Rucio output namespace all carry it, as diagrammed above and specified in
-[Concepts](concepts.md). Production configs complete the
+[Concepts](concepts.md). The composed name is unique across the catalog: intake derives a discriminating sample
+variant when a new dataset would otherwise collide, name resolution refuses an ambiguous name rather than guessing,
+and a standing integrity check alarms if uniqueness is ever violated. Production configs complete the
 picture on the execution side: reusable, deliberately mutable templates of software stack, resource, and splitting
 settings.
 

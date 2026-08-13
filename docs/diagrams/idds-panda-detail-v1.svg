@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 650" font-family="Arial, sans-serif" font-size="12">
-<!-- Derived from swf-testbed repo, docs/images/idds-panda-detail-v1.svg. This copy is maintained here and has diverged (label anchoring fix). -->
+<!-- Derived from swf-testbed repo, docs/images/idds-panda-detail-v1.svg. The origin file was retired 2026-08-12; this is the maintained version. -->
   <!-- Background -->
   <rect width="700" height="650" fill="white"/>
 

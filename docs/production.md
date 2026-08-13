@@ -83,8 +83,18 @@ inputs from and register outputs to JLab Rucio are described in Platform.
 
 Live execution state flows back to the catalog and the ePIC PanDA monitoring views: task and job status, error
 summaries, queue and site state, and resource usage. Payload logs are retrievable on demand from the task pages.
-Operators steer execution with retry, recovery, and priority controls, and the alarm system carries execution
-conditions that need attention.
+
+Operators steer execution with a graded set of task controls: native retries on an existing task (raising the
+attempt budget, or restarting a finished task to retry its failures), pause and resume, stop-and-finish for work
+not worth completing, priority changes, and reruns as fresh attempts — the entire task, or a residual rerun that
+resubmits only the work units whose outputs never arrived, so delivered data is not regenerated. The retry paths
+carry their own protections. Before a retry, the closed log datasets of a finished task are reopened: PanDA closes
+them when a task ends, and the jobs of a bare retry would fail their log registration. A retry is vetoed when the
+task's job sandbox is no longer in the server cache — every generated job would fail its first download — and
+resubmission is recommended instead. A nightly pass keeps the sandboxes and log-dataset lifetimes of retryable
+tasks alive through the retention window, and server-side retry rules bound the attempt cost of known futile
+failure classes. The alarm system carries execution conditions that need attention. The mechanics are specified in
+the [swf-epicprod JEDI integration document](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/JEDI_INTEGRATION.md).
 
 ## Data Products
 

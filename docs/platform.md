@@ -72,6 +72,12 @@ captures a snapshot of a system's state whenever it changes, so the state at any
 evolution between two moments compared. Operational pages embed its time-history panels — the PanDA activity and
 campaign delivery views draw on it — and the same history serves programmatic and AI clients through MCP tools.
 
+The service as deployed, from the subsystems that own state, through the owner-published components and the
+snap record, to the views and the AI clients. Served from the
+[snapper-ai repository](https://github.com/BNLNPPS/snapper-ai), where it evolves.
+
+[![snapper-ai — from subsystem state to the views](https://raw.githubusercontent.com/BNLNPPS/snapper-ai/main/docs/snapper_schematic.png)](https://raw.githubusercontent.com/BNLNPPS/snapper-ai/main/docs/snapper_schematic.png)
+
 ### Browser Pages
 
 Pages are server-rendered Django templates with targeted JavaScript for filtering, selection, asynchronous actions, and

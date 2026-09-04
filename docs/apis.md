@@ -50,12 +50,10 @@ authenticated as that person. The design is described on the
   its user. Inside the BNL perimeter the server is reached on the
   production host; the client setup document below covers both faces.
 
-The tools, 97 at the time of writing, fall into these families:
+The external face serves the read-only tools, 60 at the time of writing,
+plus one write, described under AI content below. Testbed control and
+production writes are served only inside BNL. The families:
 
-- **Platform state and testbed** (`swf_*`): system state; agents and their
-  control; namespaces; workflow definitions, executions, and monitors;
-  runs, STF files, and time-frame slices; messages and logs; starting and
-  stopping a user testbed; AI memory.
 - **PanDA production** (`panda_*`): activity overview, task and job lists,
   single-job study, error summary and job diagnosis, queues, resource
   usage, and Harvester workers.
@@ -69,12 +67,16 @@ The tools, 97 at the time of writing, fall into these families:
 - **Rucio catalogs** (`jlab_rucio_*`, `bnl_rucio_*`): scopes, DIDs, files
   and content, metadata, dataset summaries, rules and locks, replicas,
   RSEs, and account usage, read-only, for the JLab and BNL instances.
-- **AI content and proposals** (`epic_*`, `ai_*`): registering and reading
-  AI assessments; listing, proposing, and deciding proposals.
+- **AI content and proposals** (`epic_*`, `ai_*`): reading AI assessments
+  and listing proposals. `ai_propose_ping` is the one write on the external
+  face. It creates a proposal, not a ping: a dated obligation for the
+  alarm system is proposed, and it becomes a ping only when a person
+  approves the proposal on the alarm dashboard. A ping can therefore be
+  proposed in natural language at an LLM command line, from anywhere,
+  with the approval gated on the UI.
 
-`get_server_instructions` returns the server's orientation text and
-`swf_list_available_tools` the current catalog; a client calls these
-first. Parameter-level detail for every tool is in the
+`get_server_instructions` returns the server's orientation text and the
+protocol's tools/list the current catalog; a client reads these first. Parameter-level detail for every tool is in the
 [MCP tool reference](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/MCP_TOOL_REFERENCE.md),
 maintained with the code; the
 [client setup document](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/MCP_CLIENTS.md)

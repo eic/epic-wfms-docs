@@ -63,6 +63,29 @@ specification is generated from the composed entities and submitted through the 
 agent using the PanDA client API, and the returned PanDA task ID is recorded on the campaign task for tracking and
 monitoring.
 
+## Trials
+
+A trial is a small, real run of a composed configuration before that configuration runs at scale. It uses the
+requesting group's own tags and input, the production payload, the production submission path, and it registers real
+data — it differs from the full production run in three things only: it runs a hundred events rather than millions,
+its outputs land in a test area under a two-week lifetime, and it counts toward no physics. Everything else about it
+is what production does, which is what makes it worth running: a configuration that survives a trial has been proved
+on the path that will carry it, not on a rehearsal of that path.
+
+The trial is offered to the group whose configuration it is. What it is for on their side — a check that the
+composed configuration is the sample they asked for, the first data their validation benchmarks run over, the
+evidence behind their own sign-off — is for the physics groups and production to settle between them. On the
+production side its value is immediate and independent: a trial exercises submission, payload, storage and
+registration end to end for twenty minutes and a hundred events, so a configuration or a site problem is found before
+it can consume thousands of core-hours of finished work.
+
+A trial is a standing task in its own right rather than the production task in a special mode. It takes its own
+composed identity — the configuration's name with a trial suffix, numbered for the second and later trials a
+configuration needs — and is therefore its own dataset and its own completion unit, accounting separately and
+touching nothing belonging to the configuration it proves. Its outputs carry the production directory structure
+beneath a test root, so a group reads them in the shape real data has while nothing can mistake them for production
+data. What survives a trial is the record that it ran and what it produced; the data itself expires.
+
 ## From Request to Configuration
 
 Production requests reach PCS through the triage described in [Production System](production.md): an operator links

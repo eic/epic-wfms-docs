@@ -26,6 +26,7 @@ API and MCP references, and the glossary. The system diagrams are collected in t
 - **Production operations agent design**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_OPS_AGENT.md>
 - **Validation integration plan**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_VALIDATION.md>
 - **Production request questionnaire design**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_QUESTIONNAIRE.md>
+- **Pilot and payload test queue** (BNL_NPPS_GPU: pilot selection and the proving program for pilot, Event Service and payload changes): <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/NPPS0_TEST_QUEUE.md>
 - **argus-ai assessment application design**: <https://github.com/BNLNPPS/corun-ai/blob/master/docs/argus-ai.md>
 
 ## API and MCP References

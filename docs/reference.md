@@ -27,6 +27,7 @@ API and MCP references, and the glossary. The system diagrams are collected in t
 - **Validation integration plan**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_VALIDATION.md>
 - **Production request questionnaire design**: <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_QUESTIONNAIRE.md>
 - **Pilot and payload test queue** (BNL_NPPS_GPU: pilot selection and the proving program for pilot, Event Service and payload changes): <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/NPPS0_TEST_QUEUE.md>
+- **NERSC Perlmutter** (how a pilot starts at the site, the public worker record, pilot-side queue configuration by file, the Event Service test queue and production operations' wrapper on it): <https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/NERSC_PERLMUTTER.md>
 - **argus-ai assessment application design**: <https://github.com/BNLNPPS/corun-ai/blob/master/docs/argus-ai.md>
 
 ## API and MCP References

@@ -27,9 +27,16 @@ Fast development turnaround without loss of operational control is a stated requ
 on coordinated branches across the core repositories, and deployment is scripted and pulls from git, so the repository
 is the single source of what runs. Deploys are small, frequent, and repeatable, reloading the web tier and its workers.
 
-The credentialed operations agent is deliberately decoupled from routine deploys: the doer scripts it dispatches run
-fresh from the deploy tree, so a script fix is live on the next dispatch, while the agent process itself is restarted
-only by deliberate operator action. This documentation follows the same continuous practice, rebuilding on every push.
+The credentialed operations agent is decoupled from routine deploys: the doer scripts it dispatches run fresh from the
+deploy tree, so a script fix is live on the next dispatch, and the lightweight deploy that carries web and MCP changes
+leaves the agent running. The full deploy restarts the agent on the new release.
+
+The production application repository, swf-epicprod, deploys itself. A merge or push to its main branch starts a deploy
+on the production host through a self-hosted GitHub Actions runner, which chooses no deploy, the lightweight deploy or
+the full deploy from the changed paths, and stops on a database migration, which is deployed by hand on approval.
+Contributors open a pull request, which reports the deploy its merge will trigger, and merge it themselves
+([AUTODEPLOY.md](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/AUTODEPLOY.md)). This documentation follows the
+same continuous practice, rebuilding on every push.
 
 The production services presently share the testbed platform at BNL. Requirements for dedicated long-term hosting of
 the production services have been developed, with provisioning planned for FY27.

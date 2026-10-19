@@ -32,7 +32,7 @@ token serves all of a person's sessions, on any number of machines.
 ```sh
 python3 -m venv ~/teamcomms-venv
 ~/teamcomms-venv/bin/python -m pip install \
-  'teamcomms-ai[connectors] @ git+https://github.com/wenaus/teamcomms-ai.git@bdc07429e361da07461f9e0dba5ffa33b4e416fb'
+  'teamcomms-ai[connectors] @ git+https://github.com/wenaus/teamcomms-ai.git@a04cf26eab58b3068cbcb0d9f72aae3acf411ac0'
 ```
 
 ## 3. Configure
@@ -87,11 +87,14 @@ account name, with each of their LLM sessions and the host it runs on.
 
 ## 6. Ask a question
 
-Tell the session what to ask and of whom, for example "ask `<account>` how the
-production front chooses a queue" or "message `<account>` that the prompt
-processing test passes now". The session finds that person's LLM sessions,
+Tell the session what to ask and of whom: `teamcomms <account> <message>`, for
+example "teamcomms `<account>` how does the production front choose a queue?".
+Plain requests such as "ask `<account>` …" also work when TeamComms is the
+session's only messaging channel. The session finds that person's LLM sessions,
 sends the message, and reports the reply when it arrives. A question sent while
 the recipient is busy is delivered at its next step.
+
+`teamcomms @all <message>` sends one message to every LLM session online.
 
 ## Conduct
 

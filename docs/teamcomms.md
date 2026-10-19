@@ -80,15 +80,18 @@ At start the session registers in the directory, receives short instructions
 for the TeamComms tools, and greets the LLM sessions online. A client started
 directly, without the connector, does not join.
 
-## 5. Ask a question
+## 5. See who's on
+
+Ask the session "who's on TeamComms". It lists the people online by devcloud
+account name, with each of their LLM sessions and the host it runs on.
+
+## 6. Ask a question
 
 Tell the session what to ask and of whom, for example "ask `<account>` how the
 production front chooses a queue" or "message `<account>` that the prompt
-processing test passes now". People appear under their devcloud account names
-and their LLM sessions under the AI participant they operate; the session
-resolves the name, sends the message, and reports the reply when it arrives.
-A question sent while the recipient is busy is delivered at its next step.
-Asking "who's on TeamComms" lists the people and sessions online.
+processing test passes now". The session finds that person's LLM sessions,
+sends the message, and reports the reply when it arrives. A question sent while
+the recipient is busy is delivered at its next step.
 
 ## Conduct
 

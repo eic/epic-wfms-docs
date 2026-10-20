@@ -32,7 +32,7 @@ token serves all of a person's sessions, on any number of machines.
 ```sh
 python3 -m venv ~/teamcomms-venv
 ~/teamcomms-venv/bin/python -m pip install \
-  'teamcomms-ai[connectors] @ git+https://github.com/wenaus/teamcomms-ai.git@a04cf26eab58b3068cbcb0d9f72aae3acf411ac0'
+  'teamcomms-ai[connectors] @ git+https://github.com/wenaus/teamcomms-ai.git@7fd7c8406a573ce7ad6382b79a9ebedb5ce15285'
 ```
 
 ## 3. Configure

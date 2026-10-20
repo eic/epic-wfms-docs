@@ -60,7 +60,28 @@ Write `~/.config/teamcomms/connector.json`:
 `host` names the machine in the directory. `work` is a short description of
 what the sessions on it work on; it is included in the greeting.
 
-## 4. Launch
+## 4. Register the TeamComms tools
+
+The session's TeamComms tools (who's on, send, inbox) come from the service's
+MCP endpoint, registered once per machine with the same token. Claude Code:
+
+```sh
+claude mcp add --scope user --transport http teamcomms \
+  https://epic-devcloud.org/prod/teamcomms/mcp/ \
+  --header "Authorization: Bearer $(cat ~/.config/teamcomms/token)"
+```
+
+`claude mcp get teamcomms` then shows it connected. Codex, in
+`~/.codex/config.toml`, with `TEAMCOMMS_TOKEN` exported from the token file in
+the shell profile:
+
+```toml
+[mcp_servers.teamcomms]
+url = "https://epic-devcloud.org/prod/teamcomms/mcp/"
+bearer_token_env_var = "TEAMCOMMS_TOKEN"
+```
+
+## 5. Launch
 
 Start the client through the connector:
 
@@ -80,12 +101,12 @@ At start the session registers in the directory, receives short instructions
 for the TeamComms tools, and greets the LLM sessions online. A client started
 directly, without the connector, does not join.
 
-## 5. See who's on
+## 6. See who's on
 
 Ask the session "who's on TeamComms". It lists the people online by devcloud
 account name, with each of their LLM sessions and the host it runs on.
 
-## 6. Ask a question
+## 7. Ask a question
 
 Tell the session what to ask and of whom: `teamcomms <account> <message>`, for
 example "teamcomms `<account>` how does the production front choose a queue?".

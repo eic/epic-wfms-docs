@@ -210,6 +210,15 @@ primitives: list tools support filtering, pagination, and stable identifiers, an
 service layer and agent execution paths as browser and REST actions. Tool docstrings are operational metadata: they are
 the primary text an LLM reads when deciding what to call.
 
+Outside BNL, <https://epic-devcloud.org/prod/mcp/> serves every monitor tool except
+`ai_decide_proposal` and `epic_register_ai_assessment`, which remain internal.
+Clients use a per-user token from `/prod/account/tokens/`; swf-remote forwards
+the account identity, and state-changing tools retain swf-monitor's authority
+checks, as browser actions do. A new monitor tool is added to swf-remote's
+explicit external set in the same work unless Torre rules it internal.
+The [external-access policy](https://github.com/BNLNPPS/swf-remote/blob/main/docs/live-data-access.md)
+defines the boundary.
+
 Both interfaces rest on stable identifiers: campaign task composed names, JEDI task IDs, PanDA job IDs, Rucio DIDs, RSE
 names, agent names, workflow execution IDs, section slugs, and document artifact group IDs. JSON metadata identifies
 the source system, artifact type, subject reference, producing user or service, and, for LLM-generated artifacts, model

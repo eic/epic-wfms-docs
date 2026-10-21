@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="920" viewBox="0 0 1280 920" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <style>
+    .title    { font-size: 24px; font-weight: bold; fill: #1a1a2e; }
+    .zone     { font-size: 15px; font-weight: bold; fill: #444; }
+    .hname    { font-size: 13px; font-weight: bold; fill: #102a43; }
+    .role     { font-size: 14px; font-weight: bold; fill: #0b3d66; }
+    .spec     { font-size: 11px; fill: #555; }
+    .note     { font-size: 11px; font-style: italic; fill: #666; }
+    .edge     { stroke: #555; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    .edge2    { stroke: #555; stroke-width: 1.6; fill: none; marker-end: url(#arrow); marker-start: url(#arrow); }
+    .dashed   { stroke-dasharray: 6 4; }
+    .elabel   { font-size: 11px; fill: #333; }
+  </style>
+
+  <!-- Title -->
+  <text x="640" y="36" text-anchor="middle" class="title">BNL PanDA Deployment — ePIC Production / Streaming Workflows</text>
+
+  <!-- ===================== CERN zone ===================== -->
+  <rect x="930" y="60" width="320" height="130" rx="10" fill="#fdf3e7" stroke="#d9a05b" stroke-width="2"/>
+  <text x="950" y="84" class="zone">CERN (shared with other VOs)</text>
+
+  <rect x="950" y="98" width="130" height="70" rx="6" fill="#fff" stroke="#d9a05b"/>
+  <text x="1015" y="124" text-anchor="middle" class="role">PanDA IAM</text>
+  <text x="1015" y="142" text-anchor="middle" class="spec">identities / tokens</text>
+
+  <rect x="1098" y="98" width="130" height="70" rx="6" fill="#fff" stroke="#d9a05b"/>
+  <text x="1163" y="124" text-anchor="middle" class="role">CRIC</text>
+  <text x="1163" y="142" text-anchor="middle" class="spec">site/queue config</text>
+
+  <!-- ===================== BNL SDCC zone ===================== -->
+  <rect x="30" y="60" width="860" height="722" rx="12" fill="#eef4fb" stroke="#4a78a8" stroke-width="2"/>
+  <text x="50" y="86" class="zone">BNL SCDF</text>
+
+  <!-- Core services -->
+  <rect x="50" y="100" width="400" height="310" rx="10" fill="#e2ecf7" stroke="#4a78a8" stroke-width="1.5"/>
+  <text x="66" y="122" class="zone">Core services</text>
+
+  <rect x="66" y="134" width="368" height="62" rx="6" fill="#fff" stroke="#4a78a8"/>
+  <text x="80" y="156" class="role">PanDA server / JEDI</text>
+  <text x="80" y="173" class="hname">pandaserver01.sdcc.bnl.gov</text>
+
+  <rect x="66" y="206" width="176" height="62" rx="6" fill="#fff" stroke="#4a78a8"/>
+  <text x="80" y="228" class="role">iDDS</text>
+  <text x="80" y="245" class="hname">idds01.sdcc.bnl.gov</text>
+
+  <rect x="258" y="206" width="176" height="62" rx="6" fill="#fff" stroke="#4a78a8"/>
+  <text x="272" y="228" class="role">PanDA monitor</text>
+  <text x="272" y="245" class="hname">pandamon01</text>
+
+  <rect x="66" y="278" width="176" height="62" rx="6" fill="#fff" stroke="#4a78a8"/>
+  <text x="80" y="300" class="role">PostgreSQL DB</text>
+  <text x="80" y="317" class="hname">pandadb01</text>
+
+  <rect x="258" y="278" width="176" height="62" rx="6" fill="#fff" stroke="#4a78a8"/>
+  <text x="272" y="300" class="role">ActiveMQ</text>
+  <text x="272" y="317" class="hname">pandamsg</text>
+
+  <text x="66" y="392" class="note">all hosts *.sdcc.bnl.gov</text>
+
+  <!-- Monitoring / logging stack -->
+  <rect x="480" y="100" width="390" height="190" rx="10" fill="#e8f3e8" stroke="#5b9a5b" stroke-width="1.5"/>
+  <text x="496" y="122" class="zone">Logging &amp; monitoring</text>
+
+  <rect x="496" y="134" width="170" height="62" rx="6" fill="#fff" stroke="#5b9a5b"/>
+  <text x="510" y="156" class="role">Logstash</text>
+  <text x="510" y="173" class="hname">pandalogstash</text>
+
+  <rect x="686" y="134" width="170" height="130" rx="6" fill="#f6fbf6" stroke="#5b9a5b"/>
+  <text x="700" y="156" class="role">OpenSearch cluster</text>
+  <text x="700" y="177" class="hname">pandaos01</text>
+  <text x="700" y="191" class="spec">controller + data node</text>
+  <text x="700" y="225" class="hname">pandaos02</text>
+  <text x="700" y="239" class="spec">data node</text>
+
+  <rect x="496" y="216" width="170" height="62" rx="6" fill="#fff" stroke="#5b9a5b"/>
+  <text x="510" y="238" class="role">OS Dashboards</text>
+  <text x="510" y="255" class="hname">pandaosdash</text>
+
+  <!-- Harvesters -->
+  <rect x="50" y="470" width="820" height="162" rx="10" fill="#f3ecf9" stroke="#8a63b0" stroke-width="1.5"/>
+  <text x="66" y="492" class="zone">Harvester instances at BNL (3)</text>
+
+  <rect x="66" y="506" width="254" height="110" rx="6" fill="#fff" stroke="#8a63b0"/>
+  <text x="80" y="528" class="role">Harvester</text>
+  <text x="80" y="545" class="hname">pandaharvester01.sdcc.bnl.gov</text>
+  <text x="80" y="564" class="spec">PQs: BNL_PanDA_1, BNL_EPIC_PROD_1,</text>
+  <text x="80" y="579" class="spec">E1_BNL, E1_JLAB</text>
+
+  <rect x="333" y="506" width="254" height="110" rx="6" fill="#fff" stroke="#8a63b0"/>
+  <text x="347" y="528" class="role">Harvester</text>
+  <text x="347" y="545" class="hname">pandaharvester02.sdcc.bnl.gov</text>
+  <text x="347" y="564" class="spec">PQs: Google Cloud queue</text>
+
+  <rect x="600" y="506" width="254" height="110" rx="6" fill="#fff" stroke="#8a63b0"/>
+  <text x="614" y="528" class="role">Harvester + OSG Access Point</text>
+  <text x="614" y="545" class="hname">osgsub01.sdcc.bnl.gov</text>
+  <text x="614" y="564" class="spec">PQs: BNL_OSG_PanDA_1,</text>
+  <text x="614" y="579" class="spec">BNL_OSG_EPIC_PROD_1</text>
+
+  <!-- ===================== Compute resources ===================== -->
+  <rect x="50" y="662" width="416" height="100" rx="10" fill="#fbeaea" stroke="#b05b5b" stroke-width="1.5"/>
+  <text x="66" y="684" class="zone">Compute</text>
+  <rect x="66" y="694" width="380" height="56" rx="6" fill="#fff" stroke="#b05b5b"/>
+  <text x="256" y="718" text-anchor="middle" class="role">BNL batch</text>
+  <text x="256" y="736" text-anchor="middle" class="spec">BNL / E1 queues</text>
+
+  <!-- ===================== Grid compute (external) ===================== -->
+  <rect x="930" y="662" width="320" height="100" rx="10" fill="#fbeaea" stroke="#b05b5b" stroke-width="2"/>
+  <text x="950" y="684" class="zone">Grid compute</text>
+  <rect x="948" y="694" width="284" height="56" rx="6" fill="#fff" stroke="#b05b5b"/>
+  <text x="1090" y="718" text-anchor="middle" class="role">OSG sites</text>
+  <text x="1090" y="736" text-anchor="middle" class="spec">via OSG AP (osgsub01)</text>
+
+  <!-- ===================== Google Cloud (external) ===================== -->
+  <rect x="930" y="792" width="320" height="100" rx="10" fill="#fbeaea" stroke="#b05b5b" stroke-width="2"/>
+  <text x="950" y="814" class="zone">Google Cloud</text>
+  <rect x="948" y="824" width="284" height="56" rx="6" fill="#fff" stroke="#b05b5b"/>
+  <text x="1090" y="848" text-anchor="middle" class="role">GCP Spot VMs</text>
+  <text x="1090" y="866" text-anchor="middle" class="spec">via pandaharvester02</text>
+
+  <!-- ===================== NERSC zone ===================== -->
+  <rect x="930" y="332" width="320" height="300" rx="10" fill="#fbeaea" stroke="#b05b5b" stroke-width="2"/>
+  <text x="950" y="356" class="zone">NERSC</text>
+
+  <rect x="948" y="372" width="284" height="150" rx="6" fill="#fff" stroke="#8a63b0"/>
+  <text x="962" y="394" class="role">Local harvester</text>
+  <text x="962" y="411" class="spec">runs on the Perlmutter cluster itself</text>
+  <text x="962" y="435" class="spec">PQs:</text>
+  <text x="962" y="451" class="spec">NERSC_Perlmutter_epic_test (premium QOS)</text>
+  <text x="962" y="466" class="spec">NERSC_Perlmutter_epic (regular QOS)</text>
+  <text x="962" y="481" class="spec">NERSC_Perlmutter_epic_gpu_test (shared QOS)</text>
+  <text x="962" y="506" class="note">used for all NERSC PQs</text>
+
+  <rect x="948" y="552" width="284" height="60" rx="6" fill="#fff" stroke="#b05b5b"/>
+  <text x="1090" y="576" text-anchor="middle" class="role">Perlmutter HPC</text>
+  <text x="1090" y="594" text-anchor="middle" class="spec">Slurm QOS (premium / regular / shared)</text>
+
+  <!-- ===================== Rucio (at BNL SCDF) ===================== -->
+  <rect x="480" y="300" width="390" height="130" rx="10" fill="#e9f0f0" stroke="#4e8c8c" stroke-width="2"/>
+  <text x="496" y="324" class="zone">Rucio — data management</text>
+  <text x="496" y="350" class="hname">nprucio01 (frontend)</text>
+  <text x="496" y="368" class="hname">nprucio03 (agent)</text>
+  <text x="496" y="386" class="hname">nprucio06 (PostgreSQL DB)</text>
+  <text x="496" y="406" class="spec">RSEs: BNL_PROD_DISK_1, DAQ_DISK_3,</text>
+  <text x="496" y="421" class="spec">E1_BNL_DISK_1, E1_JLAB_DISK_1</text>
+
+  <!-- ===================== Edges ===================== -->
+  <!-- IAM/CRIC -> PanDA server -->
+  <path class="edge dashed" d="M930,92 L250,92 L250,134"/>
+  <text x="600" y="86" class="elabel">auth tokens / site &amp; queue config</text>
+
+
+  <!-- server -> logstash -> opensearch -> dashboard -->
+  <path class="edge" d="M434,165 L496,165"/>
+  <text x="453" y="158" class="elabel">logs</text>
+  <path class="edge" d="M666,165 L686,165"/>
+  <path class="edge" d="M686,235 L666,243"/>
+
+  <!-- server <-> harvesters -->
+  <path class="edge2" d="M310,410 L310,506"/>
+  <text x="318" y="446" class="elabel">job dispatch / heartbeats</text>
+  <!-- server -> NERSC local harvester (job dispatch) -->
+  <path class="edge" d="M310,452 L948,452"/>
+  <text x="880" y="446" text-anchor="end" class="elabel">job dispatch to NERSC harvester</text>
+
+  <!-- harvesters -> compute -->
+  <path class="edge" d="M175,616 L175,694"/>
+  <text x="183" y="655" class="elabel">pilots</text>
+  <path class="edge" d="M760,616 L760,722 L948,722"/>
+  <text x="752" y="655" text-anchor="end" class="elabel">pilots</text>
+  <path class="edge" d="M500,616 L500,852 L948,852"/>
+  <text x="508" y="655" class="elabel">pilots</text>
+  <path class="edge" d="M1090,522 L1090,552"/>
+  <text x="1098" y="542" class="elabel">Slurm</text>
+
+  <!-- PanDA <-> Rucio -->
+  <path class="edge2 dashed" d="M450,390 L480,390"/>
+  <text transform="rotate(-90 464 345)" x="464" y="349" text-anchor="middle" class="elabel">data I/O</text>
+</svg>

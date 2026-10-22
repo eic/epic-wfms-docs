@@ -96,6 +96,14 @@ tasks alive through the retention window, and server-side retry rules bound the 
 failure classes. The alarm system carries execution conditions that need attention. The mechanics are specified in
 the [swf-epicprod JEDI integration document](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/JEDI_INTEGRATION.md).
 
+Queue retirement closes admission while existing tasks drain in place.
+Production placement, queued submissions and site probes must agree on
+that closure. Job generation, retries, pilot supply and shared capacity
+accounting remain available to the draining tasks; an empty instantaneous
+job queue does not mean those tasks are complete. The
+[PROD_1 drain record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PROD_1_DRAIN.md)
+documents the OSG implementation and its remaining work.
+
 ## Data Products
 
 [![ePIC production dataflow](diagrams/epicprod_dataflow.svg)](diagrams/epicprod_dataflow.svg)

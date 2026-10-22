@@ -84,6 +84,19 @@ inputs from and register outputs to JLab Rucio are described in Platform.
 Live execution state flows back to the catalog and the ePIC PanDA monitoring views: task and job status, error
 summaries, queue and site state, and resource usage. Payload logs are retrievable on demand from the task pages.
 
+Experiment-specific behavior is supplied through ePIC-owned PanDA plugins:
+the JEDI job throttler regulates generation, and the
+[ePIC adder](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPIC_ADDER.md)
+registers available outputs while excluding files marked absent or failed.
+The adder preserves upstream registration errors and all job file records;
+an optional log held in S3 does not become a zero-byte Rucio registration.
+These plugins are installed from swf-epicprod and selected by configuration.
+PanDA core changes go separately to its maintainers.
+
+PCS allocates physical attempt names against both its complete association
+history and PanDA's task names. Moving an old association to another PCS
+task does not make that attempt's namespace available for reuse.
+
 Operators steer execution with a graded set of task controls: native retries on an existing task (raising the
 attempt budget, or restarting a finished task to retry its failures), pause and resume, stop-and-finish for work
 not worth completing, priority changes, and reruns as fresh attempts — the entire task, or a residual rerun that
@@ -96,11 +109,13 @@ tasks alive through the retention window, and server-side retry rules bound the 
 failure classes. The alarm system carries execution conditions that need attention. The mechanics are specified in
 the [swf-epicprod JEDI integration document](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/JEDI_INTEGRATION.md).
 
-Queue retirement closes admission while existing tasks drain in place.
+Queue retirement closes admission; remaining work can be moved by a soft
+reassignment while already-running jobs finish in place.
 Production placement, queued submissions and site probes must agree on
 that closure. Job generation, retries, pilot supply and shared capacity
-accounting remain available to the draining tasks; an empty instantaneous
-job queue does not mean those tasks are complete. The
+accounting continue through the drain. A retired queue's stock must not
+suppress generation for the active queue; an empty instantaneous job
+queue does not mean the tasks are complete. The
 [PROD_1 drain record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PROD_1_DRAIN.md)
 documents the OSG implementation and its remaining work.
 

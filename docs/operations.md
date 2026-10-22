@@ -101,3 +101,14 @@ streaming matures toward production use, adds around-the-clock operation and con
 latencies demand automated detection and response, and where the butterfly model's two-site symmetry sets the outage
 posture: processing fails over to the peer host lab and replication restores symmetry on recovery. The operations model
 described here is designed with that endpoint in mind.
+
+## Production regulation
+
+Task admission, job generation and pilot supply have separate controls and
+separate evidence. The pressure front checks live JEDI enforcement before
+relying on bounded job generation; Harvester keeps fresh demand and worker
+counts to replenish pilots. The two OSG queues share one capacity estimate.
+Multi-job pilots reduce replacement demand but do not eliminate the cold
+start requirement. Configuration clocks, fixed waiting limits, synchronization,
+verification and the boundary between admission holds and task retry control
+are recorded in the [22 October regulation audit and implementation report](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/REGULATION_AUDIT_2026-10-22.md).

@@ -112,3 +112,14 @@ Multi-job pilots reduce replacement demand but do not eliminate the cold
 start requirement. Configuration clocks, fixed waiting limits, synchronization,
 verification and the boundary between admission holds and task retry control
 are recorded in the [22 October regulation audit and implementation report](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/REGULATION_AUDIT_2026-10-22.md).
+
+For GREX's eight-pilot allocations, lifetime sizing uses the current job
+duration distribution. The 22 October follow-up changed newly submitted
+allocations from five to twelve hours, with approximately eight to nine
+hours of successive-job intake and at least three hours reserved for the
+final job. Each pilot receives time remaining to the same allocation
+deadline. The longer useful phase is intended to reduce the fraction lost
+while an allocation waits for its last job; it does not eliminate that tail.
+Already submitted pilots retain their transferred code and configuration.
+The implementation report distinguishes installed policy from measured
+acceptance, start latency and utilization of the new cohort.

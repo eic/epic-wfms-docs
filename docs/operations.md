@@ -110,6 +110,9 @@ Task admission, job generation and pilot supply have separate controls and
 separate evidence. The pressure front checks live JEDI enforcement before
 relying on bounded job generation; Harvester keeps fresh demand and worker
 counts to replenish pilots. The two OSG queues share one capacity estimate.
+Historical running peaks provide a reference for work-depth calculations.
+Lower current occupancy does not establish unused available capacity and
+does not hold task admission.
 Multi-job pilots reduce replacement demand but do not eliminate the cold
 start requirement. Configuration clocks, fixed waiting limits, synchronization,
 verification and the boundary between admission holds and task retry control

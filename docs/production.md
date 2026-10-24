@@ -97,6 +97,18 @@ PCS allocates physical attempt names against both its complete association
 history and PanDA's task names. Moving an old association to another PCS
 task does not make that attempt's namespace available for reuse.
 
+New task submissions also check their science-output namespace in JLab
+Rucio and output/log namespace in BNL Rucio. An occupied name or an
+unavailable catalog stops submission before dataset creation. Existing
+PanDA tasks can still retry or resume using their own datasets.
+
+The active pressure front automatically requests a pause when a production
+task has at least 50 completed job attempts and at least 95% have failed.
+The operations agent verifies the pause, and running jobs finish normally.
+An operator resumes the task after repair; a verified resume starts a fresh
+failure sample. Shadow mode and dry runs do not pause tasks. The counts,
+threshold and operation are retained on the live action stream.
+
 Operators steer execution with a graded set of task controls: native retries on an existing task (raising the
 attempt budget, or restarting a finished task to retry its failures), pause and resume, stop-and-finish for work
 not worth completing, priority changes, and reruns as fresh attempts — the entire task, or a residual rerun that

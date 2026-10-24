@@ -171,9 +171,10 @@ waiting-pilot counts from the submitter queue when reported, otherwise
 Harvester, while retaining both raw readings for diagnosis. The displays
 do not keep separate queue catalogues or compose separate fair-share notices.
 
-Google Event Service commissioning has a feed-owned status board with the
-controller's observed workers, its configured worker and CPU limits, PanDA
-jobs and registered outputs. Missing or stale observations are unknown.
+Google commissioning uses the same production pillars, metrics and trend
+presentation as GREX. A feed-owned display flag includes its active queue
+while preserving inactive commissioning sites. Runtime and controller
+diagnostics remain in operator views. Missing observations are unknown.
 The Computing now, Work available and Campaign header blocks are also
 formatted by the feed and consumed by both displays.
 

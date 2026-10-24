@@ -175,6 +175,9 @@ Google commissioning uses the same production pillars, metrics and trend
 presentation as GREX. A feed-owned display flag includes its active queue
 while preserving inactive commissioning sites. Runtime and controller
 diagnostics remain in operator views. Missing observations are unknown.
+Canada, Perlmutter and JLab have the same standard panels while inactive;
+panel availability is separate from operational activity. JLab's inworld
+chart is placed above its Rucio board.
 The Computing now, Work available and Campaign header blocks are also
 formatted by the feed and consumed by both displays.
 

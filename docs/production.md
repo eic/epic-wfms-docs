@@ -171,6 +171,12 @@ waiting-pilot counts from the submitter queue when reported, otherwise
 Harvester, while retaining both raw readings for diagnosis. The displays
 do not keep separate queue catalogues or compose separate fair-share notices.
 
+Google Event Service commissioning has a feed-owned status board with the
+controller's observed workers, its configured worker and CPU limits, PanDA
+jobs and registered outputs. Missing or stale observations are unknown.
+The Computing now, Work available and Campaign header blocks are also
+formatted by the feed and consumed by both displays.
+
 Shared pure drawing modules supply the finished/failed proportions and
 trend geometry, including hourly-rate conversion from the feed's bin
 duration. Each display retains its own layout and drawing adapter. The

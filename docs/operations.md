@@ -53,6 +53,12 @@ their logs land in the monitor database, and the alarm system carries the condit
 services are health-checked by round trips over the message path they serve, since that is the path whose function
 matters.
 
+The PanDA platform alarm assesses held submit workers against both a count
+and a share of the schedd's worker population: at least 10 held workers and
+at least 10% by default, configured in SysConfig. Isolated holds remain in
+worker diagnostics. The alarm clears when a new platform assessment falls
+below either threshold, removing its entry from Production now.
+
 Incident response is drill-down and bounded action. Diagnosis runs from the campaign task to the PanDA task, job,
 queue, or site, with error summaries at each level and the complete payload log one click from the job page. An AI
 assessment can be requested on the spot to summarize and interpret what the operator is looking at. Response actions —

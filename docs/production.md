@@ -119,6 +119,16 @@ queue does not mean the tasks are complete. The
 [PROD_1 drain record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PROD_1_DRAIN.md)
 documents the OSG implementation and its remaining work.
 
+Placement also requires proof that the queue's pilots can run the task's
+container image. The queue registry reads current image bindings from
+the submit hosts' actual pilot templates, reported with their source and
+hash. A native pilot bound to one image cannot serve another. The front
+leaves such work unplaced with the required and served images in its
+reason; manual placement, queued submission and the final submission
+doer enforce the same rule. Missing or stale capability evidence refuses
+placement rather than guessing. See
+[pilot image compatibility](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/QUEUE_REGISTRY.md#pilot-image-compatibility).
+
 ## Data Products
 
 [![ePIC production dataflow](diagrams/epicprod_dataflow.svg)](diagrams/epicprod_dataflow.svg)

@@ -161,6 +161,24 @@ configuration that consumes and produces them. On-the-fly event generation in th
 evolution of the input path, replacing staged inputs where generators support it, beginning with a Pythia8 proof of
 concept.
 
+## Production Displays
+
+The production dashboard and computing-centre room consume the same cached
+[comp snapshot](https://github.com/BNLNPPS/swf-monitor/blob/infra/baseline-v46/docs/COMP_SNAPSHOT.md).
+The feed owns operational counts, queue membership, health and notices,
+including their wording, severity, details and drilldown links. It resolves
+waiting-pilot counts from the submitter queue when reported, otherwise
+Harvester, while retaining both raw readings for diagnosis. The displays
+do not keep separate queue catalogues or compose separate fair-share notices.
+
+Shared pure drawing modules supply the finished/failed proportions and
+trend geometry, including hourly-rate conversion from the feed's bin
+duration. Each display retains its own layout and drawing adapter. The
+dashboard's running-job count and the room's running-core count keep their
+respective units; one whole-node Event Service job can occupy several cores.
+See the
+[dashboard implementation](https://github.com/BNLNPPS/swf-monitor/blob/infra/baseline-v46/docs/PROD_DASHBOARD.md).
+
 ## AI Assistance
 
 AI assistance appears throughout the production pages as durable, attributed artifacts. Assessments evaluate tasks,

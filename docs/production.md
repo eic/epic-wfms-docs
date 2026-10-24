@@ -161,6 +161,22 @@ configuration that consumes and produces them. On-the-fly event generation in th
 evolution of the input path, replacing staged inputs where generators support it, beginning with a Pythia8 proof of
 concept.
 
+## Event Service commissioning
+
+Google and Perlmutter are commissioning sites for Event Service. Their manual
+validation work uses the common native ePIC pilot; automatic production feeding
+remains disabled. Perlmutter starts with a short 20-event, four-slot smoke job
+and a twenty-minute worker ceiling, then advances to production-shaped jobs
+after successful execution and registered, readable outputs. The site's adapter
+retains its Harvester identity and the existing Slurm submission path. See
+[the Perlmutter runtime](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/NERSC_PERLMUTTER.md).
+
+The NERSC allocation monitor still closes ordinary production at 90% CPU
+allocation use. An explicitly commissioned queue remains operator-controlled:
+the balance monitor neither closes it nor promotes it to production. Science
+production requires completed debugging and validation, including ES output
+usability and recovery behavior.
+
 ## Production Displays
 
 The production dashboard and computing-centre room consume the same cached

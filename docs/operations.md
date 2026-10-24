@@ -31,9 +31,11 @@ The credentialed operations agent is decoupled from routine deploys: the doer sc
 deploy tree, so a script fix is live on the next dispatch, and the lightweight deploy that carries web and MCP changes
 leaves the agent running. The full deploy restarts the agent on the new release.
 
-The production application repository, swf-epicprod, deploys itself. A merge or push to its main branch starts a deploy
-on the production host through a self-hosted GitHub Actions runner, which chooses no deploy, the lightweight deploy or
-the full deploy from the changed paths, and stops on a database migration, which is deployed by hand on approval.
+The production application repository, swf-epicprod, deploys itself. A host-side timer polls canonical main every minute
+and chooses no deploy, the lightweight deploy or the full deploy from the changed paths. It refuses unmerged or dirty
+checkout code and stops on a database migration, which is deployed by hand on approval. Production is not registered
+as a GitHub Actions runner; pull-request checks run on GitHub-hosted machines. The host publishes a
+`deployment/swf-testbed` commit status on GitHub.
 Contributors open a pull request, which reports the deploy its merge will trigger, and merge it themselves
 ([AUTODEPLOY.md](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/AUTODEPLOY.md)). This documentation follows the
 same continuous practice, rebuilding on every push.

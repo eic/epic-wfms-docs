@@ -205,6 +205,15 @@ including the requested particle and angular range. Complete sample coverage
 and natural worker-loss recovery remain separate checks; these bounded tasks
 do not enable automatic feeding or expand either site.
 
+Both complete samples subsequently passed independent readback: 10,000 Google
+events in 15 files and 1,000 Perlmutter events in two files, with exact event-ID
+coverage, no duplicates, distinct neutron truth at the requested angles, and
+all 387 collections readable. Google also recovered a Spot-node shutdown:
+19 registered events survived and a replacement job supplied the remaining
+1,981, with complete final coverage. The exact cloud shutdown cause remains
+unconfirmed. These output checks do not alter the physics-validation service's
+verdict or authorize site expansion.
+
 ## Production Displays
 
 The production dashboard and computing-centre room consume the same cached

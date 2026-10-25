@@ -241,7 +241,14 @@ pod left 17,482 events registered in six files. Independent normal PODIO readbac
 verified exact saved coverage, no duplicate IDs, distinct neutron truth and all
 387 collections. Another 3,260 completed events were unshipped; 13 units with
 1,688 assigned events were in flight. Normal closeout credited the saved work
-and generated a replacement without a manual finish or range reset. See the
+and generated a replacement without a manual finish or range reset. That
+replacement completed the remaining 12,518 events, recovering every unshipped
+and interrupted assignment without overlap with credited work. PanDA credits
+all 30,000 events. Independent complete readback of the 12 output files passed:
+exact IDs 0–29,999, no duplicates, 30,000 distinct neutron truth records at the
+requested angles and all 387 collections readable. The first worker's 14
+payload slots were 96.3% occupied before the cut; occupancy includes unfinished
+work and is separate from productive efficiency after the loss. See the
 [Google worker-loss evidence and tools](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/GKE_PILOT_FLOW.md).
 
 ## Production Displays

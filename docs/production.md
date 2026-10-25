@@ -193,6 +193,18 @@ registered output and normal-reader validation. Reconstructing previously used
 external EVGEN input adds no statistics and remains validation only. Google's
 worker cap and Perlmutter's first-success gate remain in force.
 
+On 25 October UTC, the native 26.07.3 gun gates passed on Google (41154)
+and Perlmutter (41157): each finished and registered 20 events, and independent
+PODIO readback found 20 unique event IDs, distinct generated truth, and all
+387 collections readable. The authorized bounded production tasks are Google
+41158 (`gES1`, 10,000 events, five-worker cap) and Perlmutter 41159 (`pES1`,
+1,000 events, one job with a twenty-minute ceiling). Both reuse config 23's
+neutron gun at 5 GeV and 3–50 degrees, with disjoint sample stems and recorded
+generation plans. Initial Google production readback verified 56 events,
+including the requested particle and angular range. Complete sample coverage
+and natural worker-loss recovery remain separate checks; these bounded tasks
+do not enable automatic feeding or expand either site.
+
 ## Production Displays
 
 The production dashboard and computing-centre room consume the same cached

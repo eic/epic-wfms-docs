@@ -53,6 +53,13 @@ their logs land in the monitor database, and the alarm system carries the condit
 services are health-checked by round trips over the message path they serve, since that is the path whose function
 matters.
 
+Production service disks are checked by the `host_disk_space` alarm using
+the existing host reporters. It warns at 90% used on the OSG submit host,
+the two Harvester hosts and the PanDA server, naming the filesystem and
+remaining space before logging or scheduling stops. Missing or stale
+readings remain an incident; a fresh healthy reading clears it. These
+events enter Production now through the shared alarm feed.
+
 The PanDA platform alarm assesses held submit workers against both a count
 and a share of the schedd's worker population: at least 10 held workers and
 at least 10% by default, configured in SysConfig. Isolated holds remain in

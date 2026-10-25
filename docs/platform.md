@@ -107,6 +107,14 @@ swf-monitor presents PanDA task and job state through task, job, queue, and syst
 supplanting the default ATLAS PanDA monitor with production task links, campaign context, payload-log access, Rucio
 output views, and LLM assessments.
 
+The production dashboard plots reported job peak memory, scratch disk usage
+and scratch file counts by task over twelve hours. Fifteen-minute bins show
+the largest reported job peak, with task links, sample details and coverage.
+Completed jobs use their end time and running jobs their latest update.
+Missing measurements remain gaps, and a plot without measurements states
+that no peaks were reported. The shared cached product and renderer serve
+both the home dashboard tab and the standalone dashboard.
+
 [![PanDA in ePIC](diagrams/panda_in_epic.svg)](diagrams/panda_in_epic.svg)
 
 The generic PanDA architecture placed in its ePIC operating context — task sources, JEDI and iDDS, the server hub,

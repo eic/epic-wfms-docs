@@ -177,6 +177,15 @@ the balance monitor neither closes it nor promotes it to production. Science
 production requires completed debugging and validation, including ES output
 usability and recovery behavior.
 
+Particle-gun production is the preferred ES commissioning workload. It generates
+events inside the workflow, so small whole tasks can contribute new production
+statistics after validation. Each addition needs disjoint random streams and
+recorded provenance: repeating the same stem and chunk indices reuses the gun's
+seeds, even under another task name. Credit requires exact event coverage,
+registered output and normal-reader validation. Reconstructing previously used
+external EVGEN input adds no statistics and remains validation only. Google's
+worker cap and Perlmutter's first-success gate remain in force.
+
 ## Production Displays
 
 The production dashboard and computing-centre room consume the same cached

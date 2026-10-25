@@ -109,6 +109,13 @@ An operator resumes the task after repair; a verified resume starts a fresh
 failure sample. Shadow mode and dry runs do not pause tasks. The counts,
 threshold and operation are retained on the live action stream.
 
+The production watcher may also exclude an OSG glidein site whose
+site-wide worker failures are established independently of task, input or
+shared-service faults. This reversible protection updates future and
+already-idle pilot matchmaking, preserves running work, and records its
+evidence and verification. It is routine operations rather than an
+operator decision request.
+
 Operators steer execution with a graded set of task controls: native retries on an existing task (raising the
 attempt budget, or restarting a finished task to retry its failures), pause and resume, stop-and-finish for work
 not worth completing, priority changes, and reruns as fresh attempts — the entire task, or a residual rerun that

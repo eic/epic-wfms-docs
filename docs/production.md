@@ -234,6 +234,15 @@ chart is placed above its Rucio board.
 The Computing now, Work available and Campaign header blocks are also
 formatted by the feed and consumed by both displays.
 
+**Compute efficiency**, beside Site compute usage in the Sites menu and linked
+from the Computing now heading, shows site heatmaps and monthly or weekly
+trends. It measures finished-job core-hours divided by all ended-job core-hours,
+including failed, closed and cancelled attempts; it excludes running jobs and
+idle pilot time. OSG is split by execution site. Daily aggregates are retained,
+refreshed hourly, and reconciled monthly; the current period is partial.
+The incident comparison can exclude task 40856. See
+[Compute efficiency history](https://github.com/BNLNPPS/swf-monitor/blob/infra/baseline-v46/docs/COMPUTE_EFFICIENCY.md).
+
 Shared pure drawing modules supply the finished/failed proportions and
 trend geometry, including hourly-rate conversion from the feed's bin
 duration. Each display retains its own layout and drawing adapter. The

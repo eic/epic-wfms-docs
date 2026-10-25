@@ -74,6 +74,15 @@ through the operations agent and recorded on the production record. Task actions
 request becomes a durable record that tracks the command from acceptance to the observed PanDA state change, and the
 record names the requesting operator even though the command reaches PanDA under the system's credential.
 
+The production watcher has standing authority for routine service recovery.
+It weighs the cost of waiting against a bounded, reversible remedy: moving
+disposable caches, preserving closed logs before reclaiming their space,
+rerunning an existing credential renewal, or restarting a failed service
+after correcting its cause. It preserves job/spool data and science outputs,
+verifies recovery and records the action. An approval request for a riskier
+deletion does not leave a shared outage unmitigated when a safer recovery is
+available. Campaign decisions and higher-risk changes keep their gates.
+
 Incidents are as often data-side as processing-side. Transfer failures, storage pressure, log-upload contention, and
 dataset integrity carry the same discipline: surfaced, diagnosed through the data management views, and resolved with
 recorded actions.

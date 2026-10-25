@@ -236,13 +236,22 @@ verdict or authorize site expansion.
 
 Task and job pages show per-core ES occupancy for both Google and Perlmutter,
 including active jobs and their shipped harness snapshots. A running plot stops
-at its observation timestamp and warns when stale. Only an ended job without a
-normal harness end is shown as worker loss, separating registered work from
-completed but unshipped work and interrupted units.
+at its observation timestamp and warns when stale. An ended job without a
+normal harness end is shown as worker loss only when independent loss evidence
+exists. Otherwise the plot identifies an incomplete observation; missing final
+telemetry alone does not establish a failed interval.
 Perlmutter's later task 41203 has not established sustained operation: its first
 worker's last shipped record covers less than five minutes and only two events
 were registered. Plot availability is separate from that production-validation
 requirement.
+
+Task 41215 subsequently ran 128 execution slots with initial processing starts
+within 1.18 seconds and a recorded interval over 35 minutes. It did not pass the
+saved-work requirement: only 32 events were registered; a 255-file close with
+11,515 events was still running at the final observation. The pilot reported a
+batch time limit, while the launch recorded exit 137 before its 45-minute
+ceiling; the cause remains unconfirmed. A bounded fast-merge correction is
+under commissioning, with independent PODIO checks before another site run.
 
 A controlled Google demonstration on 25 October used task 41207 (`gES3`),
 30,000 fresh neutron-gun events and the normal five-minute rolling close.

@@ -103,11 +103,17 @@ unavailable catalog stops submission before dataset creation. Existing
 PanDA tasks can still retry or resume using their own datasets.
 
 The active pressure front automatically requests a pause when a production
-task has at least 50 completed job attempts and at least 95% have failed.
-The operations agent verifies the pause, and running jobs finish normally.
-An operator resumes the task after repair; a verified resume starts a fresh
-failure sample. Shadow mode and dry runs do not pause tasks. The counts,
-threshold and operation are retained on the live action stream.
+task's latest ten counted completed attempts have all failed, or at least
+25 of its latest 50 have failed, with the triggering failures spanning at
+least three hosts. Worker losses, slot-time-limit kills and rejected worker
+batch identities are set aside. The earlier threshold of at least 50
+completed attempts with at least 95% failed remains active as a backstop
+for queues with sparse host reporting. The operations agent verifies the
+pause, and running jobs finish normally. An operator resumes the task after
+repair; a verified resume starts a fresh failure sample. Shadow mode and
+dry runs do not pause tasks. The counts, thresholds and operation are
+retained on the live action stream. See the
+[task failure guard](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/CONTINUOUS_PRODUCTION.md#task-failure-guard-23-october-2026).
 
 The production watcher may also exclude an OSG glidein site whose
 site-wide worker failures are established independently of task, input or

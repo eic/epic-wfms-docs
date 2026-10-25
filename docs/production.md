@@ -224,6 +224,26 @@ all 387 collections readable. Google also recovered a Spot-node shutdown:
 unconfirmed. These output checks do not alter the physics-validation service's
 verdict or authorize site expansion.
 
+Task and job pages show per-core ES occupancy for both Google and Perlmutter,
+including active jobs and their shipped harness snapshots. A running plot stops
+at its observation timestamp and warns when stale. Only an ended job without a
+normal harness end is shown as worker loss, separating registered work from
+completed but unshipped work and interrupted units.
+Perlmutter's later task 41203 has not established sustained operation: its first
+worker's last shipped record covers less than five minutes and only two events
+were registered. Plot availability is separate from that production-validation
+requirement.
+
+A controlled Google demonstration on 25 October used task 41207 (`gES3`),
+30,000 fresh neutron-gun events and the normal five-minute rolling close.
+After 30 minutes 5 seconds, the separately approved removal of one whole worker
+pod left 17,482 events registered in six files. Independent normal PODIO readback
+verified exact saved coverage, no duplicate IDs, distinct neutron truth and all
+387 collections. Another 3,260 completed events were unshipped; 13 units with
+1,688 assigned events were in flight. Normal closeout credited the saved work
+and generated a replacement without a manual finish or range reset. See the
+[Google worker-loss evidence and tools](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/GKE_PILOT_FLOW.md).
+
 ## Production Displays
 
 The production dashboard and computing-centre room consume the same cached

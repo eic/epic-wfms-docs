@@ -178,11 +178,21 @@ configuration that consumes and produces them. On-the-fly event generation in th
 evolution of the input path, replacing staged inputs where generators support it, beginning with a Pythia8 proof of
 concept.
 
-## Event Service commissioning
+## Event Service operation and commissioning
 
-Google and Perlmutter are commissioning sites for Event Service. Their manual
-validation work uses the common native ePIC pilot; automatic production feeding
-remains disabled. Perlmutter starts with a short 20-event, four-slot smoke job
+Google operates as a production Event Service site at five nodes, using the
+common native ePIC pilot and the current 26.07.3 particle-gun configuration.
+Its dedicated feeder keeps two finite 500,000-event tasks committed, with ten
+50,000-event jobs per task, five-minute output closes and a two-hour harness
+ceiling. The five-node controller cap permits at most 70 payload cores;
+additional queued work does not expand it. PCS records each fresh sample's
+disjoint seed reservation and normal retained RECO output. The feeder holds
+on unknown, failed, paused or incomplete task state and checks storage and
+image admission. The ordinary Google queue remains off. See
+[Google production controls](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/GKE_PILOT_FLOW.md).
+
+Perlmutter remains in Event Service commissioning; automatic production feeding
+is disabled there. Its validation starts with a short 20-event, four-slot job
 and a twenty-minute worker ceiling, then advances to production-shaped jobs
 after successful execution and registered, readable outputs. The site's adapter
 retains its Harvester identity and the existing Slurm submission path. See
@@ -261,7 +271,7 @@ waiting-pilot counts from the submitter queue when reported, otherwise
 Harvester, while retaining both raw readings for diagnosis. The displays
 do not keep separate queue catalogues or compose separate fair-share notices.
 
-Google commissioning uses the same production pillars, metrics and trend
+Google uses the same production pillars, metrics and trend
 presentation as GREX. A feed-owned display flag includes its active queue
 while preserving inactive commissioning sites. Runtime and controller
 diagnostics remain in operator views. Missing observations are unknown.

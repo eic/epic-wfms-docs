@@ -250,10 +250,14 @@ trends. It measures finished-job core-hours divided by all ended-job core-hours,
 including failed, closed and cancelled attempts; it excludes running jobs and
 idle pilot time. OSG is split by execution site. Daily aggregates are retained,
 refreshed hourly, and reconciled monthly; the current period is partial.
-The dashboard panel below Storage shows the preceding 24 hours' overall
-efficiency, with one core-hour-weighted average per month since May and a
-compact trend. Its current reading refreshes every minute; the monthly
-context uses the retained history, with the current month marked partial.
+The dashboard panel below Storage shows monthly OSG, Perlmutter and GREX
+curves for efficiency, total core-hours/day and productive average cores,
+with overall last-24-hour readings and monthly averages since May.
+Core-hours/day includes failed work; productive average cores divides
+successful core-hours by elapsed hours. The three metrics use the same
+ended-job sample without processor-performance weights. Current readings
+refresh every minute; monthly rates use calendar time through the history's
+observation timestamp, with the current month marked partial.
 The incident comparison can exclude task 40856. See
 [Compute efficiency history](https://github.com/BNLNPPS/swf-monitor/blob/infra/baseline-v46/docs/COMPUTE_EFFICIENCY.md).
 

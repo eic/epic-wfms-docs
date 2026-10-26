@@ -253,6 +253,17 @@ batch time limit, while the launch recorded exit 137 before its 45-minute
 ceiling; the cause remains unconfirmed. A bounded fast-merge correction is
 under commissioning, with independent PODIO checks before another site run.
 
+Task 41218 (`pES4`) then ran the bounded fast-close configuration for 32 minutes
+25 seconds with 128 slots and initial processing starts within 1.041 seconds.
+All 27 closes completed, registering 52,332 events with no failed units.
+Independent normal PODIO readback verified every saved event ID, 52,332 distinct
+neutron truth records and all 387 collections. The allocation subsequently
+completed normally. The per-core page shows aligned starts and saved processing
+through the full run. Accounting remains unresolved: PanDA credits only the
+first close's 208 events, despite the complete readable output. The task remains
+paused to prevent duplicate reconstruction while those updates are reconciled.
+This normal drain is separate from the controlled Google worker-loss test.
+
 A controlled Google demonstration on 25 October used task 41207 (`gES3`),
 30,000 fresh neutron-gun events and the normal five-minute rolling close.
 After 30 minutes 5 seconds, the separately approved removal of one whole worker

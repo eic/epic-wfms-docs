@@ -240,6 +240,15 @@ at its observation timestamp and warns when stale. An ended job without a
 normal harness end is shown as worker loss only when independent loss evidence
 exists. Otherwise the plot identifies an incomplete observation; missing final
 telemetry alone does not establish a failed interval.
+
+Unit occupancy includes initialization, setup and output work. It does not
+measure event-processing efficiency. The plots separate measured initialization,
+simulation events, reconstruction requests and other unit work. Simulation timing
+begins at the first Geant4 event, after lazy first-run physics setup, and ends at
+the last event. Only measured processing whose output has been registered counts
+as saved event processing. Older records without these boundaries remain visibly
+unseparated; their occupied time is not assigned to processing.
+
 Perlmutter's later task 41203 has not established sustained operation: its first
 worker's last shipped record covers less than five minutes and only two events
 were registered. Plot availability is separate from that production-validation

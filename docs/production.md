@@ -259,9 +259,13 @@ All 27 closes completed, registering 52,332 events with no failed units.
 Independent normal PODIO readback verified every saved event ID, 52,332 distinct
 neutron truth records and all 387 collections. The allocation subsequently
 completed normally. The per-core page shows aligned starts and saved processing
-through the full run. Accounting remains unresolved: PanDA credits only the
-first close's 208 events, despite the complete readable output. The task remains
-paused to prevent duplicate reconstruction while those updates are reconciled.
+through the full run. PanDA initially credited only the first close's 208
+events: the pilot had inherited a two-hour interval between range-report
+archives. That interval is now 60 seconds. A reserved operator accounting
+consumer recovered the missing 52,124 credits through normal acquisition,
+reporting and fine-grained archival, without executing a physics payload.
+The verified ledger has all 52,332 saved events completed and 147,668 unsaved
+events ready. The task remains paused; both Perlmutter allocations have ended.
 This normal drain is separate from the controlled Google worker-loss test.
 
 A controlled Google demonstration on 25 October used task 41207 (`gES3`),

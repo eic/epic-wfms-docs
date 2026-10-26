@@ -87,6 +87,17 @@ Incidents are as often data-side as processing-side. Transfer failures, storage 
 dataset integrity carry the same discipline: surfaced, diagnosed through the data management views, and resolved with
 recorded actions.
 
+OSG production delegates payload recovery to PanDA and JEDI. Its pull-pilot
+template combines a matching restriction on `NumJobStarts` with removal
+after eviction returns a previously started pilot to Idle. This prevents
+ordinary re-execution under one worker ID from concealing the old payload's
+loss. Harvester reports the worker's end and PanDA's worker-done path can
+release the work for retry. Condor updates the start count after startup,
+so the policy is best effort; the existing lost-heartbeat timeout remains
+the backstop. Existing workers retain their submitted policy. Installation
+and live verification are recorded in the
+[OSG recovery runbook](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/OSG_SUBMISSION.md#eviction-and-job-recovery).
+
 ## Automation and Agents
 
 Always-on services follow one operational pattern: systemd-managed with automatic restart, burst-capped so a

@@ -253,20 +253,29 @@ batch time limit, while the launch recorded exit 137 before its 45-minute
 ceiling; the cause remains unconfirmed. A bounded fast-merge correction is
 under commissioning, with independent PODIO checks before another site run.
 
-Task 41218 (`pES4`) then ran the bounded fast-close configuration for 32 minutes
-25 seconds with 128 slots and initial processing starts within 1.041 seconds.
-All 27 closes completed, registering 52,332 events with no failed units.
-Independent normal PODIO readback verified every saved event ID, 52,332 distinct
-neutron truth records and all 387 collections. The allocation subsequently
-completed normally. The per-core page shows aligned starts and saved processing
-through the full run. PanDA initially credited only the first close's 208
-events: the pilot had inherited a two-hour interval between range-report
-archives. That interval is now 60 seconds. A reserved operator accounting
-consumer recovered the missing 52,124 credits through normal acquisition,
-reporting and fine-grained archival, without executing a physics payload.
-The verified ledger has all 52,332 saved events completed and 147,668 unsaved
-events ready. The task remains paused; both Perlmutter allocations have ended.
-This normal drain is separate from the controlled Google worker-loss test.
+Task 41218 (`pES4`) saved 52,332 events in 27 registered files during a
+32-minute run. Independent normal PODIO readback passed all saved IDs,
+distinct neutron truth and all 387 collections. Its initial starts were
+within 1.041 seconds, but sustained execution failed acceptance: some cores
+waited over six minutes, with only eight of 128 processing at minute 14.
+The per-core plot records these real dispatch gaps. This was a normal drain,
+not Perlmutter preemption validation.
+
+PanDA initially credited 208 events. A reserved accounting consumer recovered
+the remaining 52,124 through normal ownership and finalization APIs, with no
+physics rerun. The task is paused with 147,668 unsaved events ready and no
+active allocation. The earlier claim that a 60-second queue setting fixed
+pilot reporting was incorrect. The provider's 601-second default and the
+queue-field alias require full information-service resolution to establish
+the effective value. Perlmutter dispatch and reporting require a combined
+correction and a new bounded preemption validation.
+
+The Perlmutter-only batch candidate was deployed on `59f1bc9`: one IPC
+completion and one metadata archive entry per processing unit, bounded bulk
+range acquisition, oldest-idle-first dispatch and effective five-minute pilot
+credits. The frozen-runtime check used the real yampl channel and all 128
+simulated slots without external service calls. This establishes the local
+protocol, not sustained Perlmutter execution or preemption acceptance.
 
 A controlled Google demonstration on 25 October used task 41207 (`gES3`),
 30,000 fresh neutron-gun events and the normal five-minute rolling close.

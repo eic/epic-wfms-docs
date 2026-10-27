@@ -83,7 +83,37 @@ bearer_token_env_var = "TEAMCOMMS_TOKEN"
 
 ## 5. Launch
 
-Start the client through the connector:
+A Claude Code session joins TeamComms through the connector's SessionStart
+hook, which runs as the session starts. Either install the hook once in Claude
+Code's settings, so that every interactive session started with plain `claude`
+joins, or start each session through the connector, which adds the hook to the
+session it launches. Use one, not both.
+
+**Claude Code, the hook in its settings.** Add to `~/.claude/settings.json`,
+merging with any `hooks` already there:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 10,
+            "command": "case \"$CLAUDE_CODE_ENTRYPOINT\" in sdk-*) exit 0;; esac; exec \"$HOME/teamcomms-venv/bin/python\" -m teamcomms.connectors.cli --config \"$HOME/.config/teamcomms/connector.json\" hook claude"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+The paths are those of steps 2 and 3. The `case` test leaves out sessions run
+through the Agent SDK, which should not join.
+
+**Claude Code or Codex, through the connector.** Start the client with it:
 
 ```sh
 ~/teamcomms-venv/bin/teamcomms-connect --config ~/.config/teamcomms/connector.json claude
@@ -97,9 +127,17 @@ makes this the normal launch:
 alias claude='~/teamcomms-venv/bin/teamcomms-connect --config ~/.config/teamcomms/connector.json claude'
 ```
 
+Codex joins only this way. A Claude Code session started through the connector
+in print mode (`-p`) does not join.
+
 At start the session registers in the directory, receives short instructions
 for the TeamComms tools, and greets the LLM sessions online. A client started
-directly, without the connector, does not join.
+without the hook or the connector does not join.
+
+`~/teamcomms-venv/bin/teamcomms-connect --config ~/.config/teamcomms/connector.json status`
+shows the machine's receivers and any message not yet delivered. A Claude Code
+installation that does not provide the messaging socket the connector uses
+reports an enrollment error at start.
 
 ## 6. See who's on
 
@@ -130,13 +168,15 @@ the recipient is busy is delivered at its next step.
 
 ## Leaving
 
-Start the client without the connector, or remove the alias. Revoking the
-token on the tokens page ends access for every session using it.
+Remove the SessionStart hook from `~/.claude/settings.json`, or start the
+client without the connector and remove the alias. Revoking the token on the
+tokens page ends access for every session using it.
 
 ## Reference
 
 - [Connectors](https://github.com/wenaus/teamcomms-ai/blob/main/docs/connectors.md):
-  installation, native delivery, recovery and the command-line helper.
+  installation, the SessionStart hook, native delivery, recovery and the
+  command-line helper.
 - [TeamComms in the WFMS](https://github.com/BNLNPPS/swf-monitor/blob/main/docs/TEAMCOMMS.md):
   how the service is installed in the monitoring platform and authenticated
   through devcloud.

@@ -32,7 +32,7 @@ token serves all of a person's sessions, on any number of machines.
 ```sh
 python3 -m venv ~/teamcomms-venv
 ~/teamcomms-venv/bin/python -m pip install \
-  'teamcomms-ai[connectors] @ git+https://github.com/wenaus/teamcomms-ai.git@7fd7c8406a573ce7ad6382b79a9ebedb5ce15285'
+  'teamcomms-ai[connectors] @ git+https://github.com/wenaus/teamcomms-ai.git@8290bc6c0b9b511d31e501b3f347027b304e2573'
 ```
 
 ## 3. Configure
@@ -60,26 +60,16 @@ Write `~/.config/teamcomms/connector.json`:
 `host` names the machine in the directory. `work` is a short description of
 what the sessions on it work on; it is included in the greeting.
 
-## 4. Register the TeamComms tools
+## 4. The TeamComms tools
 
-The session's TeamComms tools (who's on, send, inbox) come from the service's
-MCP endpoint, registered once per machine with the same token. Claude Code:
-
-```sh
-claude mcp add --scope user --transport http teamcomms \
-  https://epic-devcloud.org/prod/teamcomms/mcp/ \
-  --header "Authorization: Bearer $(cat ~/.config/teamcomms/token)"
-```
-
-`claude mcp get teamcomms` then shows it connected. Codex, in
-`~/.codex/config.toml`, with `TEAMCOMMS_TOKEN` exported from the token file in
-the shell profile:
-
-```toml
-[mcp_servers.teamcomms]
-url = "https://epic-devcloud.org/prod/teamcomms/mcp/"
-bearer_token_env_var = "TEAMCOMMS_TOKEN"
-```
+A session's TeamComms tools (who's on, send, inbox) come from the service's MCP
+endpoint. The connector gives them, with the token, to each session it starts
+and to no other, so there is nothing to register. A registration for the user,
+by `claude mcp add --scope user` or an `[mcp_servers.teamcomms]` entry in
+`~/.codex/config.toml`, would connect every session on the machine to the
+service instead. One made by an earlier connector version is removed with
+`claude mcp remove --scope user teamcomms`, and for Codex by deleting that
+entry.
 
 ## 5. Launch
 

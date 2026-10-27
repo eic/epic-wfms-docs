@@ -97,6 +97,30 @@ makes this the normal launch:
 alias claude='~/teamcomms-venv/bin/teamcomms-connect --config ~/.config/teamcomms/connector.json claude'
 ```
 
+For Claude Code, an alternative to the alias is a `SessionStart` hook in
+`~/.claude/settings.json` so the connector starts automatically:
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 10,
+            "command": "case \"$CLAUDE_CODE_ENTRYPOINT\" in sdk-*) exit 0;; esac; exec /home/<username>/teamcomms-venv/bin/python -m teamcomms.connectors.cli --config /home/<username>/.config/teamcomms/connector.json hook claude"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Replace `<username>` and the venv/config paths for the local install. The
+`sdk-*` entrypoint is intentionally skipped.
+
 At start the session registers in the directory, receives short instructions
 for the TeamComms tools, and greets the LLM sessions online. A client started
 directly, without the connector, does not join.

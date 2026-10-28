@@ -139,6 +139,14 @@ described here is designed with that endpoint in mind.
 
 ## Production regulation
 
+New PCS submissions use the `epic` VO. Existing `wlcg` tasks retain their
+identities, and JEDI sums both VOs' equivalent work queues under one grant
+ledger and the canonical `epic` policy, with legacy values as fallback.
+Production, test and user queues retain separate allowances. The active
+OSG queue remains separate from the retired draining queue. The
+[VO migration record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPIC_VO_MIGRATION.md)
+links the deployment, verification and corrective audit.
+
 Task admission, job generation and pilot supply have separate controls and
 separate evidence. The pressure front checks live JEDI enforcement before
 relying on bounded job generation; Harvester keeps fresh demand and worker

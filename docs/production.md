@@ -134,6 +134,14 @@ tasks alive through the retention window, and server-side retry rules bound the 
 failure classes. The alarm system carries execution conditions that need attention. The mechanics are specified in
 the [swf-epicprod JEDI integration document](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/JEDI_INTEGRATION.md).
 
+Residual recovery uses the attempt's complete submitted manifest. Chunk
+indices may exceed 9999, and malformed rows cannot be silently omitted.
+A historical record suspected of truncation blocks recovery until an
+explicit repair verifies its exact sandbox CSV, row count, event sum and
+digest. Repair preserves the previous record and records an audit event
+in the same transaction. See
+[manifest verification and repair](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/EPICPROD_RETRIES.md#residual-rerun).
+
 Queue retirement closes admission; remaining work can be moved by a soft
 reassignment while already-running jobs finish in place.
 Production placement, queued submissions and site probes must agree on

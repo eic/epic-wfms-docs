@@ -83,6 +83,14 @@ verifies recovery and records the action. An approval request for a riskier
 deletion does not leave a shared outage unmitigated when a safer recovery is
 available. Campaign decisions and higher-risk changes keep their gates.
 
+Payload failures are catalogued by signature in the crash catalog, built nightly from the PanDA record: segfaults
+(a payload that died on a signal it raised), Himem (a job killed for its memory), Bad input (a stage that stopped on
+an error naming its input) and Hilog (a job, finished or failed, whose stage logs ran over a threshold, with the
+programs that wrote them). Each signature carries its tasks, sites, rates and representative jobs, and a crash can be
+reproduced as a canary and read into a finding; the
+[catalog record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/SEGFAULT_DIAGNOSIS.md) gives each kind's
+selection.
+
 Incidents are as often data-side as processing-side. Transfer failures, storage pressure, log-upload contention, and
 dataset integrity carry the same discipline: surfaced, diagnosed through the data management views, and resolved with
 recorded actions.

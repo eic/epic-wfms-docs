@@ -158,7 +158,7 @@ the submit hosts' actual pilot templates, reported with their source and
 hash. GREX selects the payload container per job; its bootstrap campaign
 image does not restrict which edition it can serve. OSG pilots remain
 bound to their glidein's image, with the allocator supplying multiple
-image cohorts under one waiting-worker budget. A native pilot bound to
+image cohorts under one waiting-worker budget. A direct pilot bound to
 one image cannot serve another. The front
 leaves such work unplaced with the required and served images in its
 reason; manual placement, queued submission and the final submission
@@ -189,7 +189,7 @@ concept.
 ## Event Service operation and commissioning
 
 Google operates as a production Event Service site at five nodes, using the
-common native ePIC pilot and the current 26.07.3 particle-gun configuration.
+common direct ePIC pilot and the current 26.07.3 particle-gun configuration.
 Its dedicated feeder keeps two finite 500,000-event tasks committed, with ten
 50,000-event jobs per task, five-minute output closes and a two-hour harness
 ceiling. The five-node controller cap permits at most 70 payload cores;

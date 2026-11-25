@@ -32,6 +32,11 @@ production host.
   configurations, and campaign tasks of the Physics Configuration System.
   Design: [PCS](pcs.md) and
   [PCS.md](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PCS.md).
+  A script acts as a person with that person's own API token, sent as
+  `Authorization: Token <key>`. The token is shown, created, regenerated
+  and revoked on the Account tab of the person's account page, or through
+  `/prod/pcs/api/my-token/`, and is issued only to accounts that may act on
+  the production system.
 - **PanDA views API** (`/prod/api/panda/`) — read-only task, job, queue,
   and resource-usage data, the source for the external monitoring pages.
 

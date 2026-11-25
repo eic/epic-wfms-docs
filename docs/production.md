@@ -115,12 +115,12 @@ dry runs do not pause tasks. The counts, thresholds and operation are
 retained on the live action stream. See the
 [task failure guard](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/CONTINUOUS_PRODUCTION.md#task-failure-guard-23-october-2026).
 
-The production watcher may also exclude an OSG glidein site whose
-site-wide worker failures are established independently of task, input or
-shared-service faults. This reversible protection updates future and
-already-idle pilot matchmaking, preserves running work, and records its
-evidence and verification. It is routine operations rather than an
-operator decision request.
+An OSG glidein site whose site-wide worker failures are established
+independently of task, input or shared-service faults is excluded only by
+the people responsible for production; the production watcher presents the
+evidence and does not exclude sites. Exclusion is reversible: it updates
+future and already-idle pilot matchmaking, preserves running work, and
+records its evidence and verification.
 
 Operators steer execution with a graded set of task controls: native retries on an existing task (raising the
 attempt budget, or restarting a finished task to retry its failures), pause and resume, stop-and-finish for work
@@ -152,6 +152,10 @@ queue does not mean the tasks are complete. The
 [PROD_1 drain record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/PROD_1_DRAIN.md)
 documents the OSG implementation and its remaining work.
 
+The JLab farm queue JLAB_PanDA_1 is a production queue, fed by the pressure
+front like the OSG and GREX queues. Its launcher runs the direct ePIC pilot,
+one pilot per batch job, from the same runtime as GREX.
+
 Placement also requires proof that the queue's pilots can run the task's
 container image. The queue registry reads current image bindings from
 the submit hosts' actual pilot templates, reported with their source and
@@ -182,7 +186,11 @@ totals per configuration.
 
 Third-party event-generation inputs are cataloged on the same footing. EVGEN datasets in JLab Rucio are swept into the
 catalog and matched to the requests they serve, so a task's inputs and outputs are both visible beside the
-configuration that consumes and produces them. On-the-fly event generation in the production payload is the planned
+configuration that consumes and produces them. An EVGEN task reads every event of each input file: an ordinary task
+cuts each file into jobs of the per-job event count, the last job taking what remains, and an Event Service task
+streams each file to its last event at its catalog event count. EVGEN inputs are registered and read under JLab's
+`/cache` door area, which EIC-XRD serves; catalog paths under `/volatile` are still accepted. On-the-fly event
+generation in the production payload is the planned
 evolution of the input path, replacing staged inputs where generators support it, beginning with a Pythia8 proof of
 concept.
 

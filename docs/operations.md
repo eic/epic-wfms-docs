@@ -40,6 +40,13 @@ Contributors open a pull request, which reports the deploy its merge will trigge
 ([AUTODEPLOY.md](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/AUTODEPLOY.md)). This documentation follows the
 same continuous practice, rebuilding on every push.
 
+The developments that users, operators and developers should know about are listed on the What's new page of the
+epicprod Help menu, newest first, with tags, importance, comments and votes, and as an RSS feed. An item is added with
+the task that ships its change, and each addition is posted to epicprod-live. DISpatcher answers questions such as
+"what's new for operators?" from the same list, and the MCP tool `whats_new_list` reads it. The core repositories'
+system releases are recorded in the
+[release notes](https://github.com/BNLNPPS/swf-testbed/blob/main/RELEASE_NOTES.md).
+
 The production services presently share the testbed platform at BNL. Requirements for dedicated long-term hosting of
 the production services have been developed, with provisioning planned for FY27.
 
@@ -166,6 +173,21 @@ Multi-job pilots reduce replacement demand but do not eliminate the cold
 start requirement. Configuration clocks, fixed waiting limits, synchronization,
 verification and the boundary between admission holds and task retry control
 are recorded in the [22 October regulation audit and implementation report](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/REGULATION_AUDIT_2026-10-22.md).
+
+The pressure front feeds every open production queue from its first cycle. A queue with no measured hours is fed, an
+empty queue takes its first task whatever its hours, and a queue quiet for weeks restarts at the capacity it last ran
+at. The queue census keeps a 90-day memory of each queue: its ceiling is the most it ran at once in that time, and a
+queue with no finished production job in 14 days is read at its 90-day walltimes. A feed switched off with an
+automatic return comes back on when a canary probe submitted after the switch-off returns healthy.
+
+A person declares a queue's downtime, a window with its reason, on the queue page or with the MCP tool
+`epicprod_declare_downtime`. Shortly before and during the window production assigns the queue no new tasks, and
+failures in it are attributed to the downtime.
+
+The node guard keeps a node that takes jobs and kills them fast from taking more work, latched for a day and then
+half open. Glidein loss, a job whose batch worker went away under it with no pilot, payload or transformation error, is
+set aside before that judgment, so an OSG eviction or an expired reconnect lease does not exclude a host. See the
+[node guard](https://github.com/BNLNPPS/site-canary/blob/main/docs/NODE_GUARD.md).
 
 For GREX's eight-pilot allocations, lifetime sizing uses the current job
 duration distribution. The 22 October follow-up changed newly submitted

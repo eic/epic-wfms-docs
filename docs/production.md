@@ -207,11 +207,15 @@ on unknown, failed, paused or incomplete task state and checks storage and
 image admission. The ordinary Google queue remains off. See
 [Google production controls](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/GKE_PILOT_FLOW.md).
 
-Perlmutter remains in Event Service commissioning; automatic production feeding
-is disabled there. Its validation starts with a short 20-event, four-slot job
-and a twenty-minute worker ceiling, then advances to production-shaped jobs
-after successful execution and registered, readable outputs. The site's adapter
-retains its Harvester identity and the existing Slurm submission path. See
+Perlmutter runs Event Service production on whole nodes. The pressure front
+feeds it tasks over a registered EVGEN input, whether the task came in through
+registered-sample intake or had its EVGEN input set on the compose page or
+through the API, and stages each task's input at NERSC before it starts. A
+payload canary runs there daily as an Event Service job in the production
+shape, 128,000 events of the feeder's particle-gun sample on one node, judged
+on the harness exit, every close registered and every event credited. The
+site's adapter retains its Harvester identity and the existing Slurm
+submission path. See
 [the Perlmutter runtime](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/NERSC_PERLMUTTER.md).
 
 The NERSC allocation monitor still closes ordinary production at 90% CPU

@@ -212,7 +212,7 @@ feeds it tasks over a registered EVGEN input, whether the task came in through
 registered-sample intake or had its EVGEN input set on the compose page or
 through the API, and stages each task's input at NERSC before it starts. A
 payload canary runs there daily as an Event Service job in the production
-shape, 128,000 events of the feeder's particle-gun sample on one node, judged
+shape, a ten-minute run of the feeder's particle-gun sample on one node, judged
 on the harness exit, every close registered and every event credited. The
 site's adapter retains its Harvester identity and the existing Slurm
 submission path. See

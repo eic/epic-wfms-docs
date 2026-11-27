@@ -96,7 +96,9 @@ an error naming its input) and Hilog (a job, finished or failed, whose stage log
 programs that wrote them). Each signature carries its tasks, sites, rates and representative jobs, and a crash can be
 reproduced as a canary and read into a finding; the
 [catalog record](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/SEGFAULT_DIAGNOSIS.md) gives each kind's
-selection.
+selection. An operator can delegate a finding to a person or a physics working group outside the operations team,
+with what is asked; the delegate accepts, answers or returns it on the Delegated to me page, and the reply is kept on
+the finding ([delegation](https://github.com/BNLNPPS/swf-epicprod/blob/main/docs/SEGFAULT_DELEGATION.md)).
 
 Incidents are as often data-side as processing-side. Transfer failures, storage pressure, log-upload contention, and
 dataset integrity carry the same discipline: surfaced, diagnosed through the data management views, and resolved with
